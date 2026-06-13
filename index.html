@@ -297,8 +297,8 @@ footer{padding:28px 28px 24px;background:var(--sand)}
   .section-header{padding:20px 16px 16px;flex-direction:column;align-items:flex-start!important;gap:4px}
   .section-title{font-size:11px!important}
   .hero-kicker{font-size:9px;letter-spacing:0.08em}
-  .hero>div:first-child{flex-direction:column;gap:20px}
-  .hero>div:first-child>div:last-child{flex:none;width:100%}
+  .hero-main{flex-direction:column!important;gap:20px!important}
+  .hero-main>div:last-child{flex:none!important;width:100%!important}
   .branch-item{border-bottom:var(--rule)}
   .branch-item:last-child{border-bottom:none}
   .tl-item{padding:16px 12px!important}
@@ -328,7 +328,7 @@ footer{padding:28px 28px 24px;background:var(--sand)}
 </nav>
 
 <div class="hero">
-  <div style="display:flex;gap:32px;align-items:flex-start;margin-bottom:28px">
+  <div class="hero-main" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:28px">
     <div style="flex:1">
       <div class="hero-kicker">华南 IT 综合服务商 · 2002</div>
       <h1>让企业 IT 与 AI<br>真正<em>无后顾之忧</em></h1>
