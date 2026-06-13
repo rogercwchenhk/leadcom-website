@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>IT基础架构维保服务 — 服务器/存储/网络运维 | 励康信息技术</title>
+<meta name="description" content="专业IT基础架构维保服务，覆盖服务器、存储、网络、数据库。IBM、HP、Dell等主流品牌，7×24小时响应。ISO20000/ITSS认证，500+企业信赖。">
+<meta name="keywords" content="IT维保,服务器维保,IT运维,IBM维保,HP维保,Dell维保,数据库维护,网络维护,IT外包">
+<link rel="canonical" href="https://www.leadcom.com.cn/leadcom_it_maintenance.html">
+
+<meta name="author" content="广东励康信息技术有限公司">
+<meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.leadcom.com.cn/leadcom_it_maintenance.html">
+<meta property="og:title" content="IT基础架构维保服务 — 服务器/存储/网络运维">
+<meta property="og:description" content="IBM、HP、Dell等主流品牌维保，7×24小时响应。ISO20000/ITSS认证，500+企业信赖。">
+<meta property="og:image" content="https://www.leadcom.com.cn/images/service-it.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="励康信息技术">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IT基础架构维保服务 — 服务器/存储/网络运维">
+<meta name="twitter:description" content="IBM、HP、Dell等主流品牌维保，7×24小时响应">
+<meta name="twitter:image" content="https://www.leadcom.com.cn/images/service-it.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "IT基础架构维保服务",
+      "provider": {
+        "@type": "Organization",
+        "name": "广东励康信息技术有限公司",
+        "url": "https://www.leadcom.com.cn/"
+      },
+      "description": "专业IT基础架构维保服务，覆盖服务器、存储、网络、数据库，7×24小时响应",
+      "areaServed": {
+        "@type": "Place",
+        "name": "珠三角地区"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT维保服务",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "服务器维保"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "存储设备维保"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "网络设备维护"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "数据库维护"}}
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.leadcom.com.cn/"},
+        {"@type": "ListItem", "position": 2, "name": "IT维保"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--sand4:#d4c9b4;
+  --ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--ink4:#9a9182;
+  --copper:#a0673a;--copper2:#c8824a;--copper3:#e8ddd0;
+  --rule:1px solid #d8d0c0;--rule-light:1px solid #e8e0d0;
+}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink)}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+.logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+.logo em{color:var(--copper);font-style:normal}
+.nav-links{display:flex;gap:22px}
+.nav-link{font-size:11px;color:var(--ink3);text-decoration:none}
+a.nav-link:hover{color:var(--copper)}
+.nav-link.active{color:var(--copper);border-bottom:1px solid var(--copper);padding-bottom:1px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-size:11px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:11px;font-weight:500;color:var(--copper);border-bottom:1.5px solid var(--copper);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--copper2)}
+
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center}
+.breadcrumb span{font-size:11px;color:var(--ink4)}
+.breadcrumb .sep{font-size:11px;color:var(--sand4)}
+.breadcrumb .current{font-size:11px;color:var(--ink2)}
+
+.hero{padding:48px 28px 40px;border-bottom:var(--rule)}
+.hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
+.hero h1{font-size:30px;font-weight:500;color:var(--ink);line-height:1.22;letter-spacing:-0.025em;max-width:480px;margin-bottom:14px}
+.hero h1 em{color:var(--copper);font-style:normal}
+.hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:420px}
+.hero-stats{display:flex;gap:0;border-top:var(--rule);margin-top:28px;padding-top:24px}
+.hero-stat{flex:1;padding-right:20px;border-right:var(--rule)}
+.hero-stat:last-child{border-right:none;padding-right:0;padding-left:20px}
+.hero-stat:not(:first-child){padding-left:20px}
+.stat-num{font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-0.02em}
+.stat-lbl{font-size:11px;color:var(--ink3);margin-top:3px}
+
+.edu{padding:36px 28px;border-bottom:var(--rule)}
+.section-label{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.what-is{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule);border-radius:2px}
+.what-left{padding:24px;border-right:var(--rule)}
+.what-left h3{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-0.01em}
+.what-left p{font-size:12px;color:var(--ink3);line-height:1.75}
+.what-right{padding:24px;background:var(--sand2)}
+.what-right h4{font-size:11px;font-weight:500;color:var(--ink2);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
+.example-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
+.example-row:last-child{margin-bottom:0}
+.example-icon{font-size:14px;color:var(--copper);flex-shrink:0;margin-top:1px}
+.example-text{font-size:11px;color:var(--ink3);line-height:1.6}
+.example-text strong{color:var(--ink2);font-weight:500}
+
+.brands{padding:36px 28px;border-bottom:var(--rule)}
+.brand-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:var(--rule);margin-top:16px}
+.brand-item{padding:18px 16px;border-right:var(--rule);border-bottom:var(--rule);text-align:center}
+.brand-item:nth-child(6n){border-right:none}
+.brand-name{font-size:13px;font-weight:500;color:var(--ink2);letter-spacing:-0.01em}
+.brand-type{font-size:10px;color:var(--ink4);margin-top:3px}
+
+.services{border-bottom:var(--rule)}
+.svc-header{display:flex;align-items:baseline;justify-content:space-between;padding:28px 28px 0}
+.svc-hero-card{margin:20px 28px 0;border:var(--rule);border-radius:2px;background:var(--sand)}
+.svc-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.svc-hero-left{padding:28px;border-right:var(--rule)}
+.svc-hero-badge{display:inline-block;font-size:10px;color:var(--copper);background:var(--copper3);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
+.svc-hero-left h3{font-size:17px;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-0.015em}
+.svc-hero-left p{font-size:12px;color:var(--ink3);line-height:1.7;margin-bottom:16px}
+.svc-hero-link{font-size:11px;color:var(--copper);border-bottom:1px solid var(--copper2);padding-bottom:1px}
+.svc-hero-right{padding:24px;background:var(--sand2)}
+.svc-hero-right h4{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
+.deliverable{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.deliverable-dot{width:4px;height:4px;background:var(--copper);border-radius:50%;flex-shrink:0}
+.deliverable span{font-size:11px;color:var(--ink2)}
+
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:var(--rule);margin:16px 28px 28px}
+.svc-card{padding:22px;border:var(--rule);border-radius:0;margin:-0.5px;background:var(--sand)}
+.svc-card:hover{background:var(--sand2)}
+.svc-idx{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:10px}
+.svc-rule-line{width:22px;height:1.5px;background:var(--copper);margin-bottom:12px}
+.svc-card h3{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.svc-card p{font-size:11px;color:var(--ink3);line-height:1.65;margin-bottom:12px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:5px}
+.svc-tag{font-size:10px;color:var(--ink3);background:var(--sand3);padding:3px 8px;border-radius:1px}
+.svc-card-link{display:block;font-size:11px;color:var(--copper);margin-top:12px}
+
+.sla{padding:36px 28px;border-bottom:var(--rule)}
+.sla-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:var(--rule);margin-top:16px}
+.sla-item{padding:20px 18px;border-right:var(--rule)}
+.sla-item:last-child{border-right:none}
+.sla-num{font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-0.02em}
+.sla-label{font-size:11px;color:var(--ink3);margin-top:3px;line-height:1.5}
+
+.faq{padding:32px 28px;border-bottom:var(--rule)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.faq-item{padding:16px 18px;border:var(--rule-light);border-radius:2px;background:var(--sand)}
+.faq-q{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px}
+.faq-a{font-size:11px;color:var(--ink3);line-height:1.65}
+
+.cta-section{padding:40px 28px;border-bottom:var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.cta-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.cta-kicker::before{content:'';display:block;width:16px;height:1px;background:var(--copper)}
+.cta-left h2{font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.3}
+.cta-left p{font-size:12px;color:var(--ink3);line-height:1.7;margin-bottom:16px}
+.cta-promise{display:flex;flex-direction:column;gap:6px}
+.promise-row{display:flex;align-items:center;gap:8px}
+.promise-check{font-size:12px;color:var(--copper)}
+.promise-row span{font-size:11px;color:var(--ink3)}
+.cta-right{background:var(--sand2);border:var(--rule);border-radius:2px;padding:22px}
+.cta-right h3{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:16px}
+.field-label{font-size:10px;color:var(--ink3);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px}
+.cta-input{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:12px;color:var(--ink);margin-bottom:12px;display:block}
+.cta-input::placeholder{color:var(--ink4)}
+.cta-select{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:12px;color:var(--ink3);margin-bottom:16px;display:block;appearance:none}
+.cta-submit{width:100%;background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:11px;border-radius:2px;text-align:center;display:block}
+.cta-note{font-size:10px;color:var(--ink4);text-align:center;margin-top:8px}
+
+footer{padding:24px 28px;border-top:var(--rule)}
+.footer-top{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:10px;color:var(--ink4)}
+.footer-links{display:flex;gap:16px}
+.footer-links span{font-size:10px;color:var(--ink4)}
+.footer-links a{font-size:10px;color:var(--ink4);text-decoration:none}
+.footer-social h4{font-size:10px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.social-qrs{display:flex;gap:16px}
+.social-qr{text-align:center}
+.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+.social-qr span{font-size:10px;color:var(--ink3)}
+
+/* WECHAT WORK CARD */
+.cta-content{display:flex;gap:24px;margin-top:20px;width:100%}
+.cta-form{flex:1;min-width:280px;display:flex;flex-direction:column;gap:10px}
+.wecom-card{flex:0 0 320px;background:var(--sand2);border-radius:8px;border:1px solid var(--sand3);padding:24px;position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(30,28,24,0.08)}
+.wecom-pulse{position:absolute;top:-20px;right:-20px;width:100px;height:100px;border:1px solid var(--copper);border-radius:50%;opacity:0.08;animation:pulse 2s ease-in-out infinite}
+.wecom-decorative-line{position:absolute;top:0;left:0;right:0;height:2px;background:var(--copper)}
+.wecom-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.wecom-icon{width:40px;height:40px;background:var(--copper);border-radius:6px;display:flex;align-items:center;justify-content:center;animation:bounce 2s ease-in-out infinite;flex-shrink:0}
+.wecom-icon svg{width:20px;height:20px;fill:#fff}
+.wecom-header h3{font-size:14px;font-weight:500;color:var(--ink);margin:0}
+.wecom-header p{font-size:10px;color:var(--ink3);margin:0;font-weight:400}
+.wecom-features{margin-bottom:18px;padding:12px 0;border-top:1px solid var(--sand3);border-bottom:1px solid var(--sand3)}
+.wecom-feature{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:11px;color:var(--ink2)}
+.wecom-feature:last-child{margin-bottom:0}
+.wecom-feature svg{width:14px;height:14px;flex-shrink:0}
+.wecom-btn-primary{display:block;background:var(--copper);color:#fff;font-size:12px;font-weight:500;padding:11px;border-radius:6px;text-align:center;text-decoration:none;margin-bottom:10px;animation:glow 2s ease-in-out infinite;border:none;cursor:pointer;transition:all 0.3s ease}
+.wecom-btn-primary:hover{background:var(--copper2);transform:translateY(-1px)}
+.wecom-hint{font-size:10px;color:var(--ink3);text-align:center;margin-bottom:14px;font-weight:400}
+.wecom-secondary-title{font-size:10px;color:var(--ink3);text-align:center;margin-bottom:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
+.wecom-secondary-actions{display:flex;gap:8px}
+.wecom-btn-secondary{flex:1;background:var(--sand);color:var(--copper);font-size:11px;font-weight:500;padding:9px;border-radius:6px;border:1.5px solid var(--copper);cursor:pointer;text-align:center;text-decoration:none;display:inline-block;transition:all 0.3s ease}
+.wecom-btn-secondary:hover{background:var(--copper);color:#fff}
+.wecom-qr-hidden{display:none;text-align:center;padding:12px;background:var(--sand);border-radius:6px;margin-top:10px;animation:slideIn 0.3s ease-out}
+.wecom-qr-hidden img{width:100px;height:100px;border-radius:6px;margin-bottom:8px;border:1px solid var(--sand3)}
+.wecom-qr-hidden p{font-size:10px;color:var(--ink3);margin:0;font-weight:400}
+.wecom-footer{font-size:9px;color:var(--ink3);text-align:center;margin-top:12px;font-weight:400}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.1);opacity:0.1}}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(160,103,58,0.4)}50%{box-shadow:0 0 0 8px rgba(160,103,58,0)}}
+@keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+
+/* ========== RESPONSIVE ========== */
+.nav-hamburger{display:none}
+@media(max-width:768px){
+  nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+  .nav-links.open{display:flex}
+  .nav-link{display:block;padding:8px 0;font-size:13px}
+  .nav-right{gap:10px}
+  .nav-phone{display:none}
+  .nav-cta{font-size:12px}
+  .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+  .nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span:nth-child(1){top:0}
+  .nav-hamburger span:nth-child(2){top:8px}
+  .nav-hamburger span:nth-child(3){top:16px}
+  .hero{padding:32px 16px 28px}
+  .hero h1{font-size:22px!important;line-height:1.35}
+  .hero h1 em{font-size:22px!important}
+  .hero-sub{font-size:13px!important}
+  .hero-actions{flex-direction:column;gap:12px;align-items:flex-start!important}
+  .hero-stats{flex-wrap:wrap}
+  .hero-stat{flex:1 1 45%;min-width:0;padding:16px 12px!important}
+  .stat-num{font-size:22px!important}
+  .stat-lbl{font-size:10px!important}
+  .hero,.section,.what-is,.svc-hero,.branches,.contact{padding-left:16px!important;padding-right:16px!important}
+  .svc-grid,.what-is,.svc-hero-inner,.faq-grid,.case-inner,.intro-grid,.contact-grid,.str-grid{grid-template-columns:1fr!important}
+  .product-grid{grid-template-columns:1fr!important}
+  .brand-grid{grid-template-columns:repeat(3,1fr)!important}
+  .ind-grid{grid-template-columns:repeat(2,1fr)!important}
+  .sla-grid,.stats,.timeline,.trust{grid-template-columns:repeat(2,1fr)!important}
+  .branch-grid{grid-template-columns:1fr!important}
+  .cert-grid{grid-template-columns:repeat(2,1fr)!important}
+  .why-grid{grid-template-columns:1fr!important}
+  .process-steps{grid-template-columns:repeat(2,1fr)!important}
+  .case-grid{grid-template-columns:1fr!important}
+  .cta-section{flex-direction:column!important;padding:28px 16px!important}
+  .cta-left h2{font-size:20px!important}
+  .cta-kicker{font-size:10px!important}
+  .cta-content{flex-direction:column;gap:20px}
+  .cta-form{min-width:0;width:100%}
+  .wecom-card{flex:1;min-width:0;width:100%}
+  .footer-top{flex-direction:column;gap:20px}
+  .footer-cols{flex-direction:column;gap:16px}
+  .footer-bottom{flex-direction:column;gap:8px;align-items:flex-start!important}
+  .footer-col a{font-size:12px}
+  .section-header{padding:20px 16px 16px;flex-direction:column;align-items:flex-start!important;gap:4px}
+  .section-title{font-size:11px!important}
+  .hero-kicker{font-size:9px;letter-spacing:0.08em}
+  .branch-item{border-bottom:var(--rule)}
+  .branch-item:last-child{border-bottom:none}
+  .tl-item{padding:16px 12px!important}
+  .cert-item{padding:14px 12px!important}
+}
+</style>
+</head>
+<body>
+
+<div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="leadcom_ai_solutions_no_tencent.html">AI 解决方案</a>
+    <a class="nav-link active">IT 维保</a>
+    <a class="nav-link" href="leadcom_tencent_cloud.html">腾讯云</a>
+    <a class="nav-link" href="leadcom_success_cases.html">成功案例</a>
+    <a class="nav-link" href="leadcom_about_us.html">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="#cta">免费服务 →</a>
+    <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html" style="font-size:11px;color:var(--ink4);text-decoration:none">首页</a><span class="sep">/</span><span class="current">IT 维保</span>
+</div>
+
+<div class="hero">
+  <div class="hero-kicker">IT 基础架构维保</div>
+  <h1>设备过保不是终点，<br>是<em>专业维保</em>的起点</h1>
+  <p class="hero-sub">原厂维保到期后，续保价格动辄翻倍。励康提供同等质量、更具性价比的第三方维保服务，覆盖服务器、存储、网络与数据库全栈，7×24 小时守护您的 IT 基础架构。</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="stat-num">20+</div><div class="stat-lbl">年维保服务经验</div></div>
+    <div class="hero-stat"><div class="stat-num">7×24</div><div class="stat-lbl">小时紧急响应</div></div>
+    <div class="hero-stat"><div class="stat-num">4h</div><div class="stat-lbl">备件到场承诺</div></div>
+    <div class="hero-stat"><div class="stat-num">50%+</div><div class="stat-lbl">平均节省维保成本</div></div>
+  </div>
+</div>
+
+<div class="edu">
+  <div class="section-label">为什么需要第三方维保</div>
+  <div class="what-is">
+    <div class="what-left">
+      <h3>原厂维保到期后，企业面临的困境</h3>
+      <p>当服务器、存储等关键设备原厂维保到期，企业通常只有两条路：接受原厂动辄翻倍的续保报价，或者裸奔运行——一旦故障，停机损失远超维保费用。</p>
+      <p style="margin-top:10px">第三方维保是第三条路：由原厂认证工程师提供同等技术水平的运维服务，备件渠道正规透明，响应时效有 SLA 保障，而成本通常只有原厂的 40%–60%。</p>
+    </div>
+    <div class="what-right">
+      <h4>选择励康维保的理由</h4>
+      <div class="example-row"><i class="ti ti-certificate example-icon" aria-hidden="true"></i><div class="example-text"><strong>原厂级技术</strong> — 工程师持 IBM、HP、Dell 等原厂认证，技术能力与原厂一致</div></div>
+      <div class="example-row"><i class="ti ti-warehouse example-icon" aria-hidden="true"></i><div class="example-text"><strong>华南备件中心</strong> — 自建备机备件仓库，常用备件现场库存，4 小时到场</div></div>
+      <div class="example-row"><i class="ti ti-file-certificate example-icon" aria-hidden="true"></i><div class="example-text"><strong>ITSS 认证</strong> — 通过 IT 运维服务标准认证，流程规范，服务可追溯</div></div>
+      <div class="example-row"><i class="ti ti-coin example-icon" aria-hidden="true"></i><div class="example-text"><strong>大幅降本</strong> — 同等服务水平下，费用仅为原厂续保的 40%–60%</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="brands">
+  <div class="section-label">覆盖品牌与设备类型</div>
+  <div class="brand-grid">
+    <div class="brand-item"><div class="brand-name">IBM</div><div class="brand-type">Power / 存储系统</div></div>
+    <div class="brand-item"><div class="brand-name">HPE</div><div class="brand-type">ProLiant / 存储</div></div>
+    <div class="brand-item"><div class="brand-name">Dell</div><div class="brand-type">PowerEdge / EMC</div></div>
+    <div class="brand-item"><div class="brand-name">Oracle</div><div class="brand-type">小型机 / 数据库</div></div>
+    <div class="brand-item"><div class="brand-name">Cisco</div><div class="brand-type">网络 / 安全</div></div>
+    <div class="brand-item"><div class="brand-name">Huawei</div><div class="brand-type">服务器 / 网络</div></div>
+    <div class="brand-item"><div class="brand-name">Lenovo</div><div class="brand-type">ThinkServer</div></div>
+    <div class="brand-item"><div class="brand-name">NetApp</div><div class="brand-type">存储系统</div></div>
+    <div class="brand-item"><div class="brand-name">Sugon</div><div class="brand-type">曙光服务器</div></div>
+    <div class="brand-item"><div class="brand-name">Inspur</div><div class="brand-type">浪潮服务器</div></div>
+    <div class="brand-item"><div class="brand-name">H3C</div><div class="brand-type">网络设备</div></div>
+    <div class="brand-item"><div class="brand-name">更多</div><div class="brand-type">主流品牌全覆盖</div></div>
+  </div>
+</div>
+
+<div class="services">
+  <div class="svc-header">
+    <div class="section-label" style="margin:0">维保服务内容</div>
+  </div>
+
+  <div class="svc-hero-card">
+    <div class="svc-hero-inner">
+      <div class="svc-hero-left">
+        <div class="svc-hero-badge">核心服务</div>
+        <h3>IT 基础架构全面维保</h3>
+        <p>从服务器、存储到网络设备和数据库，一站式覆盖企业 IT 基础架构的全生命周期运维。按需定制服务等级，从基础巡检到深度运维，灵活匹配您的业务需求与预算。</p>
+        <span class="svc-hero-link">了解详情 →</span>
+      </div>
+      <div class="svc-hero-right">
+        <h4>服务内容</h4>
+        <div class="deliverable"><div class="deliverable-dot"></div><span>7×24 小时故障监控与响应</span></div>
+        <div class="deliverable"><div class="deliverable-dot"></div><span>定期巡检与预防性维护</span></div>
+        <div class="deliverable"><div class="deliverable-dot"></div><span>备件更换与硬件维修</span></div>
+        <div class="deliverable"><div class="deliverable-dot"></div><span>系统补丁与固件升级</span></div>
+        <div class="deliverable"><div class="deliverable-dot"></div><span>性能优化与容量规划</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-idx">02 · 迁移</div>
+      <div class="svc-rule-line"></div>
+      <h3>系统迁移与升级</h3>
+      <p>老旧系统迁移、X86 替代小型机、存储扩容升级——我们有丰富的大型项目经验，确保业务零中断或最小停机。</p>
+      <div class="svc-tags"><span class="svc-tag">P 系迁移 X86</span><span class="svc-tag">存储扩容</span><span class="svc-tag">数据迁移</span><span class="svc-tag">零停机</span></div>
+      <span class="svc-card-link">了解详情 →</span>
+    </div>
+    <div class="svc-card">
+      <div class="svc-idx">03 · 机房</div>
+      <div class="svc-rule-line"></div>
+      <h3>机房搬迁与部署</h3>
+      <p>数据中心搬迁、机房重新部署、综合布线——专业项目管理，从规划到执行全程保障，确保设备安全迁移、业务快速恢复。</p>
+      <div class="svc-tags"><span class="svc-tag">数据中心搬迁</span><span class="svc-tag">综合布线</span><span class="svc-tag">上线部署</span><span class="svc-tag">项目管理</span></div>
+      <span class="svc-card-link">了解详情 →</span>
+    </div>
+    <div class="svc-card">
+      <div class="svc-idx">04 · 安全</div>
+      <div class="svc-rule-line"></div>
+      <h3>安全服务与合规</h3>
+      <p>漏洞扫描、安全加固、等保合规咨询——帮助企业构建安全防线，满足监管要求，降低安全事件风险。</p>
+      <div class="svc-tags"><span class="svc-tag">漏洞扫描</span><span class="svc-tag">安全加固</span><span class="svc-tag">等保咨询</span><span class="svc-tag">应急响应</span></div>
+      <span class="svc-card-link">了解详情 →</span>
+    </div>
+    <div class="svc-card">
+      <div class="svc-idx">05 · 数据库</div>
+      <div class="svc-rule-line"></div>
+      <h3>数据库运维服务</h3>
+      <p>Oracle、DB2、MySQL、SQL Server 全线覆盖——数据库性能调优、高可用架构设计、备份恢复策略制定，保障数据安全与系统稳定。</p>
+      <div class="svc-tags"><span class="svc-tag">Oracle</span><span class="svc-tag">DB2</span><span class="svc-tag">性能调优</span><span class="svc-tag">高可用</span></div>
+      <span class="svc-card-link">了解详情 →</span>
+    </div>
+  </div>
+</div>
+
+<div class="sla">
+  <div class="section-label" style="margin:0">服务等级承诺</div>
+  <div class="sla-grid">
+    <div class="sla-item">
+      <div class="sla-num">15 min</div>
+      <div class="sla-label">电话响应</div>
+    </div>
+    <div class="sla-item">
+      <div class="sla-num">2 h</div>
+      <div class="sla-label">远程接入</div>
+    </div>
+    <div class="sla-item">
+      <div class="sla-num">4 h</div>
+      <div class="sla-label">备件到场</div>
+    </div>
+    <div class="sla-item">
+      <div class="sla-num">99.9%</div>
+      <div class="sla-label">服务可用率</div>
+    </div>
+  </div>
+</div>
+
+<div class="faq">
+  <div class="section-label">常见问题</div>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">第三方维保的备件质量有保障吗？</div>
+      <div class="faq-a">我们的备件均来自正规渠道，支持原厂全新件和认证翻新件两种选择，每件备件都有质量追溯记录。签订合同时会明确备件来源与质保期限。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">和原厂维保相比，服务水平有差别吗？</div>
+      <div class="faq-a">没有。我们的工程师持有原厂认证资质，技术能力与原厂工程师一致。SLA 响应时间写入合同，做不到就赔偿。许多客户反馈我们的响应速度甚至快于原厂。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">已有设备在保，可以只维保部分设备吗？</div>
+      <div class="faq-a">可以。我们支持混合维保方案——原厂保核心设备，励康保过保设备，灵活组合。也支持逐步切换，等原厂合同到期后再移交。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">维保服务可以按月签吗？</div>
+      <div class="faq-a">可以。我们提供年度、半年、季度及月度维保合同，企业可根据自身预算和需求灵活选择。长期合同享受更优惠的费率。</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section" id="cta">
+  <div class="cta-left">
+    <div class="cta-kicker">任选一项免费服务</div>
+    <h2>免费 IT 体检，<br>或免费部署一个 AI Agent</h2>
+    <p>珠三角企业专属福利——我们的工程师上门评估现有基础架构，识别潜在风险，出具书面体检报告；或者为您免费部署一个 Hermes / OpenClaw AI Agent，零成本体验 AI 价值。先体验，再决定。</p>
+    <div class="cta-promise">
+      <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>IT 体检：专家上门，出具书面报告</span></div>
+      <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>AI Agent：免费部署，提供使用指导</span></div>
+      <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>完全免费，无任何义务</span></div>
+    </div>
+  </div>
+  <div class="cta-content">
+    <div class="cta-form">
+    <h3>预约免费服务</h3>
+    <div class="field-label">姓名</div>
+    <input class="cta-input" placeholder="您的姓名" type="text"/>
+    <div class="field-label">联系电话</div>
+    <input class="cta-input" placeholder="手机号码" type="text"/>
+    <div class="field-label">选择免费服务</div>
+    <select class="cta-select">
+      <option>免费 IT 体检（专家上门评估）</option>
+      <option>免费部署 AI Agent（Hermes / OpenClaw）</option>
+    </select>
+    <div class="cta-submit">预约免费服务</div>
+    <div class="cta-note">我们绝不将您的信息用于其他用途</div>
+    </div>
+    <div class="wecom-card">
+      <div class="wecom-decorative-line"></div>
+      <div class="wecom-pulse"></div>
+      <div class="wecom-header">
+        <div class="wecom-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor"/></svg>
+        </div>
+        <div>
+          <h3>企业微信咨询</h3>
+          <p>1对1专业服务，快速响应</p>
+        </div>
+      </div>
+      <div class="wecom-features">
+        <div class="wecom-feature">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--copper)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--copper)" stroke-width="1.5"/></svg>
+          <span>专业技术团队1对1咨询</span>
+        </div>
+        <div class="wecom-feature">
+          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--copper)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--copper)" stroke-width="1.5"/></svg>
+          <span>免费获取定制化方案</span>
+        </div>
+      </div>
+      <a href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer" class="wecom-btn-primary">微信客服咨询</a>
+      <p class="wecom-hint">有任何问题，随时咨询</p>
+      <p class="wecom-secondary-title">或加入企业微信，获取更多服务</p>
+      <div class="wecom-secondary-actions">
+        <button class="wecom-btn-secondary" onclick="toggleWeComQR()">扫码加入</button>
+        <a href="https://work.weixin.qq.com/ca/cawcde5092c3bf5467" target="_blank" rel="noopener noreferrer" class="wecom-btn-secondary">点击加入</a>
+      </div>
+      <div id="wecom-qr" class="wecom-qr-hidden">
+        <img src="images/wecom-qr.jpg" alt="企业微信二维码">
+        <p>使用企业微信扫一扫</p>
+      </div>
+      <p class="wecom-footer">已有 500+ 企业选择我们</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-links">
+      <a href="leadcom_ai_solutions_no_tencent.html">← AI 解决方案</a>
+      <a href="leadcom_tencent_cloud.html">腾讯云服务 →</a>
+    </div>
+    <div class="footer-social">
+      <h4>关注我们</h4>
+      <div class="social-qrs">
+        <div class="social-qr">
+          <img src="images/wecom-video.jpg" alt="微信视频号">
+          <span>微信视频号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/douyin.jpg" alt="抖音号">
+          <span>抖音号</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+<script>
+function toggleWeComQR() {
+  var qr = document.getElementById('wecom-qr');
+  if (qr.style.display === 'block') {
+    qr.style.display = 'none';
+  } else {
+    qr.style.display = 'block';
+    qr.style.animation = 'slideIn 0.3s ease-out';
+  }
+}
+</script>
+</body>
+</html>

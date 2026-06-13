@@ -1,0 +1,12 @@
+# 备份文件
+*.bak
+
+# 临时文件
+fix_colors.sed
+seo-head-templates.html
+
+# 文档草稿
+SEO优化报告.md
+seo-image-optimization.md
+seo-link-fix-guide.md
+.DS_Store
