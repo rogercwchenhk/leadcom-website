@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>技术博客 — IT维保与AI部署实战分享 | 励康信息技术</title>
+<meta name="description" content="励康信息技术技术博客：分享IT基础设施维保、AI Agent部署、腾讯云WorkBuddy/CodeBuddy实战经验。原创与精选文章，助力企业数字化转型。">
+<meta name="keywords" content="IT维保博客,AI部署实战,腾讯云技术,WorkBuddy教程,CodeBuddy使用,企业数字化转型,技术分享">
+<link rel="canonical" href="https://www.leadcom.com.cn/leadcom_blog.html">
+
+<meta name="author" content="广东励康信息技术有限公司">
+<meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+
+<meta property="og:type" "website">
+<meta property="og:url" content="https://www.leadcom.com.cn/leadcom_blog.html">
+<meta property="og:title" content="技术博客 — IT维保与AI部署实战分享">
+<meta property="og:description" content="IT基础设施维保、AI Agent部署、腾讯云WorkBuddy/CodeBuddy实战经验分享。">
+<meta property="og:image" content="https://www.leadcom.com.cn/images/hero-bg.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="励康信息技术">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="技术博客 — IT维保与AI部署实战分享">
+<meta name="twitter:description" content="IT维保、AI部署、腾讯云技术实战经验分享">
+<meta name="twitter:image" content="https://www.leadcom.com.cn/images/hero-bg.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Blog",
+      "name": "励康技术博客",
+      "description": "IT维保与AI部署实战分享",
+      "url": "https://www.leadcom.com.cn/leadcom_blog.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "广东励康信息技术有限公司"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.leadcom.com.cn/"},
+        {"@type": "ListItem", "position": 2, "name": "技术博客"}
+      ]
+    }
+  ]
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto}
+:root{
+  --sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--sand4:#d4c9b4;
+  --ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--ink4:#9a9182;
+  --copper:#a0673a;--copper2:#c8824a;--copper3:#e8ddd0;
+  --rule:1px solid #d8d0c0;--rule-light:1px solid #e8e0d0;
+}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+.logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+.logo em{color:var(--copper);font-style:normal}
+.nav-links{display:flex;gap:22px}
+.nav-link{font-size:11px;color:var(--ink3);text-decoration:none}
+a.nav-link:hover{color:var(--copper)}
+.nav-link.active{color:var(--copper);border-bottom:1px solid var(--copper);padding-bottom:1px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-size:11px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:11px;font-weight:500;color:var(--copper);border-bottom:1.5px solid var(--copper);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--copper2)}
+
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center}
+.breadcrumb span{font-size:11px;color:var(--ink4)}
+.breadcrumb .sep{font-size:11px;color:var(--sand4)}
+.breadcrumb .current{font-size:11px;color:var(--ink2)}
+
+.hero{padding:48px 28px 40px;border-bottom:var(--rule)}
+.hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
+.hero h1{font-size:30px;font-weight:500;color:var(--ink);line-height:1.22;letter-spacing:-0.025em;max-width:520px;margin-bottom:14px}
+.hero h1 em{color:var(--copper);font-style:normal}
+.hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:460px}
+
+.featured{padding:36px 28px;border-bottom:var(--rule)}
+.section-label{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.featured-card{display:grid;grid-template-columns:1.4fr 1fr;gap:0;border:var(--rule);border-radius:2px;background:var(--sand)}
+.featured-left{padding:32px;border-right:var(--rule)}
+.featured-right{padding:24px;background:var(--sand2)}
+.featured-tag{display:inline-block;font-size:10px;color:var(--copper);background:var(--copper3);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
+.featured-left h2{font-size:22px;font-weight:500;color:var(--ink);margin-bottom:12px;letter-spacing:-0.02em;line-height:1.3}
+.featured-meta{font-size:11px;color:var(--ink4);margin-bottom:14px}
+.featured-excerpt{font-size:12px;color:var(--ink3);line-height:1.75;margin-bottom:18px}
+.featured-link{font-size:11px;color:var(--copper);border-bottom:1px solid var(--copper2);padding-bottom:1px}
+.featured-right h4{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
+.featured-stat{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px}
+.featured-stat:last-child{margin-bottom:0}
+.featured-stat-dot{width:4px;height:4px;background:var(--copper);border-radius:50%;flex-shrink:0;margin-top:6px}
+.featured-stat-text{font-size:11px;color:var(--ink2);line-height:1.6}
+
+.categories{padding:28px 28px;border-bottom:var(--rule)}
+.cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:var(--rule);border-radius:2px}
+.cat-item{padding:14px 16px;border-right:var(--rule);text-align:center;background:var(--sand)}
+.cat-item:last-child{border-right:none}
+.cat-item:hover{background:var(--sand2)}
+.cat-item.active{background:var(--ink);color:var(--sand)}
+.cat-item.active .cat-name{color:var(--sand)}
+.cat-name{font-size:11px;font-weight:500;color:var(--ink)}
+
+.articles{padding:36px 28px;border-bottom:var(--rule)}
+.article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:var(--rule)}
+.article-card{padding:24px 28px;border-right:var(--rule);border-bottom:var(--rule)}
+.article-card:nth-child(3n){border-right:none}
+.article-card:hover{background:var(--sand2)}
+.article-meta{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.article-tag{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em}
+.article-date{font-size:10px;color:var(--ink4)}
+.article-type{font-size:10px;color:var(--ink4);padding:1px 6px;border:1px solid var(--rule-light);border-radius:1px}
+.article-card h3{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.4;letter-spacing:-0.005em}
+.article-card p{font-size:11px;color:var(--ink3);line-height:1.65;margin-bottom:12px}
+.article-author{font-size:10px;color:var(--ink4);display:flex;align-items:center;gap:6px}
+.article-link{font-size:11px;color:var(--copper);margin-top:8px;display:inline-block}
+
+.subscribe{padding:36px 28px;border-bottom:var(--rule);background:var(--sand2)}
+.sub-inner{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.sub-left h3{font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px;letter-spacing:-0.015em}
+.sub-left p{font-size:12px;color:var(--ink3);line-height:1.6}
+.sub-form{display:flex;gap:8px}
+.sub-input{flex:1;background:var(--sand);border:var(--rule);border-radius:2px;padding:10px 14px;font-size:12px;color:var(--ink)}
+.sub-input::placeholder{color:var(--ink4)}
+.sub-submit{background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:10px 20px;border-radius:2px;cursor:pointer;border:none;white-space:nowrap}
+
+footer{padding:24px 28px;border-top:var(--rule)}
+.footer-top{display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:10px;color:var(--ink4)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:10px;color:var(--ink4);text-decoration:none}
+.footer-social h4{font-size:10px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.social-qrs{display:flex;gap:16px}
+.social-qr{text-align:center}
+.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+.social-qr span{font-size:10px;color:var(--ink3)}
+
+.nav-hamburger{display:none}
+@media(max-width:768px){
+  nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+  .nav-links.open{display:flex}
+  .nav-link{display:block;padding:8px 0;font-size:13px}
+  .nav-right{gap:10px}
+  .nav-cta{font-size:12px}
+  .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+  .nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span:nth-child(1){top:0}
+  .nav-hamburger span:nth-child(2){top:8px}
+  .nav-hamburger span:nth-child(3){top:16px}
+  .hero{padding:32px 16px 28px}
+  .hero h1{font-size:22px!important;line-height:1.35}
+  .hero h1 em{font-size:22px!important}
+  .hero-sub{font-size:13px!important}
+  .featured-card{grid-template-columns:1fr!important}
+  .featured-left{border-right:none!important;border-bottom:var(--rule)}
+  .featured-left h2{font-size:18px!important}
+  .cat-grid{grid-template-columns:repeat(2,1fr)!important}
+  .cat-item:nth-child(2n){border-right:none}
+  .cat-item:nth-child(-n+3){border-bottom:var(--rule)}
+  .article-grid{grid-template-columns:1fr!important}
+  .article-card{border-right:none!important}
+  .sub-inner{grid-template-columns:1fr!important;gap:16px}
+  .sub-form{flex-direction:column}
+  .footer-top{flex-direction:column;gap:16px;align-items:flex-start}
+  .section-label{margin-bottom:14px}
+}
+</style>
+</head>
+<body>
+
+<div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="leadcom_ai_solutions_no_tencent.html">AI 解决方案</a>
+    <a class="nav-link" href="leadcom_it_maintenance.html">IT 维保</a>
+    <a class="nav-link" href="leadcom_tencent_cloud.html">腾讯云</a>
+    <a class="nav-link" href="leadcom_success_cases.html">成功案例</a>
+    <a class="nav-link active">博客</a>
+    <a class="nav-link" href="leadcom_about_us.html">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#cta">免费服务 →</a>
+    <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html" style="font-size:11px;color:var(--ink4);text-decoration:none">首页</a><span class="sep">/</span><span class="current">技术博客</span>
+</div>
+
+<div class="hero">
+  <div class="hero-kicker">技术博客</div>
+  <h1>实战经验，<em>少走弯路</em></h1>
+  <p class="hero-sub">励康 20 年 IT 维保 + AI 部署经验的沉淀。我们分享真实项目中的技术方案、避坑指南与行业洞察——原创与精选并重。</p>
+</div>
+
+<div class="featured">
+  <div class="section-label">精选文章</div>
+  <div class="featured-card">
+    <div class="featured-left">
+      <span class="featured-tag">原创 · AI 部署</span>
+      <h2>企业部署 AI Agent 的 5 个常见误区</h2>
+      <div class="featured-meta">2026-06-08 · 陈超伟 · 阅读 8 分钟</div>
+      <p class="featured-excerpt">过去两年，励康为珠三角 30+ 企业部署了 AI 数字员工。过程中发现，企业失败的原因往往不是技术，而是选型、流程和组织认知的偏差。本文总结最常见的 5 个误区，并给出我们的应对策略。</p>
+      <a class="featured-link" href="#">阅读全文 →</a>
+    </div>
+    <div class="featured-right">
+      <h4>本文要点</h4>
+      <div class="featured-stat"><div class="featured-stat-dot"></div><div class="featured-stat-text">误区 1：把 AI Agent 当万能工具，期望一上线就替代人工</div></div>
+      <div class="featured-stat"><div class="featured-stat-dot"></div><div class="featured-stat-text">误区 2：忽视数据治理，知识库未整理直接喂给模型</div></div>
+      <div class="featured-stat"><div class="featured-stat-dot"></div><div class="featured-stat-text">误区 3：忽略团队培训，员工抵触导致使用率低</div></div>
+      <div class="featured-stat"><div class="featured-stat-dot"></div><div class="featured-stat-text">误区 4：选型只看价格，忽视与企业系统的兼容性</div></div>
+      <div class="featured-stat"><div class="featured-stat-dot"></div><div class="featured-stat-text">误区 5：缺乏效果评估机制，无法量化 ROI</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="categories">
+  <div class="cat-grid">
+    <a class="cat-item active" href="#"><div class="cat-name">全部</div></a>
+    <a class="cat-item" href="#"><div class="cat-name">IT 维保</div></a>
+    <a class="cat-item" href="#"><div class="cat-name">AI 部署</div></a>
+    <a class="cat-item" href="#"><div class="cat-name">腾讯云</div></a>
+    <a class="cat-item" href="#"><div class="cat-name">行业洞察</div></a>
+  </div>
+</div>
+
+<div class="articles">
+  <div class="section-label">最新文章</div>
+  <div class="article-grid">
+    <div class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">IT 维保</span>
+        <span class="article-date">2026-06-10</span>
+        <span class="article-type">原创</span>
+      </div>
+      <h3>某制造业客户 IT 基础设施升级实战</h3>
+      <p>从 IBM 小型机迁移到 X86，从 SAN 存储到分布式存储，完整记录一家年产值 10 亿制造企业的 IT 现代化路径。</p>
+      <div class="article-author">作者：陈超伟</div>
+      <a class="article-link" href="#">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">AI 部署</span>
+        <span class="article-date">2026-06-05</span>
+        <span class="article-type">原创</span>
+      </div>
+      <h3>从 0 到 1：企业 AI 助手落地四步法</h3>
+      <p>经过 30+ 项目验证的标准化流程：需求评估 → 数据准备 → 模型调优 → 持续迭代。每一步的检查清单与避坑要点。</p>
+      <div class="article-author">作者：李工</div>
+      <a class="article-link" href="#">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">腾讯云</span>
+        <span class="article-date">2026-05-28</span>
+        <span class="article-type">转载</span>
+      </div>
+      <h3>WorkBuddy 企业版发布：从超级个体到超级团队</h3>
+      <p>腾讯云 2026 AI 产业应用大会重磅发布。WorkBuddy 企业版提供 7×24 数字员工、人机协同项目模式与企业级管理后台。</p>
+      <div class="article-author">来源：腾讯云</div>
+      <a class="article-link" href="#">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">行业洞察</span>
+        <span class="article-date">2026-05-20</span>
+        <span class="article-type">原创</span>
+      </div>
+      <h3>珠三角制造业 AI 转型现状调研</h3>
+      <p>走访 50 家制造企业，AI 渗透率不足 15%。大多数企业卡在"知道有用但不知道怎么开始"的阶段，本文给出三阶段路径建议。</p>
+      <div class="article-author">作者：陈超伟</div>
+      <a class="article-link" href="#">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">AI 部署</span>
+        <span class="article-date">2026-05-15</span>
+        <span class="article-type">原创</span>
+      </div>
+      <h3>CodeBuddy vs Cursor：企业级 AI 编程助手选型</h3>
+      <p>从功能、定价、安全性、IDE 兼容性四个维度对比腾讯 CodeBuddy 与 Cursor，帮助企业研发团队做出最优选择。</p>
+      <div class="article-author">作者：李工</div>
+      <a class="article-link" href="#">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-meta">
+        <span class="article-tag">IT 维保</span>
+        <span class="article-date">2026-05-08</span>
+        <span class="article-type">原创</span>
+      </div>
+      <h3>服务器维保合同怎么签？这 8 个细节必看</h3>
+      <p>20 年踩过的坑总结。响应时间、备件渠道、升级条款、数据安全……一份合格的维保合同应该长什么样？</p>
+      <div class="article-author">作者：王工</div>
+      <a class="article-link" href="#">阅读全文 →</a>
+    </div>
+  </div>
+</div>
+
+<div class="subscribe">
+  <div class="sub-inner">
+    <div class="sub-left">
+      <h3>订阅技术博客</h3>
+      <p>每月一封邮件，励康精选实战分享 + 行业动态。无营销内容，可随时退订。</p>
+    </div>
+    <form class="sub-form" onsubmit="event.preventDefault();alert('订阅功能即将上线');">
+      <input class="sub-input" type="email" placeholder="您的邮箱地址" required/>
+      <button class="sub-submit" type="submit">订阅</button>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-links">
+      <a href="leadcom_success_cases.html">← 成功案例</a>
+      <a href="leadcom_about_us.html">关于我们 →</a>
+    </div>
+    <div class="footer-social">
+      <h4>关注我们</h4>
+      <div class="social-qrs">
+        <div class="social-qr">
+          <img src="images/wecom-video.jpg" alt="微信视频号">
+          <span>微信视频号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/douyin.jpg" alt="抖音号">
+          <span>抖音号</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
