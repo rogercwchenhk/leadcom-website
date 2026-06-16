@@ -620,11 +620,11 @@ function toggleWeComQR() {
 <!-- Hermes Agent Bubble Chat -->
 <style>
 :root{--chat-copper:#a0673a;--chat-copper-light:#c4844d;--chat-ink:#1a1a1a;--chat-ink2:#555;--chat-ink3:#999;--chat-sand:#f8f5f0;--chat-sand2:#ece7df;--chat-sand3:#ddd8d0;--chat-green:#00C896;--chat-green-dark:#007A5E}
-.chat-bubble{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#C8854E,#a0673a,#8B5E3C);border:2.5px solid #00C896;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(160,103,58,.35);z-index:9999;transition:all .3s ease;animation:colorShift 4s infinite}
+.chat-bubble{position:fixed;bottom:140px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#C8854E,#a0673a,#8B5E3C);border:2.5px solid #00C896;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(160,103,58,.35);z-index:9999;transition:all .3s ease;animation:colorShift 4s infinite}
 .chat-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(160,103,58,.45)}
 .chat-bubble svg{width:26px;height:26px;fill:#fff}
 .chat-bubble.open{transform:scale(0) rotate(180deg);opacity:0;pointer-events:none}
-.chat-window{position:fixed;bottom:28px;right:28px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);z-index:10000;display:flex;flex-direction:column;overflow:hidden;transform:scale(0) translateY(20px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+.chat-window{position:fixed;bottom:140px;right:28px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);z-index:10000;display:flex;flex-direction:column;overflow:hidden;transform:scale(0) translateY(20px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
 .chat-window.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
 .chat-header{background:linear-gradient(135deg,var(--chat-copper),var(--chat-copper-light));padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .chat-header-left{display:flex;align-items:center;gap:10px}
@@ -666,7 +666,7 @@ function toggleWeComQR() {
 .chat-quick-btn:hover{background:var(--chat-copper);color:#fff;border-color:var(--chat-copper)}
 @media(max-width:480px){
   .chat-window{bottom:0;right:0;width:100%;height:100%;border-radius:0}
-  .chat-bubble{bottom:16px;right:16px}
+  .chat-bubble{bottom:80px;right:16px}
 }
 </style>
 
