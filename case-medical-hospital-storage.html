@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>案例详情 - 某市人民医院数字化医院存储架构 | 励康信息技术</title>
+    <meta name="description" content="励康为某市人民医院构建基于SAN架构的高可用存储平台，覆盖HIS、PACS、LIS核心业务，实现无单点故障与LAN-free备份，打造可扩充的数字化医院数据基座。">
+    <meta name="keywords" content="医院存储,数字化医院,SAN架构,HDS存储,LAN-free备份,励康信息">
+    <link rel="canonical" href="https://www.leadcom.com.cn/case-medical-hospital-storage.html">
+    <meta name="author" content="广东励康信息技术有限公司">
+    <meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+    <style>
+        /* 直接复用全局样式变量与基础排版 */
+        *{box-sizing:border-box;margin:0;padding:0}
+        img{max-width:100%;height:auto}
+        :root{
+            --sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--sand4:#d4c9b4;
+            --ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--ink4:#9a9182;
+            --copper:#a0673a;--copper2:#c8824a;--copper3:#e8ddd0;
+            --rule:1px solid #d8d0c0;--rule-light:1px solid #e8e0d0;
+        }
+        body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden;line-height:1.6}
+        nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+        .logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+        .logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+        .logo em{color:var(--copper);font-style:normal}
+        .nav-links{display:flex;gap:22px}
+        .nav-link{font-size:11px;color:var(--ink3);text-decoration:none}
+        a.nav-link:hover{color:var(--copper)}
+        .nav-link.active{color:var(--copper);border-bottom:1px solid var(--copper);padding-bottom:1px}
+        .nav-right{display:flex;align-items:center;gap:16px}
+        .nav-cta{font-size:11px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
+        .nav-wechat{font-size:11px;font-weight:500;color:var(--copper);border-bottom:1.5px solid var(--copper);padding-bottom:1px;text-decoration:none}
+        a.nav-wechat:hover{color:var(--copper2)}
+        .breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center}
+        .breadcrumb span{font-size:11px;color:var(--ink4)}
+        .breadcrumb .sep{font-size:11px;color:var(--sand4)}
+        .breadcrumb .current{font-size:11px;color:var(--ink2)}
+        .hero{padding:48px 28px 40px;border-bottom:var(--rule)}
+        .hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+        .hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
+        .hero h1{font-size:30px;font-weight:500;color:var(--ink);line-height:1.22;letter-spacing:-0.025em;max-width:480px;margin-bottom:14px}
+        .hero h1 em{color:var(--copper);font-style:normal}
+        .hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:420px}
+        .section{padding:48px 28px;border-bottom:var(--rule)}
+        .section-label{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+        .content-grid{display:grid;grid-template-columns:2fr 1fr;gap:40px}
+        .content-main h2{font-size:20px;font-weight:500;color:var(--ink);margin-bottom:16px;letter-spacing:-0.015em;line-height:1.3}
+        .content-main p{font-size:13px;color:var(--ink3);line-height:1.75;margin-bottom:16px}
+        .content-main ul{font-size:13px;color:var(--ink3);line-height:1.75;margin-bottom:16px;padding-left:20px}
+        .content-main li{margin-bottom:8px}
+        .content-main li::marker{color:var(--copper)}
+        .sidebar{background:var(--sand2);padding:28px;border:var(--rule);border-radius:2px;align-self:start}
+        .sidebar h3{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:16px;letter-spacing:-0.01em}
+        .tech-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+        .tech-tag{font-size:11px;color:var(--ink3);background:var(--sand3);padding:4px 10px;border-radius:1px}
+        .case-meta{margin-top:24px;padding-top:16px;border-top:var(--rule-light)}
+        .meta-item{display:flex;justify-content:space-between;font-size:11px;color:var(--ink4);margin-bottom:8px}
+        .meta-item:last-child{margin-bottom:0}
+        .meta-label{font-weight:500;color:var(--ink3)}
+        .cta-section{padding:40px 28px;border-bottom:var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:28px}
+        .cta-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+        .cta-kicker::before{content:'';display:block;width:16px;height:1px;background:var(--copper)}
+        .cta-left h2{font-size:20px;font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.3}
+        .cta-left p{font-size:12px;color:var(--ink3);line-height:1.7;margin-bottom:16px}
+        .cta-promise{display:flex;flex-direction:column;gap:6px}
+        .promise-row{display:flex;align-items:center;gap:8px}
+        .promise-check{font-size:12px;color:var(--copper)}
+        .promise-row span{font-size:11px;color:var(--ink3)}
+        .cta-right{background:var(--sand2);border:var(--rule);border-radius:2px;padding:22px}
+        .cta-right h3{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:16px}
+        .field-label{font-size:10px;color:var(--ink3);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px}
+        .cta-input{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:12px;color:var(--ink);margin-bottom:12px;display:block}
+        .cta-input::placeholder{color:var(--ink4)}
+        .cta-select{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:12px;color:var(--ink3);margin-bottom:16px;display:block;appearance:none}
+        .cta-submit{width:100%;background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:11px;border-radius:2px;text-align:center;display:block;cursor:pointer;border:none}
+        .cta-note{font-size:10px;color:var(--ink4);text-align:center;margin-top:8px}
+        footer{padding:24px 28px;border-top:var(--rule)}
+        .footer-top{display:flex;justify-content:space-between;align-items:center}
+        .footer-copy{font-size:10px;color:var(--ink4)}
+        .footer-links{display:flex;gap:16px}
+        .footer-links span{font-size:10px;color:var(--ink4)}
+        .footer-links a{font-size:10px;color:var(--ink4);text-decoration:none}
+        .footer-social h4{font-size:10px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+        .social-qrs{display:flex;gap:16px}
+        .social-qr{text-align:center}
+        .social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+        .social-qr span{font-size:10px;color:var(--ink3)}
+        /* 响应式处理 */
+        .nav-hamburger{display:none}
+        @media(max-width:768px){
+            nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+            .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+            .nav-links.open{display:flex}
+            .nav-link{display:block;padding:8px 0;font-size:13px}
+            .nav-right{gap:10px}
+            .nav-cta{font-size:12px}
+            .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+            .nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}
+            .nav-hamburger span:nth-child(1){top:0}
+            .nav-hamburger span:nth-child(2){top:8px}
+            .nav-hamburger span:nth-child(3){top:16px}
+            .hero{padding:32px 16px 28px}
+            .hero h1{font-size:22px!important;line-height:1.35}
+            .hero-sub{font-size:13px!important}
+            .hero,.section,.cta-section,footer{padding-left:16px!important;padding-right:16px!important}
+            .content-grid{grid-template-columns:1fr!important}
+            .sidebar{margin-top:32px}
+            .cta-section{flex-direction:column!important;gap:20px}
+            .footer-top{flex-direction:column;gap:20px;align-items:flex-start!important}
+        }
+    </style>
+</head>
+<body>
+    <div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+        <!-- 导航栏 -->
+        <nav>
+            <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+            <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+            <div class="nav-links">
+                <a class="nav-link" href="leadcom_ai_solutions_no_tencent.html">AI 解决方案</a>
+                <a class="nav-link" href="leadcom_it_maintenance.html">IT 维保</a>
+                <a class="nav-link" href="leadcom_tencent_cloud.html">腾讯云</a>
+                <a class="nav-link active" href="leadcom_success_cases.html">成功案例</a>
+                <a class="nav-link" href="leadcom_blog.html">博客</a>
+                <a class="nav-link" href="leadcom_about_us.html">关于我们</a>
+            </div>
+            <div class="nav-right">
+                <a class="nav-cta" href="index.html#cta">免费服务 →</a>
+                <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+            </div>
+        </nav>
+
+        <!-- 面包屑 -->
+        <div class="breadcrumb">
+            <a href="index.html" style="font-size:11px;color:var(--ink4);text-decoration:none">首页</a><span class="sep">/</span>
+            <a href="leadcom_success_cases.html" style="font-size:11px;color:var(--ink4);text-decoration:none">成功案例</a><span class="sep">/</span>
+            <span class="current">人民医院存储架构</span>
+        </div>
+
+        <!-- 头部 Hero -->
+        <div class="hero">
+            <div class="hero-kicker">智慧医疗案例</div>
+            <h1>某市人民医院<br><em>数字化医院存储架构</em></h1>
+            <p class="hero-sub">构建基于 SAN 架构的高可用存储平台，覆盖 HIS、PACS、LIS 核心业务，实现无单点故障与 LAN-free 备份，打造可扩充的数字化医院数据基座。</p>
+        </div>
+
+        <!-- 正文内容 -->
+        <div class="section">
+            <div class="content-grid">
+                <div class="content-main">
+                    <h2>项目背景</h2>
+                    <p>随着某市人民医院信息化建设的深入，HIS（医院信息系统）、PACS（影像归档和通信系统）、LIS（实验室信息系统）等核心业务产生的数据量呈指数级增长。原有的分散式存储架构面临容量瓶颈，且存在单点故障风险，难以满足 7x24 小时医疗服务的高可用性要求。</p>
+                    <p>医院急需构建一个统一、高效、安全的数据集中存储平台，既要解决海量医疗影像数据的存储难题，又要确保业务系统在备份和维护期间不受影响，实现真正的数字化医院基座升级。</p>
+
+                    <h2>解决方案</h2>
+                    <p>励康技术团队深入调研医院业务特性，设计并实施了基于 SAN 架构的高可用存储方案：</p>
+                    <ul>
+                        <li><strong>全核心业务覆盖：</strong> 统一存储平台全面承载 HIS、PACS（含 RIS、USIS、ESIS 子系统）及 LIS 系统数据，打破信息孤岛，实现数据集中化管理。</li>
+                        <li><strong>高可用 SAN 架构：</strong> 采用双活光纤交换机与 HDS Thunder 9570V 高端存储设备，构建全冗余链路，彻底消除单点故障，确保核心业务连续性。</li>
+                        <li><strong>高效备份策略：</strong> 实施 LAN-free 与 Server-free 磁带备份技术。备份数据流不经过局域网和服务器，直接在存储层进行，极大减轻了业务网络和服务器的负载，确保备份窗口期内业务“零”感知。</li>
+                        <li><strong>弹性扩展能力：</strong> 架构设计具备高度可扩充性，支持在线平滑扩容，满足医院未来 3-5 年的数据增长需求，有效降低总拥有成本。</li>
+                    </ul>
+                    
+                    <div class="case-image-container" style="text-align: center; margin-bottom: 30px;">
+                        <img src="images/case-medical-hospital-storage.png" alt="某市人民医院SAN存储架构图 - HDS Thunder 9570V与光纤交换机" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                        <p style="font-size: 0.9em; color: #666; margin-top: 10px;">图：医院核心业务 SAN 存储架构示意图</p>
+                    </div>
+
+                    <h2>项目成效</h2>
+                    <p>新存储架构上线后，为医院数字化转型提供了坚实支撑：</p>
+                    <ul>
+                        <li><strong>业务连续性提升：</strong> 系统运行稳定，彻底消除了单点故障隐患，保障了临床业务的连续性。</li>
+                        <li><strong>备份效率飞跃：</strong> LAN-free 备份机制成功落地，备份速度大幅提升，且不再占用业务网络带宽。</li>
+                        <li><strong>管理成本降低：</strong> 统一管理平台简化了运维工作，高扩充性设计保护了客户投资。</li>
+                    </ul>
+                </div>
+
+                <!-- 侧边栏 -->
+                <div class="sidebar">
+                    <h3>关键技术</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HDS Thunder 9570V</span>
+                        <span class="tech-tag">SAN 架构</span>
+                        <span class="tech-tag">光纤交换机</span>
+                        <span class="tech-tag">LAN-free 备份</span>
+                        <span class="tech-tag">RAID</span>
+                    </div>
+                    <div class="case-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">行业</span>
+                            <span>医疗卫生 · 三甲医院</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">客户</span>
+                            <span>某市人民医院</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">核心产品</span>
+                            <span>数字化医院存储解决方案</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 咨询 CTA -->
+        <div class="cta-section">
+            <div class="cta-left">
+                <div class="cta-kicker">免费咨询</div>
+                <h2>您的核心业务，<br>需要怎样的保护？</h2>
+                <p>无论是传统磁带备份升级，还是同城/异地双活架构规划，预约一次免费沟通，让我们为您评估现有的数据安全风险。</p>
+                <div class="cta-promise">
+                    <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>1 个工作日内回复</span></div>
+                    <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>提供书面方案建议</span></div>
+                    <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>无义务，可随时结束</span></div>
+                </div>
+            </div>
+            <div class="cta-right">
+                <h3>预约免费咨询</h3>
+                <div class="field-label">姓名</div>
+                <input class="cta-input" placeholder="您的姓名" type="text" />
+                <div class="field-label">联系电话</div>
+                <input class="cta-input" placeholder="手机号码" type="text" />
+                <div class="field-label">最感兴趣的服务</div>
+                <select class="cta-select">
+                    <option>数字化医院存储</option>
+                    <option>数据备份与恢复</option>
+                    <option>IT 基础架构维保</option>
+                    <option>政务IT基础架构</option>
+                    <option>还不确定，需要建议</option>
+                </select>
+                <div class="cta-submit">预约免费咨询</div>
+                <div class="cta-note">我们绝不将您的信息用于其他用途</div>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <div class="footer
