@@ -288,7 +288,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
         <div class="case-tag">汽车制造</div>
         <h3>汽车集团存储系统改造</h3>
         <p class="case-desc">某大型汽车集团拥有 ERP、SCM、DRP、OA、Web 等多种核心业务系统，数据分散存储，安全风险突出。励康为其量身定制存储高可用方案，采用双磁盘阵列互为镜像架构，确保业务连续不中断、数据零丢失。</p>
-        <span class="case-link">查看详情 →</span>
+        <a href="case-auto-storage-upgrade.html" class="case-link">查看详情 →</a>
       </div>
       <div class="case-right">
         <h4>方案亮点</h4>
@@ -311,7 +311,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
         <div class="case-tag">政府</div>
         <h3>某政府机构软件中心建设</h3>
         <p class="case-desc">某政府机构需建立软件开发中心，对业务系统和办公系统进行开发、升级及测试。要求新建平台与现有小型机平台保持一致，既能平稳对接，又保证技术先进性。励康承建并成功实施该项目。</p>
-        <span class="case-link">查看详情 →</span>
+        <a href="case-gov-software-center.html" class="case-link">查看详情 →</a>
       </div>
       <div class="case-right">
         <h4>方案亮点</h4>
@@ -334,7 +334,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
         <div class="case-tag">政府 · 社保</div>
         <h3>某省社保局异地灾备中心建设</h3>
         <p class="case-desc">某省社保局原有磁带备份方式恢复慢、可能丢失一天数据，且生产与备份数据同存本地，无容灾能力。励康为其建设异地灾备数据中心，通过裸光纤实时同步，灾备切换演练运行正常，完全达到设计要求。</p>
-        <span class="case-link">查看详情 →</span>
+        <a href="case-gov-social-security-dr.html" class="case-link">查看详情 →</a>
       </div>
       <div class="case-right">
         <h4>方案亮点</h4>
@@ -357,7 +357,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
         <div class="case-tag">医疗</div>
         <h3>某市人民医院数字化医院存储架构</h3>
         <p class="case-desc">某市人民医院需构建覆盖 HIS、PACS、LIS 等核心业务系统的数据集中存储平台。励康设计并实施基于 SAN 架构的高可用存储方案，实现无单点故障、LAN-free 备份，构建了可扩充的数字化医院数据基座。</p>
-        <span class="case-link">查看详情 →</span>
+        <a href="case-medical-hospital-storage.html" class="case-link">查看详情 →</a>
       </div>
       <div class="case-right">
         <h4>方案亮点</h4>
@@ -484,11 +484,11 @@ function toggleWeComQR() {
 <!-- Hermes Agent Bubble Chat -->
 <style>
 :root{--chat-copper:#a0673a;--chat-copper-light:#c4844d;--chat-ink:#1a1a1a;--chat-ink2:#555;--chat-ink3:#999;--chat-sand:#f8f5f0;--chat-sand2:#ece7df;--chat-sand3:#ddd8d0;--chat-green:#00C896;--chat-green-dark:#007A5E}
-.chat-bubble{position:fixed;bottom:140px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#C8854E,#a0673a,#8B5E3C);border:2.5px solid #00C896;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(160,103,58,.35);z-index:9999;transition:all .3s ease;animation:colorShift 4s infinite}
+.chat-bubble{position:fixed;bottom:28px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#C8854E,#a0673a,#8B5E3C);border:2.5px solid #00C896;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(160,103,58,.35);z-index:9999;transition:all .3s ease;animation:colorShift 4s infinite}
 .chat-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(160,103,58,.45)}
 .chat-bubble svg{width:26px;height:26px;fill:#fff}
 .chat-bubble.open{transform:scale(0) rotate(180deg);opacity:0;pointer-events:none}
-.chat-window{position:fixed;bottom:140px;right:28px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);z-index:10000;display:flex;flex-direction:column;overflow:hidden;transform:scale(0) translateY(20px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+.chat-window{position:fixed;bottom:28px;right:28px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);z-index:10000;display:flex;flex-direction:column;overflow:hidden;transform:scale(0) translateY(20px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
 .chat-window.open{transform:scale(1) translateY(0);opacity:1;pointer-events:all}
 .chat-header{background:linear-gradient(135deg,var(--chat-copper),var(--chat-copper-light));padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .chat-header-left{display:flex;align-items:center;gap:10px}
@@ -530,7 +530,7 @@ function toggleWeComQR() {
 .chat-quick-btn:hover{background:var(--chat-copper);color:#fff;border-color:var(--chat-copper)}
 @media(max-width:480px){
   .chat-window{bottom:0;right:0;width:100%;height:100%;border-radius:0}
-  .chat-bubble{bottom:80px;right:16px}
+  .chat-bubble{bottom:16px;right:16px}
 }
 </style>
 
