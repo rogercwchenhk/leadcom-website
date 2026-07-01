@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>IT基础架构维保服务 — 服务器/存储/网络运维 | 励康信息技术</title>
-<meta name="description" content="专业IT基础架构维保服务，覆盖服务器、存储、网络、数据库。IBM、HP、Dell等主流品牌，7×24小时响应。ISO20000/ITSS认证，500+企业信赖。">
-<meta name="keywords" content="IT维保,服务器维保,IT运维,IBM维保,HP维保,Dell维保,数据库维护,网络维护,IT外包">
+<title>IT基础架构维保 — 服务器/存储/网络/数据库/中间件/备份/云平台运维 | 励康信息技术</title>
+<meta name="description" content="励康提供全栈IT基础架构维保：服务器维保、存储设备维保、网络设备维保、数据库运维、中间件运维、备份与恢复、云基础设施运维。覆盖Dell、HPE、IBM、华为等主流品牌，7×24小时响应，500+企业信赖。">
+<meta name="keywords" content="IT维保,服务器维保,存储维保,网络维保,数据库运维,中间件运维,备份恢复,云基础设施,VMware迁移,虚拟化运维,K8s运维,IT运维外包">
 <link rel="canonical" href="https://www.leadcom.com.cn/leadcom_it_maintenance.html">
 
 <meta name="author" content="广东励康信息技术有限公司">
@@ -14,15 +14,15 @@
 
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.leadcom.com.cn/leadcom_it_maintenance.html">
-<meta property="og:title" content="IT基础架构维保服务 — 服务器/存储/网络运维">
-<meta property="og:description" content="IBM、HP、Dell等主流品牌维保，7×24小时响应。ISO20000/ITSS认证，500+企业信赖。">
+<meta property="og:title" content="IT基础架构维保 — 服务器/存储/网络/数据库/中间件/备份/云平台运维">
+<meta property="og:description" content="全栈IT基础架构维保：服务器、存储、网络、数据库、中间件、备份恢复、云基础设施。7×24小时响应，500+企业信赖。">
 <meta property="og:image" content="https://www.leadcom.com.cn/images/service-it.png">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="励康信息技术">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="IT基础架构维保服务 — 服务器/存储/网络运维">
-<meta name="twitter:description" content="IBM、HP、Dell等主流品牌维保，7×24小时响应">
+<meta name="twitter:title" content="IT基础架构维保 — 服务器/存储/网络/数据库/中间件/备份/云平台运维">
+<meta name="twitter:description" content="覆盖服务器、存储、网络、数据库、中间件、备份、云平台七大领域">
 <meta name="twitter:image" content="https://www.leadcom.com.cn/images/service-it.png">
 
 <script type="application/ld+json">
@@ -44,12 +44,15 @@
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "IT维保服务",
+        "name": "IT基础架构维保服务",
         "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "服务器维保"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "存储设备维保"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "网络设备维护"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "数据库维护"}}
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "服务器维保", "description": "x86服务器、UNIX小型机、国产服务器硬件维保与操作系统运维"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "存储设备维保", "description": "SAN/NAS/分布式存储巡检、扩容、迁移、高可用与数据恢复"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "网络设备维保", "description": "交换机、路由器、防火墙、无线、负载均衡运维与安全加固"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "数据库运维", "description": "Oracle/MySQL/达梦/人大金仓等数据库部署、优化与信创迁移"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "中间件运维", "description": "WebLogic/Nginx/Kafka/Redis等中间件部署、调优与信创替代"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "备份与恢复运维", "description": "备份架构设计、容灾演练、防勒索加固与等保合规"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "云基础设施运维", "description": "VMware迁移、超融合部署、K8s容器平台与云管平台建设"}}
         ]
       }
     },
@@ -63,10 +66,12 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 img{max-width:100%;height:auto}
 :root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
   --sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--sand4:#d4c9b4;
   --ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--ink4:#9a9182;
   --copper:#a0673a;--copper2:#c8824a;--copper3:#e8ddd0;
@@ -279,6 +284,41 @@ footer{padding:24px 28px;border-top:var(--rule)}
   .tl-item{padding:16px 12px!important}
   .cert-item{padding:14px 12px!important}
 }
+
+/* ========== SERVICE TABS ========== */
+.svc-tab-wrap{margin:20px 28px 28px;border:var(--rule);border-radius:2px;background:var(--sand)}
+.svc-tab-nav{display:flex;border-bottom:var(--rule);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.svc-tab-nav::-webkit-scrollbar{display:none}
+.svc-tab-btn{flex:0 0 auto;padding:12px 18px;font-size:12px;font-weight:500;color:var(--ink3);background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .2s}
+.svc-tab-btn:hover{color:var(--ink2);background:var(--sand2)}
+.svc-tab-btn.active{color:var(--copper);border-bottom-color:var(--copper)}
+.svc-tab-panel{display:none;padding:24px}
+.svc-tab-panel.active{display:block}
+.svc-tab-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.svc-tab-left{padding-right:24px;border-right:var(--rule)}
+.svc-tab-left h3{font-size:16px;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-0.01em}
+.svc-tab-left p{font-size:12px;color:var(--ink3);line-height:1.75;margin-bottom:16px}
+.svc-tab-brands{display:flex;flex-wrap:wrap;gap:6px}
+.svc-bchip{font-size:10px;color:var(--ink2);background:var(--sand2);border:var(--rule-light);padding:4px 10px;border-radius:1px}
+.svc-tab-right{padding-left:24px}
+.svc-tab-right h4{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
+.svc-tab-items{display:flex;flex-direction:column;gap:10px}
+.svc-tab-item{display:flex;align-items:center;gap:8px}
+.svc-tab-item span{font-size:12px;color:var(--ink2);line-height:1.5}
+.svc-tab-os{margin-top:20px;padding-top:16px;border-top:var(--rule-light)}
+.svc-tab-os h4{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+.svc-tab-os-chips{display:flex;flex-wrap:wrap;gap:5px}
+.svc-tab-os-chips span{font-size:10px;color:var(--ink4);background:var(--sand3);padding:3px 8px;border-radius:1px}
+
+@media(max-width:768px){
+  .svc-tab-wrap{margin:16px}
+  .svc-tab-btn{padding:10px 14px;font-size:11px}
+  .svc-tab-panel{padding:16px}
+  .svc-tab-body{grid-template-columns:1fr!important}
+  .svc-tab-left{padding-right:0;border-right:none;border-bottom:var(--rule-light);padding-bottom:16px;margin-bottom:16px}
+  .svc-tab-right{padding-left:0}
+}
+
 </style>
 </head>
 <body>
@@ -354,65 +394,235 @@ footer{padding:24px 28px;border-top:var(--rule)}
   </div>
 </div>
 
-<div class="services">
+<div class="services" id="services">
   <div class="svc-header">
-    <div class="section-label" style="margin:0">维保服务内容</div>
+    <div class="section-label" style="margin:0">七大维保服务</div>
+    <p style="font-size:12px;color:var(--ink3);margin-top:6px">覆盖 IT 基础架构全栈，从硬件到软件、从本地到云端</p>
   </div>
 
-  <div class="svc-hero-card">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-left">
-        <div class="svc-hero-badge">核心服务</div>
-        <h3>IT 基础架构全面维保</h3>
-        <p>从服务器、存储到网络设备和数据库，一站式覆盖企业 IT 基础架构的全生命周期运维。按需定制服务等级，从基础巡检到深度运维，灵活匹配您的业务需求与预算。</p>
-        <span class="svc-hero-link">了解详情 →</span>
-      </div>
-      <div class="svc-hero-right">
-        <h4>服务内容</h4>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>7×24 小时故障监控与响应</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>定期巡检与预防性维护</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>备件更换与硬件维修</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>系统补丁与固件升级</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>性能优化与容量规划</span></div>
-      </div>
+  <div class="svc-tab-wrap">
+    <div class="svc-tab-nav" role="tablist">
+      <button class="svc-tab-btn active" data-tab="server" role="tab" aria-selected="true">服务器维保</button>
+      <button class="svc-tab-btn" data-tab="storage" role="tab">存储设备</button>
+      <button class="svc-tab-btn" data-tab="network" role="tab">网络设备</button>
+      <button class="svc-tab-btn" data-tab="database" role="tab">数据库运维</button>
+      <button class="svc-tab-btn" data-tab="mw" role="tab">中间件运维</button>
+      <button class="svc-tab-btn" data-tab="backup" role="tab">备份恢复</button>
+      <button class="svc-tab-btn" data-tab="cloud" role="tab">云基础设施</button>
     </div>
-  </div>
 
-  <div class="svc-grid">
-    <div class="svc-card">
-      <div class="svc-idx">02 · 迁移</div>
-      <div class="svc-rule-line"></div>
-      <h3>系统迁移与升级</h3>
-      <p>老旧系统迁移、X86 替代小型机、存储扩容升级——我们有丰富的大型项目经验，确保业务零中断或最小停机。</p>
-      <div class="svc-tags"><span class="svc-tag">P 系迁移 X86</span><span class="svc-tag">存储扩容</span><span class="svc-tag">数据迁移</span><span class="svc-tag">零停机</span></div>
-      <span class="svc-card-link">了解详情 →</span>
+    <!-- 服务器维保 -->
+    <div class="svc-tab-panel active" id="tab-server" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>服务器维保服务</h3>
+          <p>覆盖 x86 服务器、UNIX 小型机（AIX / HP-UX / Solaris）、国产信创服务器全品牌，提供硬件故障维修、操作系统运维、系统迁移、信创适配等全生命周期服务。工程师持 IBM、HPE、Dell 等原厂认证。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">Dell PowerEdge</span><span class="svc-bchip">HPE ProLiant</span><span class="svc-bchip">IBM Power</span><span class="svc-bchip">华为 FusionServer</span><span class="svc-bchip">浪潮</span><span class="svc-bchip">联想 ThinkSystem</span><span class="svc-bchip">新华三</span><span class="svc-bchip">曙光</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>硬件故障诊断与备件更换</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>定期巡检与预防性维护</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>操作系统安装 / 补丁 / 安全加固</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>UNIX to Linux / 信创迁移</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>远程管理卡配置（iDRAC / iLO / HMC）</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>性能优化与容量规划</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>支持操作系统</h4>
+        <div class="svc-tab-os-chips">
+          <span>Windows Server 2022</span><span>RHEL 8/9</span><span>VMware ESXi 8.x</span><span>IBM AIX 7.3</span><span>HP-UX 11i v3</span><span>银河麒麟 V10</span><span>统信 UOS</span><span>openEuler</span><span>Proxmox VE 8</span>
+        </div>
+      </div>
     </div>
-    <div class="svc-card">
-      <div class="svc-idx">03 · 机房</div>
-      <div class="svc-rule-line"></div>
-      <h3>机房搬迁与部署</h3>
-      <p>数据中心搬迁、机房重新部署、综合布线——专业项目管理，从规划到执行全程保障，确保设备安全迁移、业务快速恢复。</p>
-      <div class="svc-tags"><span class="svc-tag">数据中心搬迁</span><span class="svc-tag">综合布线</span><span class="svc-tag">上线部署</span><span class="svc-tag">项目管理</span></div>
-      <span class="svc-card-link">了解详情 →</span>
+
+    <!-- 存储设备维保 -->
+    <div class="svc-tab-panel" id="tab-storage" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>存储设备维保服务</h3>
+          <p>覆盖 SAN / NAS / 对象存储 / 分布式存储全架构，提供存储巡检、扩容迁移、高可用双活配置、固件升级、数据恢复等专业服务。熟悉主流存储操作系统与管理平台。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">Dell PowerStore / PowerMax</span><span class="svc-bchip">NetApp AFF / FAS</span><span class="svc-bchip">HPE Alletra</span><span class="svc-bchip">IBM FlashSystem</span><span class="svc-bchip">华为 OceanStor</span><span class="svc-bchip">Pure Storage</span><span class="svc-bchip">浪潮</span><span class="svc-bchip">Ceph / MinIO</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>存储设备巡检与健康检查</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>存储扩容与性能优化</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>异构存储数据在线迁移</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>SAN 双活 / 容灾架构搭建</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>存储固件升级与回退</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>数据恢复与 LUN 修复</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>覆盖存储系统</h4>
+        <div class="svc-tab-os-chips">
+          <span>ONTAP 9.x</span><span>PowerStoreOS</span><span>OceanOS</span><span>Purity</span><span>Spectrum Virtualize</span><span>OneFS</span><span>Ceph</span><span>MinIO</span>
+        </div>
+      </div>
     </div>
-    <div class="svc-card">
-      <div class="svc-idx">04 · 安全</div>
-      <div class="svc-rule-line"></div>
-      <h3>安全服务与合规</h3>
-      <p>漏洞扫描、安全加固、等保合规咨询——帮助企业构建安全防线，满足监管要求，降低安全事件风险。</p>
-      <div class="svc-tags"><span class="svc-tag">漏洞扫描</span><span class="svc-tag">安全加固</span><span class="svc-tag">等保咨询</span><span class="svc-tag">应急响应</span></div>
-      <span class="svc-card-link">了解详情 →</span>
+
+    <!-- 网络设备维保 -->
+    <div class="svc-tab-panel" id="tab-network" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>网络设备维保服务</h3>
+          <p>覆盖交换机、路由器、防火墙、无线 AP/控制器、负载均衡全品类，提供网络巡检、架构设计、割接实施、安全策略部署、SD-WAN 分支互联等服务。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">Cisco Catalyst / Nexus</span><span class="svc-bchip">HPE Aruba</span><span class="svc-bchip">Juniper</span><span class="svc-bchip">Palo Alto</span><span class="svc-bchip">Fortinet</span><span class="svc-bchip">F5 BIG-IP</span><span class="svc-bchip">华为 CloudEngine</span><span class="svc-bchip">新华三</span><span class="svc-bchip">锐捷</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>网络设备巡检与故障排查</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>网络架构设计与 IP/VLAN 规划</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>设备替换与网络割接</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>防火墙策略与安全加固</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>无线覆盖规划与部署</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>SD-WAN 分支互联与负载均衡</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>覆盖网络系统</h4>
+        <div class="svc-tab-os-chips">
+          <span>IOS-XE</span><span>NX-OS</span><span>VRP 8.0</span><span>Comware V7/V9</span><span>Junos</span><span>PAN-OS</span><span>FortiOS</span><span>TMOS</span><span>AOS-CX</span>
+        </div>
+      </div>
     </div>
-    <div class="svc-card">
-      <div class="svc-idx">05 · 数据库</div>
-      <div class="svc-rule-line"></div>
-      <h3>数据库运维服务</h3>
-      <p>Oracle、DB2、MySQL、SQL Server 全线覆盖——数据库性能调优、高可用架构设计、备份恢复策略制定，保障数据安全与系统稳定。</p>
-      <div class="svc-tags"><span class="svc-tag">Oracle</span><span class="svc-tag">DB2</span><span class="svc-tag">性能调优</span><span class="svc-tag">高可用</span></div>
-      <span class="svc-card-link">了解详情 →</span>
+
+    <!-- 数据库运维 -->
+    <div class="svc-tab-panel" id="tab-database" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>数据库运维服务</h3>
+          <p>覆盖国际商业数据库、国产信创数据库、开源数据库全生态，提供安装部署、高可用集群建设、性能调优、信创迁移（Oracle → 达梦/金仓）、安全加固等专业 DBA 服务。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">Oracle</span><span class="svc-bchip">SQL Server</span><span class="svc-bchip">MySQL</span><span class="svc-bchip">PostgreSQL</span><span class="svc-bchip">达梦 DM8</span><span class="svc-bchip">人大金仓</span><span class="svc-bchip">OceanBase</span><span class="svc-bchip">GaussDB</span><span class="svc-bchip">TiDB</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>数据库安装部署与参数优化</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>高可用集群建设（RAC / AlwaysOn / 主从）</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>性能调优与慢 SQL 分析</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>信创迁移（Oracle → 达梦 / 金仓）</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>备份策略制定与容灾演练</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>安全加固与等保合规</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>支持数据库</h4>
+        <div class="svc-tab-os-chips">
+          <span>Oracle 19c/23ai</span><span>SQL Server 2022</span><span>MySQL 8.x</span><span>PostgreSQL 16</span><span>MongoDB 8.0</span><span>Redis 7.x</span><span>达梦 DM8/DM9</span><span>人大金仓 V9</span><span>OceanBase V4.x</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 中间件运维 -->
+    <div class="svc-tab-panel" id="tab-mw" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>中间件运维服务</h3>
+          <p>覆盖应用服务器、Web 服务器、消息中间件、缓存、API 网关全栈，提供部署、性能调优、信创迁移（WebLogic → 东方通 TongWeb）、微服务改造等服务。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">WebLogic</span><span class="svc-bchip">WebSphere</span><span class="svc-bchip">Nginx</span><span class="svc-bchip">Tomcat</span><span class="svc-bchip">Kafka</span><span class="svc-bchip">RabbitMQ</span><span class="svc-bchip">Redis</span><span class="svc-bchip">东方通 TongWeb</span><span class="svc-bchip">宝兰德 BES</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>中间件安装部署与集群配置</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>JVM 调优与压测验证</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>信创迁移（WebLogic → 东方通 / 宝兰德）</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>消息中间件运维（Kafka / RocketMQ / MQ）</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>安全加固与漏洞修复</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>微服务架构改造与治理</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>支持中间件</h4>
+        <div class="svc-tab-os-chips">
+          <span>WebLogic 14.x</span><span>WebSphere 9.x</span><span>JBoss EAP 8.0</span><span>Nginx 1.26</span><span>Kafka 3.x</span><span>RabbitMQ 4.x</span><span>Redis 7.x</span><span>Kong / APISIX</span><span>Spring Cloud</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 备份与恢复运维 -->
+    <div class="svc-tab-panel" id="tab-backup" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>备份与恢复运维服务</h3>
+          <p>覆盖主流备份软件与国产备份产品，提供备份架构设计、系统部署、容灾演练、防勒索加固、等保合规等数据保护全栈服务。支持虚拟化、数据库、云环境的统一备份管理。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">Veeam B&R</span><span class="svc-bchip">Commvault</span><span class="svc-bchip">Veritas NetBackup</span><span class="svc-bchip">华为 OceanProtect</span><span class="svc-bchip">鼎甲 DBackup</span><span class="svc-bchip">爱数 AnyBackup</span><span class="svc-bchip">英方 i2Backup</span><span class="svc-bchip">Bacula / Bareos</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>数据保护需求评估与架构设计</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>备份系统部署与策略配置</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>异地灾备与两地三中心建设</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>备份恢复演练与数据验证</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>防勒索加固（不可变备份 / Air Gap）</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>信创环境备份适配</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>覆盖场景</h4>
+        <div class="svc-tab-os-chips">
+          <span>VMware / Hyper-V</span><span>FusionCompute</span><span>Oracle / SQL Server</span><span>MySQL / PostgreSQL</span><span>达梦 / 人大金仓</span><span>K8s 容器备份</span><span>云上备份</span><span>磁带归档</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 云基础设施运维 -->
+    <div class="svc-tab-panel" id="tab-cloud" role="tabpanel">
+      <div class="svc-tab-body">
+        <div class="svc-tab-left">
+          <h3>云基础设施运维服务</h3>
+          <p>覆盖服务器虚拟化、超融合、容器平台、云管平台，提供 VMware 替代迁移、K8s 部署运维、传统应用容器化改造、超融合建设等云基础设施全栈服务。</p>
+          <div class="svc-tab-brands">
+            <span class="svc-bchip">VMware vSphere</span><span class="svc-bchip">华为 FusionCompute</span><span class="svc-bchip">新华三 CAS</span><span class="svc-bchip">深信服 HCI</span><span class="svc-bchip">ZStack</span><span class="svc-bchip">Proxmox VE</span><span class="svc-bchip">Kubernetes</span><span class="svc-bchip">Rancher</span><span class="svc-bchip">OpenShift</span>
+          </div>
+        </div>
+        <div class="svc-tab-right">
+          <h4>核心服务项</h4>
+          <div class="svc-tab-items">
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>VMware 迁移至国产虚拟化平台</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>超融合部署与运维</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>K8s 容器平台搭建与运维</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>传统应用容器化改造</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>虚拟化平台巡检与性能优化</span></div>
+            <div class="svc-tab-item"><div class="deliverable-dot"></div><span>高可用与跨站点容灾</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="svc-tab-os">
+        <h4>覆盖平台</h4>
+        <div class="svc-tab-os-chips">
+          <span>VMware ESXi 9.x</span><span>FusionCompute 8.x</span><span>CAS 7.0</span><span>ZStack ZSphere</span><span>Proxmox VE 8.x</span><span>Kubernetes 1.31</span><span>Docker 27.x</span><span>Rancher 2.9</span><span>Nutanix</span>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
 
 <div class="sla">
   <div class="section-label" style="margin:0">服务等级承诺</div>
@@ -560,6 +770,20 @@ function toggleWeComQR() {
     qr.style.animation = 'slideIn 0.3s ease-out';
   }
 }
+</script>
+<script>
+// Service tabs
+document.querySelectorAll('.svc-tab-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var tab = this.getAttribute('data-tab');
+    document.querySelectorAll('.svc-tab-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});
+    document.querySelectorAll('.svc-tab-panel').forEach(function(p){p.classList.remove('active')});
+    this.classList.add('active');
+    this.setAttribute('aria-selected','true');
+    var panel = document.getElementById('tab-'+tab);
+    if(panel) panel.classList.add('active');
+  });
+});
 </script>
 <!-- Hermes Agent Bubble Chat -->
 <style>
