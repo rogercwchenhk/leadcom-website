@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>备份与恢复服务：Veeam/Commvault/鼎甲 全方案支持 | 珠三角IT</title>
+<meta name="description" content="励康信息技术提供Veeam、Commvault、Veritas NetBackup、华为OceanProtect、鼎甲DBackup等全品牌备份与恢复服务。覆盖VMware/国产虚拟化/云平台全环境，7×24响应。">
+<meta name="keywords" content="备份恢复服务,Veeam运维,Commvault运维,Veritas NetBackup,华为OceanProtect,鼎甲DBackup,数据备份,灾备,广州备份服务">
+<link rel="canonical" href="https://www.leadcom.com.cn/leadcom_blog_backup.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="备份与恢复服务：Veeam/Commvault/鼎甲 全方案支持">
+<meta property="og:description" content="覆盖国际与国产全品牌备份软件，VMware/国产虚拟化/云平台全环境。">
+<meta property="og:url" content="https://www.leadcom.com.cn/leadcom_blog_backup.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"备份与恢复服务：Veeam/Commvault/鼎甲 全方案支持","author":{"@type":"Organization","name":"广东励康信息技术有限公司"},"publisher":{"@type":"Organization","name":"广东励康信息技术有限公司"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.leadcom.com.cn/leadcom_blog_backup.html"}}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
+:root{--font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;--sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--copper:#a0673a;--copper2:#c8824a;--rule:1px solid #d8d0c0}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}.logo{font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}.logo-accent{color:var(--copper)}.nav-links{display:flex;gap:22px}.nav-link{font-size:11px;color:var(--ink3);text-decoration:none}a.nav-link:hover{color:var(--copper)}.nav-right{display:flex;align-items:center;gap:16px}.nav-phone{font-size:11px;color:var(--ink3)}.nav-cta{font-size:11px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule);font-size:11px;color:var(--ink3)}.breadcrumb a{color:var(--copper);text-decoration:none}
+.hero{padding:48px 28px 40px;border-bottom:var(--rule)}.hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}.hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}.hero h1{font-size:28px;font-weight:500;color:var(--ink);line-height:1.25;letter-spacing:-0.025em;max-width:600px;margin-bottom:14px}.hero h1 em{color:var(--copper);font-style:normal}.hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:560px}
+.content{padding:0 28px}.section{padding:36px 0;border-bottom:var(--rule)}.section h2{font-size:18px;font-weight:500;color:var(--ink);margin-bottom:6px}.section-intro{font-size:13px;color:var(--ink3);line-height:1.75;margin-bottom:20px;max-width:640px}
+table{width:100%;border-collapse:collapse;font-size:11px;margin:12px 0 20px}th{background:var(--sand2);color:var(--ink2);font-weight:500;text-align:left;padding:8px 10px;border:var(--rule)}td{padding:7px 10px;border:var(--rule);color:var(--ink3);vertical-align:top}tr:hover td{background:var(--sand2)}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;border:var(--rule)}.svc-item{padding:16px 18px;border-right:var(--rule);border-bottom:var(--rule)}.svc-item h4{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px}.svc-item p{font-size:11px;color:var(--ink3);line-height:1.6}
+.cta-section{padding:40px 28px;border-bottom:var(--rule);display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.cta-left h2{font-size:22px;font-weight:500;color:var(--ink);margin-bottom:6px}.cta-left p{font-size:12px;color:var(--ink3);line-height:1.6;max-width:300px}.btn-primary{background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:10px 22px;border-radius:2px;text-decoration:none;display:inline-block;margin-top:12px}
+.blog-nav{display:flex;justify-content:space-between;padding:20px 28px;border-bottom:var(--rule)}.blog-nav a{font-size:11px;color:var(--copper);text-decoration:none}
+footer{padding:28px 28px 24px;background:var(--sand)}.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}.footer-logo{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}.footer-addr{font-size:11px;color:var(--ink3);line-height:1.7}.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:var(--rule)}.footer-copy{font-size:10px;color:var(--ink3)}
+.nav-hamburger{display:none}
+@media(max-width:768px){nav{flex-wrap:wrap;padding:10px 16px;gap:8px}.nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}.nav-links.open{display:flex}.nav-link{display:block;padding:8px 0;font-size:13px}.nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}.nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}.nav-hamburger span:nth-child(1){top:0}.nav-hamburger span:nth-child(2){top:8px}.nav-hamburger span:nth-child(3){top:16px}.hero{padding:28px 16px}.hero h1{font-size:22px!important}.content{padding:0 16px}.cta-section{flex-direction:column!important;padding:28px 16px!important}.svc-list{grid-template-columns:1fr!important}table{font-size:10px}th,td{padding:5px 6px}}
+</style>
+</head>
+<body>
+<div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<span class="logo-accent">康</span>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="leadcom_ai_solutions_no_tencent.html">AI 解决方案</a>
+    <a class="nav-link" href="leadcom_it_maintenance.html">IT 维保</a>
+    <a class="nav-link" href="leadcom_tencent_cloud.html">腾讯云</a>
+    <a class="nav-link" href="leadcom_success_cases.html">成功案例</a>
+    <a class="nav-link" href="leadcom_blog.html">博客</a>
+    <a class="nav-link" href="leadcom_about_us.html">关于我们</a>
+  </div>
+  <div class="nav-right"><span class="nav-phone">020-66319828</span><a class="nav-cta" href="index.html#cta">免费服务 →</a></div>
+</nav>
+
+<div class="breadcrumb"><a href="index.html">首页</a> / <a href="leadcom_blog.html">博客</a> / 备份与恢复服务</div>
+
+<div class="hero">
+  <div class="hero-kicker">IT 维保 · 服务目录</div>
+  <h1>备份与恢复服务：<em>Veeam / Commvault / 鼎甲</em> 全方案支持</h1>
+  <p class="hero-sub">覆盖国际商业备份软件（Veeam、Commvault、Veritas NetBackup）、国产备份软件（华为 OceanProtect、鼎甲 DBackup、爱数 AnyBackup）、开源工具（Bacula、Restic）全品类。支持 VMware、Hyper-V、国产虚拟化、云平台全环境——从规划到部署，从容灾到防勒索。</p>
+</div>
+
+<div class="content">
+
+<div class="section">
+  <h2>国际商业备份软件</h2>
+  <p class="section-intro">Veeam、Commvault、Veritas 是企业级备份市场的三大国际品牌，各有所长。</p>
+  <table>
+    <tr><th>备份软件</th><th>备份服务器OS</th><th>虚拟化支持</th><th>数据库支持</th><th>云/对象存储</th></tr>
+    <tr><td><strong>Veeam B&R v12</strong></td><td>Windows Server 2019/2022</td><td>VMware、Hyper-V、Proxmox VE</td><td>Oracle、SQL Server、MySQL、PostgreSQL</td><td>AWS S3、Azure Blob、GCP</td></tr>
+    <tr><td><strong>Commvault 11.x</strong></td><td>Windows Server、RHEL 8/9</td><td>VMware、Hyper-V、Nutanix</td><td>Oracle、SQL Server、MySQL、MongoDB</td><td>AWS、Azure、GCP、阿里云</td></tr>
+    <tr><td><strong>Veritas NetBackup 10.x</strong></td><td>RHEL、Windows Server、SLES</td><td>VMware、Hyper-V、Nutanix</td><td>Oracle、SQL Server、DB2、SAP HANA</td><td>AWS、Azure、GCP、OCI</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>国产备份软件</h2>
+  <p class="section-intro">信创场景下，华为 OceanProtect、鼎甲 DBackup、爱数 AnyBackup、英方 i2Backup 等国产备份软件快速成熟，全面适配国产 CPU/OS/数据库。</p>
+  <table>
+    <tr><th>备份软件</th><th>备份服务器OS</th><th>客户端CPU架构</th><th>虚拟化支持</th><th>国产数据库</th></tr>
+    <tr><td><strong>华为 OceanProtect</strong></td><td>华为专用OS（鲲鹏ARM）</td><td>x86/鲲鹏/飞腾/海光</td><td>VMware、FusionCompute、H3C CAS、OpenStack</td><td>GaussDB、达梦、人大金仓、OceanBase、TiDB</td></tr>
+    <tr><td><strong>鼎甲 DBackup V8</strong></td><td>Ubuntu、银河麒麟（x86/ARM）</td><td>x86/鲲鹏/飞腾/海光/龙芯/申威</td><td>VMware、FusionCompute、H3C CAS、ZStack、SmartX</td><td>达梦、人大金仓、GBase、OceanBase、Vastbase</td></tr>
+    <tr><td><strong>爱数 AnyBackup</strong></td><td>Windows Server、Linux</td><td>x86/鲲鹏/飞腾</td><td>VMware、FusionCompute、H3C CAS</td><td>达梦、人大金仓、GBase、MongoDB</td></tr>
+    <tr><td><strong>英方 i2Backup</strong></td><td>openEuler（鲲鹏/x86）</td><td>x86/鲲鹏/飞腾</td><td>VMware、FusionCompute、H3C CAS</td><td>GaussDB、达梦、人大金仓、OceanBase</td></tr>
+    <tr><td><strong>云祺 Vinchin</strong></td><td>Linux（专用一体机）</td><td>x86/鲲鹏/飞腾/海光</td><td>VMware、Hyper-V、XenServer、FusionCompute、ZStack</td><td>达梦、人大金仓</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>选型参考</h2>
+  <p class="section-intro">根据企业规模、信创需求、虚拟化环境选择最合适的备份方案。</p>
+  <table>
+    <tr><th>场景</th><th>推荐产品</th><th>理由</th></tr>
+    <tr><td>VMware虚拟化保护</td><td>Veeam B&R</td><td>无代理备份、即时恢复功能最强</td></tr>
+    <tr><td>全栈信创（6大CPU架构）</td><td>鼎甲 DBackup</td><td>唯一支持全部6大CPU架构的备份软件</td></tr>
+    <tr><td>华为生态+国产虚拟化</td><td>华为 OceanProtect</td><td>鲲鹏优化最深，重删率72:1</td></tr>
+    <tr><td>大型企业多云环境</td><td>Commvault / Veritas</td><td>功能最全面，多云支持最广</td></tr>
+    <tr><td>防勒索/不可变备份</td><td>Veeam + Immutability</td><td>WORM防篡改，Air Gap</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>服务项目</h2>
+  <div class="svc-list">
+    <div class="svc-item"><h4>备份系统规划</h4><p>数据保护需求评估、备份架构设计、产品选型、容量规划</p></div>
+    <div class="svc-item"><h4>备份系统部署</h4><p>备份服务器/一体机部署、Agent安装、虚拟化集成、策略配置</p></div>
+    <div class="svc-item"><h4>异地灾备部署</h4><p>远程复制链路搭建、两地三中心架构</p></div>
+    <div class="svc-item"><h4>恢复演练</h4><p>文件级/应用级/整机恢复测试，验证RTO/RPO</p></div>
+    <div class="svc-item"><h4>备份系统巡检</h4><p>定期检查备份任务、存储空间、告警</p></div>
+    <div class="svc-item"><h4>备份策略优化</h4><p>根据业务变化调整备份窗口和保留策略</p></div>
+    <div class="svc-item"><h4>防勒索加固</h4><p>不可变存储、Air Gap、勒索检测配置</p></div>
+    <div class="svc-item"><h4>信创适配改造</h4><p>备份系统适配国产CPU/OS/DB环境</p></div>
+    <div class="svc-item"><h4>故障排除</h4><p>备份失败、恢复异常等问题7×24处理</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="cta-section">
+  <div class="cta-left">
+    <h2>备份系统需要评估？</h2>
+    <p>免费数据保护评估——励康工程师检查您的备份策略与恢复能力。</p>
+    <a class="btn-primary" href="index.html#cta">立即预约 →</a>
+  </div>
+  <div style="flex:1;max-width:320px">
+    <p style="font-size:11px;color:var(--ink3);line-height:1.7">励康覆盖 Veeam、Commvault、Veritas、华为 OceanProtect、鼎甲、爱数等全品牌备份软件，提供从规划到部署、从灾备到防勒索的全流程服务。</p>
+    <p style="font-size:11px;margin-top:12px"><strong>相关服务：</strong>
+      <a href="leadcom_blog_storage.html" style="color:var(--copper)">存储设备维保</a> ·
+      <a href="leadcom_blog_database.html" style="color:var(--copper)">数据库运维</a> ·
+      <a href="leadcom_blog_cloud.html" style="color:var(--copper)">云基础设施</a>
+    </p>
+  </div>
+</div>
+
+<div class="blog-nav">
+  <a href="leadcom_blog_network.html">← 网络设备维保</a>
+  <a href="leadcom_blog_cloud.html">云基础设施 →</a>
+</div>
+
+<footer>
+  <div class="footer-top"><div><div class="footer-logo">励<span style="color:var(--copper)">康</span>信息技术</div><div class="footer-addr">广州市天河区中山大道中路 439 号<br>天银商贸大厦 10 楼 26–27 室<br>020-66319828</div></div></div>
+  <div class="footer-bottom"><span class="footer-copy">© 2026 广东励康信息技术有限公司</span></div>
+</footer>
+
+</div>
+</body>
+</html>

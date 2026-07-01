@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中间件运维服务：WebLogic/东方通/Nginx 全品牌覆盖 | 广东IT服务</title>
+<meta name="description" content="励康信息技术提供Oracle WebLogic、IBM WebSphere、东方通TongWeb、Nginx、Kafka、Redis等全品牌中间件运维、信创迁移、性能优化服务。覆盖应用服务器、消息中间件、缓存、API网关全品类。">
+<meta name="keywords" content="中间件运维,WebLogic运维,东方通TongWeb,中间件信创迁移,Nginx运维,Kafka运维,广州中间件服务">
+<link rel="canonical" href="https://www.leadcom.com.cn/leadcom_blog_middleware.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="中间件运维服务：WebLogic/东方通/Nginx 全品牌覆盖">
+<meta property="og:description" content="覆盖应用服务器、消息中间件、缓存、API网关全品类，提供运维与信创迁移服务。">
+<meta property="og:url" content="https://www.leadcom.com.cn/leadcom_blog_middleware.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"中间件运维服务：WebLogic/东方通/Nginx 全品牌覆盖","author":{"@type":"Organization","name":"广东励康信息技术有限公司"},"publisher":{"@type":"Organization","name":"广东励康信息技术有限公司"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://www.leadcom.com.cn/leadcom_blog_middleware.html"}}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}img{max-width:100%;height:auto}
+:root{--font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;--sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--copper:#a0673a;--copper2:#c8824a;--rule:1px solid #d8d0c0}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}.logo{font-size:15px;font-weight:500;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}.logo-accent{color:var(--copper)}.nav-links{display:flex;gap:22px}.nav-link{font-size:11px;color:var(--ink3);text-decoration:none}a.nav-link:hover{color:var(--copper)}.nav-right{display:flex;align-items:center;gap:16px}.nav-phone{font-size:11px;color:var(--ink3)}.nav-cta{font-size:11px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule);font-size:11px;color:var(--ink3)}.breadcrumb a{color:var(--copper);text-decoration:none}
+.hero{padding:48px 28px 40px;border-bottom:var(--rule)}.hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}.hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}.hero h1{font-size:28px;font-weight:500;color:var(--ink);line-height:1.25;letter-spacing:-0.025em;max-width:600px;margin-bottom:14px}.hero h1 em{color:var(--copper);font-style:normal}.hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:560px}
+.content{padding:0 28px}.section{padding:36px 0;border-bottom:var(--rule)}.section h2{font-size:18px;font-weight:500;color:var(--ink);margin-bottom:6px}.section-intro{font-size:13px;color:var(--ink3);line-height:1.75;margin-bottom:20px;max-width:640px}
+table{width:100%;border-collapse:collapse;font-size:11px;margin:12px 0 20px}th{background:var(--sand2);color:var(--ink2);font-weight:500;text-align:left;padding:8px 10px;border:var(--rule)}td{padding:7px 10px;border:var(--rule);color:var(--ink3);vertical-align:top}tr:hover td{background:var(--sand2)}
+.svc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0;border:var(--rule)}.svc-item{padding:16px 18px;border-right:var(--rule);border-bottom:var(--rule)}.svc-item h4{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:4px}.svc-item p{font-size:11px;color:var(--ink3);line-height:1.6}
+.cta-section{padding:40px 28px;border-bottom:var(--rule);display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.cta-left h2{font-size:22px;font-weight:500;color:var(--ink);margin-bottom:6px}.cta-left p{font-size:12px;color:var(--ink3);line-height:1.6;max-width:300px}.btn-primary{background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:10px 22px;border-radius:2px;text-decoration:none;display:inline-block;margin-top:12px}
+.blog-nav{display:flex;justify-content:space-between;padding:20px 28px;border-bottom:var(--rule)}.blog-nav a{font-size:11px;color:var(--copper);text-decoration:none}
+footer{padding:28px 28px 24px;background:var(--sand)}.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}.footer-logo{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}.footer-addr{font-size:11px;color:var(--ink3);line-height:1.7}.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:var(--rule)}.footer-copy{font-size:10px;color:var(--ink3)}
+.nav-hamburger{display:none}
+@media(max-width:768px){nav{flex-wrap:wrap;padding:10px 16px;gap:8px}.nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}.nav-links.open{display:flex}.nav-link{display:block;padding:8px 0;font-size:13px}.nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}.nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}.nav-hamburger span:nth-child(1){top:0}.nav-hamburger span:nth-child(2){top:8px}.nav-hamburger span:nth-child(3){top:16px}.hero{padding:28px 16px}.hero h1{font-size:22px!important}.content{padding:0 16px}.cta-section{flex-direction:column!important;padding:28px 16px!important}.svc-list{grid-template-columns:1fr!important}table{font-size:10px}th,td{padding:5px 6px}}
+</style>
+</head>
+<body>
+<div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<span class="logo-accent">康</span>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="leadcom_ai_solutions_no_tencent.html">AI 解决方案</a>
+    <a class="nav-link" href="leadcom_it_maintenance.html">IT 维保</a>
+    <a class="nav-link" href="leadcom_tencent_cloud.html">腾讯云</a>
+    <a class="nav-link" href="leadcom_success_cases.html">成功案例</a>
+    <a class="nav-link" href="leadcom_blog.html">博客</a>
+    <a class="nav-link" href="leadcom_about_us.html">关于我们</a>
+  </div>
+  <div class="nav-right"><span class="nav-phone">020-66319828</span><a class="nav-cta" href="index.html#cta">免费服务 →</a></div>
+</nav>
+
+<div class="breadcrumb"><a href="index.html">首页</a> / <a href="leadcom_blog.html">博客</a> / 中间件运维服务</div>
+
+<div class="hero">
+  <div class="hero-kicker">IT 维保 · 服务目录</div>
+  <h1>中间件运维服务：<em>WebLogic / 东方通 / Nginx</em> 全品牌覆盖</h1>
+  <p class="hero-sub">覆盖应用服务器（WebLogic、WebSphere、TongWeb）、消息中间件（IBM MQ、Kafka、RocketMQ）、Web服务器（Nginx、Apache）、缓存（Redis）、API 网关（Kong、APISIX）全品类。信创替代经验丰富——从 WebLogic 到东方通 TongWeb，从 IBM MQ 到 TongLINK/Q。</p>
+</div>
+
+<div class="content">
+
+<div class="section">
+  <h2>国际品牌中间件</h2>
+  <p class="section-intro">Oracle WebLogic、IBM WebSphere、Red Hat JBoss EAP 等企业级 Java 应用服务器，IBM MQ、RabbitMQ、Kafka 等消息中间件。</p>
+  <table>
+    <tr><th>中间件</th><th>类型</th><th>主流版本</th><th>支持操作系统</th><th>典型场景</th></tr>
+    <tr><td><strong>Oracle WebLogic</strong></td><td>应用服务器</td><td>14.1.2 / 15.x</td><td>RHEL、Windows、AIX、Solaris</td><td>大型企业核心Java应用</td></tr>
+    <tr><td><strong>IBM WebSphere</strong></td><td>应用服务器</td><td>9.0 / 9.1</td><td>RHEL、Windows、AIX、z/OS</td><td>企业集群部署、微服务</td></tr>
+    <tr><td><strong>Red Hat JBoss EAP</strong></td><td>应用服务器</td><td>7.4 / 8.0</td><td>RHEL、Windows、AIX</td><td>企业Java EE应用</td></tr>
+    <tr><td><strong>IBM MQ</strong></td><td>消息中间件</td><td>9.3 LTS / 9.4</td><td>RHEL、Windows、AIX、z/OS</td><td>企业级消息传递</td></tr>
+    <tr><td><strong>RabbitMQ</strong></td><td>消息中间件</td><td>3.13 / 4.x</td><td>Ubuntu、RHEL、Debian</td><td>异步消息、任务队列</td></tr>
+    <tr><td><strong>Apache Kafka</strong></td><td>流消息平台</td><td>3.7 / 3.8</td><td>RHEL、Ubuntu、Debian</td><td>事件流、日志聚合</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>国产信创中间件</h2>
+  <p class="section-intro">东方通（市占率第一）、宝兰德（电信行业深耕）、金蝶天燕（制造业领先）、中创软件（政务云标准）——国产中间件市场份额已超越国际品牌。</p>
+  <table>
+    <tr><th>中间件</th><th>类型</th><th>主流版本</th><th>支持操作系统</th><th>特色</th></tr>
+    <tr><td><strong>东方通 TongWeb</strong></td><td>应用服务器</td><td>V7.0 / V9.0</td><td>银河麒麟、统信UOS、openEuler、AIX</td><td>国产市占率第一，信创替代WebLogic首选</td></tr>
+    <tr><td><strong>东方通 TongLINK/Q</strong></td><td>消息中间件</td><td>V9.0</td><td>银河麒麟、统信UOS、openEuler</td><td>信创替代IBM MQ</td></tr>
+    <tr><td><strong>宝兰德 BES</strong></td><td>应用服务器</td><td>V10</td><td>银河麒麟、统信UOS、openEuler、AIX</td><td>中国移动5G核心网供应商</td></tr>
+    <tr><td><strong>金蝶天燕 Apusic</strong></td><td>应用服务器</td><td>V10</td><td>银河麒麟、统信UOS、openEuler、AIX</td><td>制造业信创中间件领先</td></tr>
+    <tr><td><strong>中创 InforSuite</strong></td><td>应用服务器/ESB</td><td>V8.0/V9.0</td><td>银河麒麟、统信UOS、openEuler、AIX</td><td>政务云事实标准，31省部署率93.5%</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>信创替代对照表</h2>
+  <p class="section-intro">从国际中间件到国产替代的迁移路径参考。</p>
+  <table>
+    <tr><th>原中间件</th><th>推荐替代方案</th><th>迁移难度</th></tr>
+    <tr><td>Oracle WebLogic</td><td>东方通 TongWeb / 宝兰德 BES</td><td>中等 — Java EE标准应用迁移较易</td></tr>
+    <tr><td>IBM WebSphere</td><td>东方通 TongWeb / 金蝶天燕 Apusic</td><td>较高 — WAS特有功能需改造</td></tr>
+    <tr><td>IBM MQ</td><td>东方通 TongLINK/Q / RocketMQ</td><td>中等 — JMS标准接口可迁移</td></tr>
+    <tr><td>Tomcat (开源)</td><td>东方通 TongWeb 嵌入版</td><td>简单 — 基本兼容</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <h2>服务项目</h2>
+  <div class="svc-list">
+    <div class="svc-item"><h4>中间件规划与选型</h4><p>业务分析、产品选型、架构设计、容量规划</p></div>
+    <div class="svc-item"><h4>中间件安装部署</h4><p>环境准备、软件安装、参数优化、集群部署</p></div>
+    <div class="svc-item"><h4>信创迁移替代</h4><p>WebLogic/WS→国产中间件迁移评估、应用适配、双轨运行</p></div>
+    <div class="svc-item"><h4>性能调优</h4><p>JVM参数优化、线程池/连接池调优、GC策略调整</p></div>
+    <div class="svc-item"><h4>中间件巡检</h4><p>定期健康检查、JVM/线程/连接池监控、日志分析</p></div>
+    <div class="svc-item"><h4>故障处理</h4><p>7×24故障响应、紧急修复、根因分析</p></div>
+    <div class="svc-item"><h4>安全加固</h4><p>账号权限管理、国密算法配置、等保合规</p></div>
+    <div class="svc-item"><h4>微服务改造</h4><p>传统应用微服务化、Service Mesh部署、API治理</p></div>
+    <div class="svc-item"><h4>监控平台建设</h4><p>Prometheus/Zabbix部署、告警配置、可视化</p></div>
+  </div>
+</div>
+
+</div>
+
+<div class="cta-section">
+  <div class="cta-left">
+    <h2>中间件需要运维支持？</h2>
+    <p>免费中间件健康评估——励康工程师为您的中间件环境做全面检查。</p>
+    <a class="btn-primary" href="index.html#cta">立即预约 →</a>
+  </div>
+  <div style="flex:1;max-width:320px">
+    <p style="font-size:11px;color:var(--ink3);line-height:1.7">励康覆盖 WebLogic、WebSphere、东方通、宝兰德、Nginx、Kafka、Redis 等全品牌中间件，提供从信创迁移到性能优化的全流程服务。</p>
+    <p style="font-size:11px;margin-top:12px"><strong>相关服务：</strong>
+      <a href="leadcom_blog_database.html" style="color:var(--copper)">数据库运维</a> ·
+      <a href="leadcom_blog_network.html" style="color:var(--copper)">网络设备维保</a> ·
+      <a href="leadcom_blog_cloud.html" style="color:var(--copper)">云基础设施</a>
+    </p>
+  </div>
+</div>
+
+<div class="blog-nav">
+  <a href="leadcom_blog_database.html">← 数据库运维</a>
+  <a href="leadcom_blog_network.html">网络设备维保 →</a>
+</div>
+
+<footer>
+  <div class="footer-top"><div><div class="footer-logo">励<span style="color:var(--copper)">康</span>信息技术</div><div class="footer-addr">广州市天河区中山大道中路 439 号<br>天银商贸大厦 10 楼 26–27 室<br>020-66319828</div></div></div>
+  <div class="footer-bottom"><span class="footer-copy">© 2026 广东励康信息技术有限公司</span></div>
+</footer>
+
+</div>
+</body>
+</html>
