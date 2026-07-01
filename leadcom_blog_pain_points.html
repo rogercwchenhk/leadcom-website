@@ -49,10 +49,10 @@
 img{max-width:100%;height:auto}
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --sand:#f7f3ec;--sand2:#ede7db;--sand3:#e0d7c8;--sand4:#d4c9b4;
-  --ink:#1e1c18;--ink2:#3d3a33;--ink3:#6b6659;--ink4:#9a9182;
-  --copper:#a0673a;--copper2:#c8824a;--copper3:#e8ddd0;
-  --rule:1px solid #d8d0c0;--rule-light:1px solid #e8e0d0;
+  --sand:#F5F7FA;--sand2:#EDF0F5;--sand3:#D8DEE6;--sand4:#d4c9b4;
+  --ink:#1A1F36;--ink2:#3A3F52;--ink3:#6B7280;--ink4:#9a9182;
+  --copper:#2563EB;--copper2:#3B82F6;--copper3:#DBEAFE;
+  --rule:1px solid #CBD5E1;--rule-light:1px solid #e8e0d0;
 }
 body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
 
@@ -426,9 +426,9 @@ footer{padding:24px 28px;border-top:var(--rule)}
 </div>
 <!-- Hermes Agent Bubble Chat -->
 <style>
-:root{--chat-copper:#a0673a;--chat-copper-light:#c4844d;--chat-ink:#1a1a1a;--chat-ink2:#555;--chat-ink3:#999;--chat-sand:#f8f5f0;--chat-sand2:#ece7df;--chat-sand3:#ddd8d0;--chat-green:#00C896;--chat-green-dark:#007A5E}
-.chat-bubble{position:fixed;bottom:140px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#C8854E,#a0673a,#8B5E3C);border:2.5px solid #00C896;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(160,103,58,.35);z-index:9999;transition:all .3s ease;animation:colorShift 4s infinite}
-.chat-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(160,103,58,.45)}
+:root{--chat-copper:#2563EB;--chat-copper-light:#3B82F6;--chat-ink:#1a1a1a;--chat-ink2:#555;--chat-ink3:#999;--chat-sand:#F0F4FF;--chat-sand2:#E0E7FF;--chat-sand3:#CBD5E1;--chat-green:#00C896;--chat-green-dark:#007A5E}
+.chat-bubble{position:fixed;bottom:140px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#3B82F6,#2563EB,#1D4ED8);border:2.5px solid #60A5FA;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(26,31,54,.35);z-index:9999;transition:all .3s ease;animation:colorShift 4s infinite}
+.chat-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(26,31,54,.45)}
 .chat-bubble svg{width:26px;height:26px;fill:#fff}
 .chat-bubble.open{transform:scale(0) rotate(180deg);opacity:0;pointer-events:none}
 .chat-window{position:fixed;bottom:140px;right:28px;width:380px;height:520px;background:#fff;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.15);z-index:10000;display:flex;flex-direction:column;overflow:hidden;transform:scale(0) translateY(20px);opacity:0;transition:all .3s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
@@ -457,7 +457,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
 .chat-typing span:nth-child(2){animation-delay:.2s}
 .chat-typing span:nth-child(3){animation-delay:.4s}
 @keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
-@keyframes colorShift{0%,100%{border-color:#00C896}50%{border-color:#a0673a}}
+@keyframes colorShift{0%,100%{border-color:#60A5FA}50%{border-color:#2563EB}}
 .chat-input-area{padding:12px 16px;background:#fff;border-top:1px solid var(--chat-sand2);display:flex;gap:10px;align-items:flex-end;flex-shrink:0}
 .chat-input{flex:1;border:1px solid var(--chat-sand3);border-radius:20px;padding:8px 16px;font-size:13px;outline:none;resize:none;max-height:80px;line-height:1.4;font-family:inherit;transition:border-color .2s}
 .chat-input:focus{border-color:var(--chat-copper)}
