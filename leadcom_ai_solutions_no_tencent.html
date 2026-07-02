@@ -409,6 +409,28 @@ footer{padding:24px 28px;border-top:var(--rule)}
   </div>
 </div>
 
+<!-- Performance Benchmark -->
+<div class="architecture" style="margin-top:40px; padding:40px 28px; border-bottom:var(--rule)">
+  <div class="section-label" style="font-size:20px;font-weight:700;color:var(--ink);text-transform:none;letter-spacing:normal;margin-bottom:24px">算力性能实测对比</div>
+  <div style="background:#fff;padding:40px;border:var(--rule);border-radius:8px;box-shadow:0 4px 12px rgba(37,99,235,0.08)">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
+      <div>
+        <h4 style="font-size:17px;font-weight:600;color:var(--ink);margin-bottom:16px">DGX Spark vs Mac mini M4 Pro</h4>
+        <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:20px">基于 LMSYS 的权威评测数据，我们的算力方案在主流大模型（如 DeepSeek-R1, Qwen-32B, Llama-3.1）的推理速度上表现卓越。</p>
+        <ul style="font-size:13px;color:var(--ink2);line-height:2;padding-left:20px">
+          <li><strong>本地化推理优势</strong>：在 Batch=1 的场景下，Mac mini M4 Pro 展现了极高的性价比与响应速度。</li>
+          <li><strong>集群扩展能力</strong>：DGX Spark 在处理超大规模模型（如 70B+）及高并发任务时具备更强的吞吐性能。</li>
+          <li><strong>全场景覆盖</strong>：无论是单机本地运行还是企业级集群部署，励康均能提供最优的能效比方案。</li>
+        </ul>
+      </div>
+      <div style="text-align:center">
+        <img src="images/compute-benchmark.png" alt="DGX Spark vs Mac mini M4 Pro 性能对比" style="max-width:100%;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
+        <p style="font-size:11px;color:var(--ink3);margin-top:12px">数据来源：LMSYS (Decode Speed, Engine=ollama)</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="why-leadcom">
   <div class="section-label">为什么选择励康</div>
   <div class="why-grid">
