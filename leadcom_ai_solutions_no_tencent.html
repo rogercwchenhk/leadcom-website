@@ -73,9 +73,9 @@ img{max-width:100%;height:auto}
   --copper:#2563EB;--copper2:#3B82F6;--copper3:#DBEAFE;
   --rule:1px solid #CBD5E1;--rule-light:1px solid #e8e0d0;
 }
-body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden;padding-top:60px}
 
-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
 .logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
 .logo em{color:var(--copper);font-style:normal}
@@ -93,12 +93,12 @@ a.nav-wechat:hover{color:var(--copper2)}
 .breadcrumb .sep{font-size:11px;color:var(--sand4)}
 .breadcrumb .current{font-size:11px;color:var(--ink2)}
 
-.hero{padding:48px 28px 40px;border-bottom:var(--rule)}
+.hero{padding:48px 28px 40px;border-bottom:var(--rule);background:linear-gradient(135deg, rgba(26,31,54,0.7) 0%, rgba(37,99,235,0.25) 100%), url('images/ai-solutions-hero.png') center/cover no-repeat;position:relative;color:#fff}.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(26,31,54,0.5);z-index:0}.hero > *{position:relative;z-index:1}
 .hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
 .hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
-.hero h1{font-size:30px;font-weight:500;color:var(--ink);line-height:1.22;letter-spacing:-0.025em;max-width:480px;margin-bottom:14px}
+.hero h1{font-size:30px;font-weight:500;color:#fff;line-height:1.22;letter-spacing:-0.025em;max-width:480px;margin-bottom:14px}
 .hero h1 em{color:var(--copper);font-style:normal}
-.hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:420px}
+.hero-sub{font-size:13px;color:#e0e7ff;line-height:1.75;max-width:420px}
 
 .edu{padding:36px 28px;border-bottom:var(--rule)}
 .section-label{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}

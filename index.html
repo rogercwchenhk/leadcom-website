@@ -101,6 +101,12 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 img{max-width:100%;height:auto}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.7}}
+.animate-on-scroll{opacity:0;animation:fadeInUp 0.6s ease-out forwards}
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
   --sand:#F5F7FA;--sand2:#EDF0F5;--sand3:#D8DEE6;
@@ -108,118 +114,142 @@ img{max-width:100%;height:auto}
   --copper:#2563EB;--copper2:#3B82F6;
   --rule:1px solid #CBD5E1;
 }
-body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden;padding-top:60px}
 
 /* NAV */
-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08);transition:all 0.3s ease}
 .logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;display:flex;align-items:center;gap:8px}
 .logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
 .logo-accent{color:var(--copper)}
 .nav-links{display:flex;gap:22px}
-.nav-link{font-size:11px;color:var(--ink3);text-decoration:none}
+.nav-link{font-size:11px;color:var(--ink3);text-decoration:none;position:relative;transition:color 0.3s ease}
 a.nav-link:hover{color:var(--copper)}
+a.nav-link.active{color:var(--copper);font-weight:500}
+a.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--copper);transition:width 0.3s ease}
+a.nav-link.active::after{width:100%}
 .nav-right{display:flex;align-items:center;gap:16px}
 .nav-phone{font-size:11px;color:var(--ink3)}
 .nav-cta{font-size:11px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
 .nav-wechat{font-size:11px;font-weight:500;color:var(--copper);border-bottom:1.5px solid var(--copper);padding-bottom:1px;text-decoration:none}
-a.nav-wechat:hover{color:var(--copper2)}
+a.nav-wechat:hover{color:var(--copper2);transform:scale(1.05)}
+.nav-cta{transition:all 0.3s ease}
+.nav-cta:hover{transform:scale(1.05)}
 
 /* HERO */
-.hero{padding:52px 28px 44px;border-bottom:var(--rule)}
+.hero{padding:52px 28px 44px;border-bottom:var(--rule);background:linear-gradient(135deg, rgba(26,31,54,0.75) 0%, rgba(37,99,235,0.3) 100%), url('images/modern-datacenter-hero.png') center/cover no-repeat;position:relative;color:#fff}.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(26,31,54,0.6);z-index:0}.hero > *{position:relative;z-index:1}
 .hero-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px}
 .hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
-.hero h1{font-size:34px;font-weight:500;color:var(--ink);line-height:1.2;letter-spacing:-0.025em;max-width:440px;margin-bottom:16px}
+.hero h1{font-size:42px;font-weight:600;color:#fff;line-height:1.3;letter-spacing:-0.03em;max-width:480px;margin-bottom:20px}
 .hero h1 em{color:var(--copper);font-style:normal}
-.hero-sub{font-size:13px;color:var(--ink3);line-height:1.75;max-width:380px;margin-bottom:28px}
+.hero-sub{font-size:14px;color:#e0e7ff;line-height:1.8;max-width:420px;margin-bottom:32px;font-weight:400}
 .hero-actions{display:flex;align-items:center;gap:18px;margin-bottom:44px}
-.btn-primary{background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:10px 22px;border-radius:2px;text-decoration:none;display:inline-block}
-.btn-text{font-size:12px;color:var(--ink3);border-bottom:1px solid var(--sand3);padding-bottom:1px;text-decoration:none}
-.hero-stats{display:flex;gap:0;border-top:var(--rule);padding-top:28px}
-.hero-stat{flex:1;padding-right:24px;border-right:var(--rule)}
+.btn-primary{background:var(--copper);color:#fff;font-size:12px;font-weight:600;padding:12px 28px;border-radius:4px;text-decoration:none;display:inline-block;transition:all 0.3s ease;box-shadow:0 2px 8px rgba(37,99,235,0.2)}
+.btn-primary:hover{background:var(--copper2);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+.btn-text{font-size:12px;color:var(--ink2);border-bottom:2px solid var(--copper);padding-bottom:2px;text-decoration:none;transition:all 0.3s ease;font-weight:500}
+.btn-text:hover{color:var(--copper)}
+.hero-stats{display:flex;gap:0;border-top:1px solid rgba(255,255,255,0.2);padding-top:28px}
+.hero-stat{flex:1;padding-right:24px;border-right:1px solid rgba(255,255,255,0.2)}
 .hero-stat:last-child{border-right:none;padding-right:0;padding-left:24px}
 .hero-stat:not(:first-child){padding-left:24px}
-.stat-num{font-size:26px;font-weight:500;color:var(--ink);letter-spacing:-0.03em}
-.stat-lbl{font-size:11px;color:var(--ink3);margin-top:3px}
+.stat-num{font-size:28px;font-weight:600;color:var(--copper);letter-spacing:-0.03em}
+.stat-lbl{font-size:11px;color:#cbd5e1;margin-top:4px;font-weight:500}
 
 /* SERVICES */
 .services{border-bottom:var(--rule)}
 .section-header{display:flex;align-items:baseline;justify-content:space-between;padding:28px 28px 20px}
 .section-title{font-size:11px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em}
-.section-link{font-size:11px;color:var(--copper);border-bottom:1px solid var(--copper2);padding-bottom:1px;text-decoration:none}
-a.section-link:hover{color:var(--copper2)}
+.section-link{font-size:11px;color:var(--copper);border-bottom:2px solid var(--copper2);padding-bottom:2px;text-decoration:none;transition:all 0.3s ease;font-weight:500}
+a.section-link:hover{color:var(--copper2);transform:translateX(2px)}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--rule)}
-.svc-card{padding:24px 28px;border-right:var(--rule);background:var(--sand)}
+.svc-card{padding:28px;border-right:var(--rule);background:var(--sand);border-radius:8px;transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);position:relative;overflow:hidden;animation:fadeInUp 0.6s ease-out backwards}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.svc-card:hover::before{transform:scaleX(1)}
 .svc-card:last-child{border-right:none}
-.svc-card:hover{background:var(--sand2)}
-.svc-index{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:14px}
-.svc-rule{width:28px;height:1.5px;background:var(--copper);margin-bottom:14px}
-.svc-card h3{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
-.svc-card p{font-size:11px;color:var(--ink3);line-height:1.65}
-.svc-arrow{font-size:11px;color:var(--copper);margin-top:14px;display:block;text-decoration:none}
-a.svc-arrow:hover{color:var(--copper2)}
+.svc-card:hover{background:var(--sand2);transform:translateY(-8px);box-shadow:0 12px 24px rgba(37,99,235,0.15);border-radius:12px}
+.svc-index{font-size:11px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase}
+.svc-rule{width:40px;height:2px;background:linear-gradient(90deg, var(--copper), transparent);margin-bottom:16px}
+.svc-card h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.4}
+.svc-card p{font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:4px}
+.svc-arrow{font-size:11px;color:var(--copper);margin-top:14px;display:block;text-decoration:none;transition:all 0.3s ease;font-weight:500}
+a.svc-arrow:hover{color:var(--copper2);transform:translateX(3px)}
+.blog-card{animation:fadeInUp 0.6s ease-out backwards;transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)}
+.blog-card:hover{background:var(--sand2);transform:translateY(-6px);box-shadow:0 8px 16px rgba(37,99,235,0.12);border-radius:8px}
 
 /* INDUSTRIES */
 .industries{padding:0 0 0;border-bottom:var(--rule)}
 .ind-grid{display:grid;grid-template-columns:repeat(6,1fr)}
-.ind-item{padding:16px 18px;border-right:var(--rule);border-top:var(--rule)}
+.ind-item{padding:20px;border-right:var(--rule);border-top:var(--rule);text-align:center;transition:all 0.3s ease;cursor:pointer;animation:fadeInUp 0.6s ease-out backwards;position:relative}
 .ind-item:last-child{border-right:none}
-.ind-icon{font-size:18px;color:var(--ink3);margin-bottom:8px}
-.ind-item span{font-size:11px;color:var(--ink2);display:block}
+.ind-item:hover{background:var(--sand2);transform:scale(1.08);border-radius:8px;box-shadow:0 4px 12px rgba(37,99,235,0.1)}
+.ind-icon{font-size:24px;color:var(--copper);margin-bottom:10px;transition:all 0.3s ease}
+.ind-item:hover .ind-icon{font-size:28px;color:var(--copper2)}
+.ind-item span{font-size:12px;color:var(--ink2);display:block;font-weight:500}
 
 /* PROCESS */
 .process{padding:36px 28px;border-bottom:var(--rule)}
 .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px;border-top:var(--rule)}
-.step{padding:20px 0 0;border-right:var(--rule);padding-right:20px;padding-left:0}
+.step{padding:24px 0 0;border-right:var(--rule);padding-right:24px;padding-left:0;position:relative}
 .step:first-child{padding-left:0}
 .step:last-child{border-right:none}
-.step+.step{padding-left:20px}
-.step-num{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:10px}
-.step h4{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:5px}
-.step p{font-size:11px;color:var(--ink3);line-height:1.6}
+.step+.step{padding-left:24px}
+.step::before{content:'';position:absolute;left:-12px;top:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:3px solid var(--sand)}
+.step-num{font-size:11px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase}
+.step h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.step p{font-size:12px;color:var(--ink2);line-height:1.7}
 
 /* TRUST */
 .trust{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:var(--rule)}
-.trust-item{padding:20px 24px;border-right:var(--rule)}
+.trust-item{padding:28px 24px;border-right:var(--rule);text-align:center;transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards;position:relative}
+.trust-item:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.08);border-radius:8px}
 .trust-item:last-child{border-right:none}
-.trust-num{font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-0.02em}
-.trust-label{font-size:11px;color:var(--ink3);margin-top:2px;line-height:1.5}
+.trust-num{font-size:26px;font-weight:600;color:var(--copper);letter-spacing:-0.02em}
+.trust-label{font-size:12px;color:var(--ink2);margin-top:4px;line-height:1.6;font-weight:500}
 
 /* CASE */
 .cases{border-bottom:var(--rule)}
 .case-grid{display:grid;grid-template-columns:1fr 1fr;border-top:var(--rule)}
-.case-card{padding:24px 28px;border-right:var(--rule)}
+.case-card{padding:28px;border-right:var(--rule);border-radius:8px;transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);background:var(--sand);position:relative;overflow:hidden;animation:fadeInUp 0.6s ease-out backwards}
+.case-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--copper);transform:scaleY(0);transform-origin:top;transition:transform 0.3s ease}
+.case-card:hover::before{transform:scaleY(1)}
+.case-card:hover{background:var(--sand2);transform:translateX(8px);box-shadow:0 8px 16px rgba(37,99,235,0.1);border-radius:12px}
 .case-card:last-child{border-right:none}
-.case-tag{font-size:10px;color:var(--copper);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
-.case-card h3{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.4}
-.case-card p{font-size:11px;color:var(--ink3);line-height:1.6}
+.case-tag{font-size:11px;color:var(--copper);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.case-card h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.5}
+.case-card p{font-size:12px;color:var(--ink2);line-height:1.7}
 
 /* CTA */
 .cta-section{padding:40px 28px;border-bottom:var(--rule);display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
-.cta-left h2{font-size:22px;font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:6px}
-.cta-left p{font-size:12px;color:var(--ink3);line-height:1.6;max-width:300px}
+.cta-left h2{font-size:24px;font-weight:600;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px}
+.cta-left p{font-size:13px;color:var(--ink2);line-height:1.7;max-width:320px}
 .cta-right{display:flex;flex-direction:column;gap:10px;min-width:240px}
-.cta-input{background:var(--sand2);border:var(--rule);border-radius:2px;padding:9px 14px;font-size:12px;color:var(--ink);width:100%}
+.cta-input{background:var(--sand2);border:var(--rule);border-radius:4px;padding:11px 16px;font-size:12px;color:var(--ink);width:100%;transition:all 0.3s ease}
+.cta-input:focus{outline:none;border-color:var(--copper);background:#fff;box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
 .cta-input::placeholder{color:var(--ink3)}
-.cta-submit{background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:10px;border-radius:2px;text-align:center}
+.cta-submit{background:var(--copper);color:#fff;font-size:12px;font-weight:600;padding:12px;border-radius:4px;text-align:center;cursor:pointer;transition:all 0.3s ease;border:none;box-shadow:0 2px 8px rgba(37,99,235,0.2)}
+.cta-submit:hover{background:var(--copper2);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
 .cta-note{font-size:10px;color:var(--ink3);text-align:center}
 
 /* FOOTER */
-footer{padding:28px 28px 24px;background:var(--sand)}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px}
-.footer-logo{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
-.footer-addr{font-size:11px;color:var(--ink3);line-height:1.7}
-.footer-cols{display:flex;gap:40px}
-.footer-col h4{font-size:10px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
-.footer-col a{display:block;font-size:11px;color:var(--ink3);margin-bottom:5px}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:var(--rule)}
-.footer-copy{font-size:10px;color:var(--ink3)}
-.footer-links{display:flex;gap:16px}
-.footer-links a{font-size:10px;color:var(--ink3)}
-.footer-social h4{font-size:10px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
-.social-qrs{display:flex;gap:16px}
-.social-qr{text-align:center}
-.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
-.social-qr span{font-size:10px;color:var(--ink3)}
+footer{padding:36px 28px 28px;background:var(--sand);border-top:2px solid var(--copper)}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:32px}
+.footer-logo{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px}
+.footer-addr{font-size:12px;color:var(--ink2);line-height:1.8}
+.footer-cols{display:flex;gap:48px}
+.footer-col h4{font-size:11px;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.footer-col a{display:block;font-size:12px;color:var(--ink2);margin-bottom:8px;transition:all 0.3s ease}
+.footer-col a:hover{color:var(--copper);transform:translateX(2px)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:var(--rule)}
+.footer-copy{font-size:11px;color:var(--ink3)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:11px;color:var(--ink2);transition:all 0.3s ease}
+.footer-links a:hover{color:var(--copper)}
+.footer-social h4{font-size:11px;font-weight:600;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px}
+.social-qrs{display:flex;gap:20px}
+.social-qr{text-align:center;transition:all 0.3s ease}
+.social-qr:hover{transform:scale(1.08)}
+.social-qr img{width:80px;height:80px;border-radius:6px;display:block;margin-bottom:6px;border:2px solid var(--sand3);transition:all 0.3s ease}
+.social-qr:hover img{border-color:var(--copper);box-shadow:0 4px 12px rgba(37,99,235,0.15)}
+.social-qr span{font-size:11px;color:var(--ink2);font-weight:500}
 
 /* WECHAT WORK CARD */
 .cta-content{display:flex;gap:24px;margin-top:20px;width:100%}
@@ -236,8 +266,8 @@ footer{padding:28px 28px 24px;background:var(--sand)}
 .wecom-feature{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:11px;color:var(--ink2)}
 .wecom-feature:last-child{margin-bottom:0}
 .wecom-feature svg{width:14px;height:14px;flex-shrink:0}
-.wecom-btn-primary{display:block;background:var(--copper);color:#fff;font-size:12px;font-weight:500;padding:11px;border-radius:6px;text-align:center;text-decoration:none;margin-bottom:10px;animation:glow 2s ease-in-out infinite;border:none;cursor:pointer;transition:all 0.3s ease}
-.wecom-btn-primary:hover{background:var(--copper2);transform:translateY(-1px)}
+.wecom-btn-primary{display:block;background:var(--copper);color:#fff;font-size:12px;font-weight:600;padding:12px;border-radius:6px;text-align:center;text-decoration:none;margin-bottom:10px;animation:glow 2s ease-in-out infinite;border:none;cursor:pointer;transition:all 0.3s ease;box-shadow:0 2px 8px rgba(37,99,235,0.2)}
+.wecom-btn-primary:hover{background:var(--copper2);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
 .wecom-hint{font-size:10px;color:var(--ink3);text-align:center;margin-bottom:14px;font-weight:400}
 .wecom-secondary-title{font-size:10px;color:var(--ink3);text-align:center;margin-bottom:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
 .wecom-secondary-actions{display:flex;gap:8px}
@@ -312,7 +342,7 @@ footer{padding:28px 28px 24px;background:var(--sand)}
 </head>
 <body>
 
-<div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+<div style="background:var(--sand);border:var(--rule);border-radius:4px">
 
 <nav>
   <div class="logo"><img src="images/logo.jpg" alt="励康信息"><span>励<span class="logo-accent">康</span>信息技术</span></div>
@@ -364,7 +394,7 @@ footer{padding:28px 28px 24px;background:var(--sand)}
   </div>
   <div class="svc-grid">
     <div class="svc-card">
-      <img src="images/service-ai.png" alt="AI Agent 部署" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:16px">
+      <img src="images/ai-agent-interface.png" alt="AI Agent 部署" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:16px">
       <div class="svc-index">01 · AI</div>
       <div class="svc-rule"></div>
       <h3>AI Agent 部署</h3>
@@ -372,7 +402,7 @@ footer{padding:28px 28px 24px;background:var(--sand)}
       <a class="svc-arrow" href="leadcom_ai_solutions_no_tencent.html">了解详情 →</a>
     </div>
     <div class="svc-card">
-      <img src="images/service-it.png" alt="IT 基础架构维保" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:16px">
+      <img src="images/it-professional-service.png" alt="IT 基础架构维保" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:16px">
       <div class="svc-index">02 · 维保</div>
       <div class="svc-rule"></div>
       <h3>IT 基础架构维保</h3>
@@ -380,7 +410,7 @@ footer{padding:28px 28px 24px;background:var(--sand)}
       <a class="svc-arrow" href="leadcom_it_maintenance.html">了解详情 →</a>
     </div>
     <div class="svc-card">
-      <img src="images/service-cloud.png" alt="腾讯云代理服务" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:16px">
+      <img src="images/workbuddy-style-cloud.png" alt="腾讯云代理服务" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:16px">
       <div class="svc-index">03 · 云</div>
       <div class="svc-rule"></div>
       <h3>腾讯云代理服务</h3>
@@ -405,27 +435,35 @@ footer{padding:28px 28px 24px;background:var(--sand)}
 </div>
 
 <div class="process">
-  <div class="section-title" style="padding:0">服务流程</div>
-  <div class="process-steps">
-    <div class="step">
-      <div class="step-num">STEP 01</div>
-      <h4>免费服务体验</h4>
-      <p>免费 IT 体检或免费部署 AI Agent，零成本感受价值</p>
+  <div class="section-title" style="padding:0;margin-bottom:32px">服务流程 · 您的成功路径</div>
+  <div class="process-steps" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px;border-top:var(--rule);position:relative">
+    <div class="step" style="padding:28px 20px 20px 0;border-right:var(--rule);position:relative;transition:all 0.3s ease">
+      <div style="position:absolute;top:-12px;left:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:4px solid var(--sand);z-index:2;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:bold">1</div>
+      <div class="step-num" style="margin-bottom:8px;display:flex;align-items:center;gap:6px"><i class="ti ti-stethoscope" style="font-size:16px"></i> 零成本评估</div>
+      <h4 style="margin-bottom:10px;font-size:15px">价值初探</h4>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:12px">免费 IT 体检或 AI 部署体验，获取专业诊断报告。</p>
+      <div style="font-size:10px;color:var(--copper);background:var(--sand2);padding:4px 8px;border-radius:4px;display:inline-block;font-weight:500">交付物：IT/AI 现状诊断建议书</div>
     </div>
-    <div class="step">
-      <div class="step-num">STEP 02</div>
-      <h4>方案定制</h4>
-      <p>结合业务目标，量身定制维保或 AI 落地方案</p>
+    <div class="step" style="padding:28px 20px 20px 24px;border-right:var(--rule);position:relative;transition:all 0.3s ease">
+      <div style="position:absolute;top:-12px;left:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:4px solid var(--sand);z-index:2;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:bold">2</div>
+      <div class="step-num" style="margin-bottom:8px;display:flex;align-items:center;gap:6px"><i class="ti ti-settings-automation" style="font-size:16px"></i> 业务匹配</div>
+      <h4 style="margin-bottom:10px;font-size:15px">方案定制</h4>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:12px">深入调研业务痛点，量身定制维保或 AI 落地方案。</p>
+      <div style="font-size:10px;color:var(--copper);background:var(--sand2);padding:4px 8px;border-radius:4px;display:inline-block;font-weight:500">交付物：定制化实施蓝图与报价</div>
     </div>
-    <div class="step">
-      <div class="step-num">STEP 03</div>
-      <h4>实施交付</h4>
-      <p>专业团队驻场或远程部署，确保平稳上线</p>
+    <div class="step" style="padding:28px 20px 20px 24px;border-right:var(--rule);position:relative;transition:all 0.3s ease">
+      <div style="position:absolute;top:-12px;left:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:4px solid var(--sand);z-index:2;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:bold">3</div>
+      <div class="step-num" style="margin-bottom:8px;display:flex;align-items:center;gap:6px"><i class="ti ti-rocket" style="font-size:16px"></i> 无感切换</div>
+      <h4 style="margin-bottom:10px;font-size:15px">专业交付</h4>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:12px">专业团队驻场或远程部署，确保业务平稳上线。</p>
+      <div style="font-size:10px;color:var(--copper);background:var(--sand2);padding:4px 8px;border-radius:4px;display:inline-block;font-weight:500">交付物：上线报告与操作手册</div>
     </div>
-    <div class="step">
-      <div class="step-num">STEP 04</div>
-      <h4>持续运维</h4>
-      <p>7×24 小时监控与响应，长期保障系统稳定运行</p>
+    <div class="step" style="padding:28px 0 20px 24px;position:relative;transition:all 0.3s ease">
+      <div style="position:absolute;top:-12px;left:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:4px solid var(--sand);z-index:2;display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:bold">4</div>
+      <div class="step-num" style="margin-bottom:8px;display:flex;align-items:center;gap:6px"><i class="ti ti-shield-check" style="font-size:16px"></i> 主动预防</div>
+      <h4 style="margin-bottom:10px;font-size:15px">全时守护</h4>
+      <p style="font-size:12px;color:var(--ink3);line-height:1.6;margin-bottom:12px">7×24 监控与响应，化被动维修为主动预防。</p>
+      <div style="font-size:10px;color:var(--copper);background:var(--sand2);padding:4px 8px;border-radius:4px;display:inline-block;font-weight:500">交付物：季度运维报告与安全审计</div>
     </div>
   </div>
 </div>
@@ -455,22 +493,22 @@ footer{padding:28px 28px 24px;background:var(--sand)}
     <a class="section-link" href="leadcom_blog.html">查看全部文章 →</a>
   </div>
   <div class="blog-grid" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:var(--rule)">
-    <div class="blog-card" style="padding:24px 28px;border-right:var(--rule)">
-      <div class="blog-meta" style="font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:10px">行业洞察 · 原创</div>
-      <h3 style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.4">500条群聊告诉你：AI Agent 落地的6大真实痛点</h3>
-      <p style="font-size:11px;color:var(--ink3);line-height:1.6;margin-bottom:12px">基于微信群500条真实讨论，归纳AI Agent企业落地的核心障碍。</p>
+    <div class="blog-card" style="padding:28px;border-right:var(--rule);border-radius:8px;transition:all 0.3s ease;background:var(--sand)">
+      <div class="blog-meta" style="font-size:11px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase">行业洞察 · 原创</div>
+      <h3 style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.5">500条群聊告诉你：AI Agent 落地的6大真实痛点</h3>
+      <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:14px">基于微信群500条真实讨论，归纳AI Agent企业落地的核心障碍。</p>
       <a href="leadcom_blog_pain_points.html" style="font-size:11px;color:var(--copper)">阅读全文 →</a>
     </div>
-    <div class="blog-card" style="padding:24px 28px;border-right:var(--rule)">
-      <div class="blog-meta" style="font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:10px">行业洞察 · 原创</div>
-      <h3 style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.4">从500条群聊看：AI Agent 创业的5个细分机会</h3>
-      <p style="font-size:11px;color:var(--ink3);line-height:1.6;margin-bottom:12px">痛点即机会。被验证的5个细分切入点，给同行和创业者的实战参考。</p>
+    <div class="blog-card" style="padding:28px;border-right:var(--rule);border-radius:8px;transition:all 0.3s ease;background:var(--sand)">
+      <div class="blog-meta" style="font-size:11px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase">行业洞察 · 原创</div>
+      <h3 style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.5">从500条群聊看：AI Agent 创业的5个细分机会</h3>
+      <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:14px">痛点即机会。被验证的5个细分切入点，给同行和创业者的实战参考。</p>
       <a href="leadcom_blog_opportunities.html" style="font-size:11px;color:var(--copper)">阅读全文 →</a>
     </div>
-    <div class="blog-card" style="padding:24px 28px;border-right:none">
-      <div class="blog-meta" style="font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:10px">AI 部署 · 原创</div>
-      <h3 style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.4">企业 AI Agent 部署避坑指南</h3>
-      <p style="font-size:11px;color:var(--ink3);line-height:1.6;margin-bottom:12px">5 个常见误区与应对策略，帮助企业真正用起 AI 数字员工。</p>
+    <div class="blog-card" style="padding:28px;border-right:none;border-radius:8px;transition:all 0.3s ease;background:var(--sand)">
+      <div class="blog-meta" style="font-size:11px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:12px;text-transform:uppercase">AI 部署 · 原创</div>
+      <h3 style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.5">企业 AI Agent 部署避坑指南</h3>
+      <p style="font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:14px">5 个常见误区与应对策略，帮助企业真正用起 AI 数字员工。</p>
       <a href="leadcom_blog.html" style="font-size:11px;color:var(--copper)">阅读全文 →</a>
     </div>
   </div>
@@ -612,6 +650,20 @@ function toggleWeComQR() {
     qr.style.animation = 'slideIn 0.3s ease-out';
   }
 }
+
+const observerOptions = {threshold: 0.1, rootMargin: '0px 0px -50px 0px'};
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.svc-card, .case-card, .blog-card, .ind-item, .trust-item').forEach(el => {
+  observer.observe(el);
+})
 </script>
 
 <!-- Hermes Agent Bubble Chat -->

@@ -54,9 +54,9 @@ img{max-width:100%;height:auto}
   --copper:#2563EB;--copper2:#3B82F6;--copper3:#DBEAFE;
   --rule:1px solid #CBD5E1;--rule-light:1px solid #e8e0d0;
 }
-body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden;padding-top:60px}
 
-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
 .logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
 .logo em{color:var(--copper);font-style:normal}

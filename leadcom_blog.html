@@ -60,9 +60,9 @@ img{max-width:100%;height:auto}
   --copper:#2563EB;--copper2:#3B82F6;--copper3:#DBEAFE;
   --rule:1px solid #CBD5E1;--rule-light:1px solid #e8e0d0;
 }
-body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden}
+body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden;padding-top:60px}
 
-nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule)}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
 .logo{font-size:15px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
 .logo em{color:var(--copper);font-style:normal}
@@ -273,6 +273,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
   </div>
   <div class="cat-article-grid">
     <div class="cat-article">
+      <img src="images/blog-ai-pain-points.png" alt="AI Agent 痛点分析" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:12px">
       <div class="cat-article-tag">原创 · 数据 <span class="dot"></span> <span>2026-06-15</span></div>
       <h3>500条群聊告诉你：AI Agent 落地的6大真实痛点</h3>
       <p>基于微信群 500 条真实讨论记录，归纳 AI Agent 在企业落地中的六大核心痛点，以及背后的行业机会。</p>
@@ -282,6 +283,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
       </div>
     </div>
     <div class="cat-article">
+      <img src="images/blog-ai-opportunities.png" alt="AI Agent 机会分析" style="width:100%;height:180px;object-fit:cover;border-radius:4px;margin-bottom:12px">
       <div class="cat-article-tag">原创 · 数据 <span class="dot"></span> <span>2026-05-28</span></div>
       <h3>从500条群聊看：AI Agent 创业的5个细分机会</h3>
       <p>痛点即机会。本文分析 AI Agent 市场中 5 个被验证的细分切入点，给同行和创业者的实战参考。</p>
