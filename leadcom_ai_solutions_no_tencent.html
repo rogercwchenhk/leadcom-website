@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>AI Agent全栈方案服务 — 企业AI解决方案 | 励康信息技术</title>
-<meta name="description" content="励康信息技术提供企业AI Agent全栈方案服务，包括Hermes、OpenClaw等方案。从规划、部署、培训到运维一站式交付，助力企业数字化转型，节省人力成本40%+">
-<meta name="keywords" content="AI Agent全栈方案,企业AI解决方案,数字员工,Hermes部署,OpenClaw部署,AI落地,企业智能化">
+<meta name="description" content="励康信息技术提供企业AI Agent全栈方案服务，包括底层算力、中层模型网关、顶层应用开发。从规划、部署、培训到运维一站式交付，助力企业数字化转型，节省人力成本40%+">
+<meta name="keywords" content="AI Agent全栈方案,企业AI解决方案,数字员工,Hermes部署,Dify,One API,AI落地,企业智能化">
 <link rel="canonical" href="https://www.leadcom.com.cn/leadcom_ai_solutions_no_tencent.html">
 
 <meta name="author" content="广东励康信息技术有限公司">
@@ -37,19 +37,10 @@
         "name": "广东励康信息技术有限公司",
         "url": "https://www.leadcom.com.cn/"
       },
-      "description": "提供企业AI Agent全栈方案服务，包括Hermes、OpenClaw等方案，从规划到运维一站式交付",
+      "description": "提供企业AI Agent全栈方案服务，包括底层算力、中层模型网关、顶层应用开发，从规划到运维一站式交付",
       "areaServed": {
         "@type": "Place",
         "name": "珠三角地区"
-      },
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "AI服务",
-        "itemListElement": [
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI Agent规划咨询"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "本地大模型部署"}},
-          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AI运维与培训"}}
-        ]
       }
     },
     {
@@ -98,53 +89,74 @@ a.nav-wechat:hover{color:var(--copper2)}
 .hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
 .hero h1{font-size:30px;font-weight:500;color:#fff;line-height:1.22;letter-spacing:-0.025em;max-width:480px;margin-bottom:14px}
 .hero h1 em{color:var(--copper);font-style:normal}
-.hero-sub{font-size:13px;color:#e0e7ff;line-height:1.75;max-width:420px}
+.hero-sub{font-size:13px;color:#e0e7ff;line-height:1.75;max-width:520px}
 
-.edu{padding:36px 28px;border-bottom:var(--rule)}
 .section-label{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
-.what-is{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule);border-radius:2px}
-.what-left{padding:24px;border-right:var(--rule)}
-.what-left h3{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-0.01em}
-.what-left p{font-size:12px;color:var(--ink3);line-height:1.75}
-.what-right{padding:24px;background:var(--sand2)}
-.what-right h4{font-size:11px;font-weight:500;color:var(--ink2);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
-.example-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px}
-.example-row:last-child{margin-bottom:0}
-.example-icon{font-size:14px;color:var(--copper);flex-shrink:0;margin-top:1px}
-.example-text{font-size:11px;color:var(--ink3);line-height:1.6}
-.example-text strong{color:var(--ink2);font-weight:500}
 
-.services{border-bottom:var(--rule)}
-.svc-header{display:flex;align-items:baseline;justify-content:space-between;padding:28px 28px 0}
-.svc-hero-card{margin:20px 28px 0;border:var(--rule);border-radius:2px;background:var(--sand)}
-.svc-hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
-.svc-hero-left{padding:28px;border-right:var(--rule)}
-.svc-hero-badge{display:inline-block;font-size:10px;color:var(--copper);background:var(--copper3);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
-.svc-hero-left h3{font-size:17px;font-weight:500;color:var(--ink);margin-bottom:10px;letter-spacing:-0.015em}
-.svc-hero-left p{font-size:12px;color:var(--ink3);line-height:1.7;margin-bottom:16px}
-.svc-hero-link{font-size:11px;color:var(--copper);border-bottom:1px solid var(--copper2);padding-bottom:1px}
-.svc-hero-right{padding:24px;background:var(--sand2)}
-.svc-hero-right h4{font-size:10px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px}
-.deliverable{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-.deliverable-dot{width:4px;height:4px;background:var(--copper);border-radius:50%;flex-shrink:0}
-.deliverable span{font-size:11px;color:var(--ink2)}
+/* ===== 三层架构体系 ===== */
+.architecture{padding:40px 28px;border-bottom:var(--rule)}
+.arch-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:24px}
+.arch-layer{padding:28px;border:var(--rule);border-radius:4px;background:var(--sand);transition:all 0.3s ease}
+.arch-layer:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 8px 16px rgba(37,99,235,0.1)}
+.arch-layer-header{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
+.arch-layer-title{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
+.arch-layer-kicker{font-size:11px;color:var(--copper);font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.arch-keywords{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+.keyword-tag{font-size:11px;color:var(--copper);background:var(--copper3);padding:4px 10px;border-radius:2px;font-weight:500}
+.arch-content{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.arch-left h4{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.arch-left p{font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:12px}
+.arch-left ul{font-size:12px;color:var(--ink2);line-height:1.8;margin-left:20px}
+.arch-left li{margin-bottom:8px}
+.arch-right h4{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:12px}
+.arch-service-item{font-size:12px;color:var(--ink2);line-height:1.8;margin-bottom:12px;padding-left:16px;position:relative}
+.arch-service-item::before{content:'✓';position:absolute;left:0;color:var(--copper);font-weight:bold}
 
-.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:var(--rule);margin:16px 28px 28px}
-.svc-card{padding:22px;border:var(--rule);border-radius:0;margin:-0.5px;background:var(--sand)}
-.svc-card:hover{background:var(--sand2)}
-.svc-idx{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.08em;margin-bottom:10px}
-.svc-rule-line{width:22px;height:1.5px;background:var(--copper);margin-bottom:12px}
-.svc-card h3{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:6px}
-.svc-card p{font-size:11px;color:var(--ink3);line-height:1.65;margin-bottom:12px}
-.svc-tags{display:flex;flex-wrap:wrap;gap:5px}
-.svc-tag{font-size:10px;color:var(--ink3);background:var(--sand3);padding:3px 8px;border-radius:1px}
-.svc-card-link{display:block;font-size:11px;color:var(--copper);margin-top:12px}
+/* ===== 六大应用场景 ===== */
+.scenarios{padding:40px 28px;border-bottom:var(--rule)}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.scenario-card{padding:24px;border:var(--rule);border-radius:4px;background:var(--sand);transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);position:relative;overflow:hidden}
+.scenario-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.scenario-card:hover::before{transform:scaleX(1)}
+.scenario-card:hover{background:var(--sand2);transform:translateY(-6px);box-shadow:0 8px 16px rgba(37,99,235,0.12);border-radius:8px}
+.scenario-num{font-size:11px;color:var(--copper);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.scenario-card h3{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4}
+.scenario-card p{font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:12px}
+.scenario-value{font-size:11px;color:var(--copper);font-weight:500;background:var(--copper3);padding:6px 10px;border-radius:2px;display:inline-block}
 
-.faq{padding:32px 28px;border-bottom:var(--rule)}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-.faq-item{padding:16px 18px;border:var(--rule-light);border-radius:2px;background:var(--sand)}
-.faq-q{font-size:12px;font-weight:500;color:var(--ink);margin-bottom:6px}
-.faq-a{font-size:11px;color:var(--ink3);line-height:1.65}
+/* ===== 为什么选择励康 ===== */
+.why-leadcom{padding:40px 28px;border-bottom:var(--rule)}
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:24px}
+.why-item{padding:20px;border:var(--rule);border-radius:4px;background:var(--sand);text-align:center;transition:all 0.3s ease}
+.why-item:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.1)}
+.why-icon{font-size:28px;color:var(--copper);margin-bottom:12px}
+.why-item h4{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.why-item p{font-size:11px;color:var(--ink2);line-height:1.6}
+
+/* ===== 典型部署方案 ===== */
+.deployment{padding:40px 28px;border-bottom:var(--rule)}
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
+.plan-card{padding:28px;border:var(--rule);border-radius:4px;background:var(--sand);transition:all 0.3s ease;position:relative}
+.plan-card:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 8px 16px rgba(37,99,235,0.12)}
+.plan-badge{display:inline-block;font-size:10px;color:var(--copper);background:var(--copper3);padding:4px 10px;border-radius:2px;margin-bottom:14px;font-weight:500}
+.plan-card h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.plan-price{font-size:18px;font-weight:600;color:var(--copper);margin-bottom:14px}
+.plan-detail{font-size:12px;color:var(--ink2);line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:var(--rule)}
+.plan-detail strong{color:var(--ink);font-weight:600}
+.plan-specs{font-size:11px;color:var(--ink3);line-height:1.8;margin-bottom:12px}
+.plan-specs div{margin-bottom:6px}
+.plan-timeline{font-size:11px;color:var(--copper);font-weight:500;background:var(--copper3);padding:6px 10px;border-radius:2px;display:inline-block}
+
+/* ===== 后续步骤 ===== */
+.next-steps{padding:40px 28px;border-bottom:var(--rule)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:24px;border-top:var(--rule);position:relative}
+.step{padding:28px 20px 20px 0;border-right:var(--rule);position:relative;transition:all 0.3s ease}
+.step:last-child{border-right:none}
+.step:not(:first-child){padding-left:20px}
+.step::before{content:'';position:absolute;left:-12px;top:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:3px solid var(--sand);z-index:2;display:flex;align-items:center;justify-content:center}
+.step-num{font-size:11px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:10px;text-transform:uppercase}
+.step h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.step p{font-size:12px;color:var(--ink2);line-height:1.7}
 
 .cta-section{padding:40px 28px;border-bottom:var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .cta-kicker{font-size:10px;color:var(--copper);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
@@ -161,7 +173,8 @@ a.nav-wechat:hover{color:var(--copper2)}
 .cta-input{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:12px;color:var(--ink);margin-bottom:12px;display:block}
 .cta-input::placeholder{color:var(--ink4)}
 .cta-select{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:12px;color:var(--ink3);margin-bottom:16px;display:block;appearance:none}
-.cta-submit{width:100%;background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:11px;border-radius:2px;text-align:center;display:block}
+.cta-submit{width:100%;background:var(--ink);color:var(--sand);font-size:12px;font-weight:500;padding:11px;border-radius:2px;text-align:center;display:block;cursor:pointer;border:none;transition:all 0.3s ease}
+.cta-submit:hover{background:var(--copper);color:#fff}
 .cta-note{font-size:10px;color:var(--ink4);text-align:center;margin-top:8px}
 
 footer{padding:24px 28px;border-top:var(--rule)}
@@ -170,44 +183,11 @@ footer{padding:24px 28px;border-top:var(--rule)}
 .footer-links{display:flex;gap:16px}
 .footer-links span{font-size:10px;color:var(--ink4)}
 .footer-links a{font-size:10px;color:var(--ink4);text-decoration:none}
-.footer-social h4{font-size:10px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
-.social-qrs{display:flex;gap:16px}
-.social-qr{text-align:center}
-.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
-.social-qr span{font-size:10px;color:var(--ink3)}
 
-/* WECHAT WORK CARD */
-.cta-content{display:flex;gap:24px;margin-top:20px;width:100%}
-.cta-form{flex:1;min-width:280px;display:flex;flex-direction:column;gap:10px}
-.wecom-card{flex:0 0 320px;background:var(--sand2);border-radius:8px;border:1px solid var(--sand3);padding:24px;position:relative;overflow:hidden;box-shadow:0 4px 12px rgba(30,28,24,0.08)}
-.wecom-pulse{position:absolute;top:-20px;right:-20px;width:100px;height:100px;border:1px solid var(--copper);border-radius:50%;opacity:0.08;animation:pulse 2s ease-in-out infinite}
-.wecom-decorative-line{position:absolute;top:0;left:0;right:0;height:2px;background:var(--copper)}
-.wecom-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.wecom-icon{width:40px;height:40px;background:var(--copper);border-radius:6px;display:flex;align-items:center;justify-content:center;animation:bounce 2s ease-in-out infinite;flex-shrink:0}
-.wecom-icon svg{width:20px;height:20px;fill:#fff}
-.wecom-header h3{font-size:14px;font-weight:500;color:var(--ink);margin:0}
-.wecom-header p{font-size:10px;color:var(--ink3);margin:0;font-weight:400}
-.wecom-features{margin-bottom:18px;padding:12px 0;border-top:1px solid var(--sand3);border-bottom:1px solid var(--sand3)}
-.wecom-feature{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:11px;color:var(--ink2)}
-.wecom-feature:last-child{margin-bottom:0}
-.wecom-feature svg{width:14px;height:14px;flex-shrink:0}
-.wecom-btn-primary{display:block;background:var(--copper);color:#fff;font-size:12px;font-weight:500;padding:11px;border-radius:6px;text-align:center;text-decoration:none;margin-bottom:10px;animation:glow 2s ease-in-out infinite;border:none;cursor:pointer;transition:all 0.3s ease}
-.wecom-btn-primary:hover{background:var(--copper2);transform:translateY(-1px)}
-.wecom-hint{font-size:10px;color:var(--ink3);text-align:center;margin-bottom:14px;font-weight:400}
-.wecom-secondary-title{font-size:10px;color:var(--ink3);text-align:center;margin-bottom:10px;font-weight:500;text-transform:uppercase;letter-spacing:0.05em}
-.wecom-secondary-actions{display:flex;gap:8px}
-.wecom-btn-secondary{flex:1;background:var(--sand);color:var(--copper);font-size:11px;font-weight:500;padding:9px;border-radius:6px;border:1.5px solid var(--copper);cursor:pointer;text-align:center;text-decoration:none;display:inline-block;transition:all 0.3s ease}
-.wecom-btn-secondary:hover{background:var(--copper);color:#fff}
-.wecom-qr-hidden{display:none;text-align:center;padding:12px;background:var(--sand);border-radius:6px;margin-top:10px;animation:slideIn 0.3s ease-out}
-.wecom-qr-hidden img{width:100px;height:100px;border-radius:6px;margin-bottom:8px;border:1px solid var(--sand3)}
-.wecom-qr-hidden p{font-size:10px;color:var(--ink3);margin:0;font-weight:400}
-.wecom-footer{font-size:9px;color:var(--ink3);text-align:center;margin-top:12px;font-weight:400}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.1);opacity:0.1}}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(160,103,58,0.4)}50%{box-shadow:0 0 0 8px rgba(160,103,58,0)}}
 @keyframes slideIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 
-/* ========== RESPONSIVE ========== */
 .nav-hamburger{display:none}
 @media(max-width:768px){
   nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
@@ -215,7 +195,6 @@ footer{padding:24px 28px;border-top:var(--rule)}
   .nav-links.open{display:flex}
   .nav-link{display:block;padding:8px 0;font-size:13px}
   .nav-right{gap:10px}
-  .nav-phone{display:none}
   .nav-cta{font-size:12px}
   .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
   .nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}
@@ -226,39 +205,14 @@ footer{padding:24px 28px;border-top:var(--rule)}
   .hero h1{font-size:22px!important;line-height:1.35}
   .hero h1 em{font-size:22px!important}
   .hero-sub{font-size:13px!important}
-  .hero-actions{flex-direction:column;gap:12px;align-items:flex-start!important}
-  .hero-stats{flex-wrap:wrap}
-  .hero-stat{flex:1 1 45%;min-width:0;padding:16px 12px!important}
-  .stat-num{font-size:22px!important}
-  .stat-lbl{font-size:10px!important}
-  .hero,.section,.what-is,.svc-hero,.branches,.contact{padding-left:16px!important;padding-right:16px!important}
-  .svc-grid,.what-is,.svc-hero-inner,.faq-grid,.case-inner,.intro-grid,.contact-grid,.str-grid{grid-template-columns:1fr!important}
-  .product-grid{grid-template-columns:1fr!important}
-  .brand-grid{grid-template-columns:repeat(3,1fr)!important}
-  .ind-grid{grid-template-columns:repeat(2,1fr)!important}
-  .sla-grid,.stats,.timeline,.trust{grid-template-columns:repeat(2,1fr)!important}
-  .branch-grid{grid-template-columns:1fr!important}
-  .cert-grid{grid-template-columns:repeat(2,1fr)!important}
-  .why-grid{grid-template-columns:1fr!important}
-  .process-steps{grid-template-columns:repeat(2,1fr)!important}
-  .case-grid{grid-template-columns:1fr!important}
-  .cta-section{flex-direction:column!important;padding:28px 16px!important}
+  .arch-content,.scenario-grid,.why-grid,.plan-grid,.steps-grid{grid-template-columns:1fr!important}
+  .cta-section{grid-template-columns:1fr!important;padding:28px 16px!important}
   .cta-left h2{font-size:20px!important}
-  .cta-kicker{font-size:10px!important}
-  .cta-content{flex-direction:column;gap:20px}
-  .cta-form{min-width:0;width:100%}
-  .wecom-card{flex:1;min-width:0;width:100%}
+  .architecture,.scenarios,.why-leadcom,.deployment,.next-steps,.cta-section{padding-left:16px!important;padding-right:16px!important}
   .footer-top{flex-direction:column;gap:20px}
-  .footer-cols{flex-direction:column;gap:16px}
   .footer-bottom{flex-direction:column;gap:8px;align-items:flex-start!important}
-  .footer-col a{font-size:12px}
-  .section-header{padding:20px 16px 16px;flex-direction:column;align-items:flex-start!important;gap:4px}
-  .section-title{font-size:11px!important}
+  .section-label{font-size:11px!important}
   .hero-kicker{font-size:9px;letter-spacing:0.08em}
-  .branch-item{border-bottom:var(--rule)}
-  .branch-item:last-child{border-bottom:none}
-  .tl-item{padding:16px 12px!important}
-  .cert-item{padding:14px 12px!important}
 }
 </style>
 </head>
@@ -288,91 +242,277 @@ footer{padding:24px 28px;border-top:var(--rule)}
 </div>
 
 <div class="hero">
-  <div class="hero-kicker">AI 解决方案</div>
-  <h1>帮助企业<em>用好 AI</em>，<br>而不只是买到 AI</h1>
-  <p class="hero-sub">很多企业买了 AI 工具，却不知道如何落地。励康从规划到运维全程陪跑，让 AI Agent 真正成为您的数字员工，而不是束之高阁的软件。</p>
+  <div class="hero-kicker">企业级 AI 落地架构</div>
+  <h1>从算力到智能体，<br>一次部署，<em>全栈就绪</em></h1>
+  <p class="hero-sub">励康信息技术将企业 AI 部署分解为三个清晰的层级，帮助企业从底层算力选择、中层模型管理，到顶层应用开发的全过程中做出正确决策，实现真正的"拿来即用"。</p>
 </div>
 
-<div class="edu">
-  <div class="section-label">什么是 AI Agent</div>
-  <div class="what-is">
-    <div class="what-left">
-      <h3>AI Agent 就是能独立完成任务的数字员工</h3>
-      <p>不同于普通聊天机器人，AI Agent 可以理解目标、制定计划、调用工具、执行操作，全程自主完成复杂业务流程——就像一位不需要休息的员工。</p>
-      <p style="margin-top:10px">对于企业而言，AI Agent 可以接管重复性强、规则清晰的工作：处理询报价、整理文件、回复客户、监控系统……释放人力专注更高价值的事务。</p>
-    </div>
-    <div class="what-right">
-      <h4>真实应用场景</h4>
-      <div class="example-row"><i class="ti ti-file-invoice example-icon" aria-hidden="true"></i><div class="example-text"><strong>采购助手</strong> — 自动处理供应商询报价，比对价格，生成采购建议</div></div>
-      <div class="example-row"><i class="ti ti-headset example-icon" aria-hidden="true"></i><div class="example-text"><strong>客服 Agent</strong> — 7×24 小时处理常见问题，复杂问题转人工</div></div>
-      <div class="example-row"><i class="ti ti-chart-bar example-icon" aria-hidden="true"></i><div class="example-text"><strong>数据分析员</strong> — 定时抓取数据，生成报表，发送给相关负责人</div></div>
-      <div class="example-row"><i class="ti ti-code example-icon" aria-hidden="true"></i><div class="example-text"><strong>IT 运维助手</strong> — 监控告警，自动排障，记录处理过程</div></div>
-    </div>
-  </div>
-</div>
-
-<div class="services">
-  <div class="svc-header">
-    <div class="section-label" style="margin:0">我们提供的 AI 服务</div>
-  </div>
-
-  <div class="svc-hero-card">
-    <div class="svc-hero-inner">
-      <div class="svc-hero-left">
-        <div class="svc-hero-badge">最受欢迎</div>
-        <h3>AI Agent 规划与部署</h3>
-        <p>从零开始，帮助企业识别最适合 AI 落地的业务场景，设计 Agent 架构，完成系统集成与上线部署。我们不卖产品，我们交付结果。</p>
-        <span class="svc-hero-link">了解详情 →</span>
+<div class="architecture">
+  <div class="section-label">三层架构体系</div>
+  <div class="arch-grid">
+    <div class="arch-layer">
+      <div class="arch-layer-header">
+        <div class="arch-layer-title">Layer 01 · POWER</div>
+        <div class="arch-layer-kicker">底层：私有化算力矩阵</div>
       </div>
-      <div class="svc-hero-right">
-        <h4>交付内容</h4>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>AI 落地可行性评估报告</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>业务场景优先级排序</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>Agent 架构设计方案</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>系统集成与上线部署</span></div>
-        <div class="deliverable"><div class="deliverable-dot"></div><span>验收测试与效果评估</span></div>
+      <div class="arch-keywords">
+        <span class="keyword-tag">高性能</span>
+        <span class="keyword-tag">高隐私</span>
+        <span class="keyword-tag">低成本</span>
+      </div>
+      <div class="arch-content">
+        <div class="arch-left">
+          <h4>核心方案</h4>
+          <p><strong>1. Apple Silicon 本地化方案</strong></p>
+          <ul>
+            <li>硬件：Mac Studio / Mac Pro（32GB-192GB 统一内存）</li>
+            <li>优势：推理速度快 3-5 倍，功耗仅为 GPU 方案的 1/3</li>
+            <li>适用：中小团队、隐私敏感行业（金融、医疗）</li>
+          </ul>
+          <p style="margin-top:12px"><strong>2. Spark / GPU 集群方案</strong></p>
+          <ul>
+            <li>硬件：NVIDIA A100/H100 GPU 集群</li>
+            <li>优势：支持 70B+ 参数模型，弹性扩展</li>
+            <li>适用：大型企业、高吞吐场景</li>
+          </ul>
+        </div>
+        <div class="arch-right">
+          <h4>励康的服务</h4>
+          <div class="arch-service-item">硬件选型与采购</div>
+          <div class="arch-service-item">系统初始化与优化</div>
+          <div class="arch-service-item">7×24 可用性监控</div>
+          <div class="arch-service-item">成本管理与优化</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="svc-grid">
-    <div class="svc-card">
-      <div class="svc-idx">02 · 运维</div>
-      <div class="svc-rule-line"></div>
-      <h3>AI Agent 培训与运维</h3>
-      <p>部署完成后，团队会不会用、用得好不好同样关键。我们提供员工培训、使用规范制定，以及持续运维支持。</p>
-      <div class="svc-tags"><span class="svc-tag">员工上手培训</span><span class="svc-tag">操作手册</span><span class="svc-tag">7×24 运维</span><span class="svc-tag">定期优化</span></div>
-      <span class="svc-card-link">了解详情 →</span>
+    <div class="arch-layer">
+      <div class="arch-layer-header">
+        <div class="arch-layer-title">Layer 02 · GATEWAY</div>
+        <div class="arch-layer-kicker">中层：统一模型网关</div>
+      </div>
+      <div class="arch-keywords">
+        <span class="keyword-tag">标准</span>
+        <span class="keyword-tag">聚合</span>
+        <span class="keyword-tag">安全</span>
+      </div>
+      <div class="arch-content">
+        <div class="arch-left">
+          <h4>One API 统一网关</h4>
+          <p>解决多模型源导致的代码重复、成本失控、风险集中等问题。</p>
+          <p style="margin-top:12px"><strong>核心能力：</strong></p>
+          <ul>
+            <li>支持 50+ 模型源（OpenAI、Claude、文心、DeepSeek 等）</li>
+            <li>统一 API 调用接口，自动故障转移</li>
+            <li>实时成本统计与配额管理</li>
+            <li>API Key 集中管理，请求审计</li>
+            <li>请求缓存与负载均衡</li>
+          </ul>
+        </div>
+        <div class="arch-right">
+          <h4>励康的服务</h4>
+          <div class="arch-service-item">网关部署与配置</div>
+          <div class="arch-service-item">多模型源接入</div>
+          <div class="arch-service-item">成本优化咨询</div>
+          <div class="arch-service-item">权限体系建立</div>
+          <div class="arch-service-item">持续运维支持</div>
+        </div>
+      </div>
     </div>
-    <div class="svc-card">
-      <div class="svc-idx">03 · 算力</div>
-      <div class="svc-rule-line"></div>
-      <h3>本地大模型租赁</h3>
-      <p>数据不出厂是许多企业的硬性要求。我们提供基于 Mac mini 的本地 LLM 算力方案，按月租用，无需自购服务器。</p>
-      <div class="svc-tags"><span class="svc-tag">数据不出厂</span><span class="svc-tag">Mac mini 算力</span><span class="svc-tag">按月租用</span><span class="svc-tag">本地部署</span></div>
-      <span class="svc-card-link">了解详情 →</span>
+
+    <div class="arch-layer">
+      <div class="arch-layer-header">
+        <div class="arch-layer-title">Layer 03 · INTERACTION</div>
+        <div class="arch-layer-kicker">顶层：智能交互应用</div>
+      </div>
+      <div class="arch-keywords">
+        <span class="keyword-tag">敏捷</span>
+        <span class="keyword-tag">低代码</span>
+        <span class="keyword-tag">生产力</span>
+      </div>
+      <div class="arch-content">
+        <div class="arch-left">
+          <h4>核心方案</h4>
+          <p><strong>1. Dify：AI 应用编排平台</strong></p>
+          <ul>
+            <li>拖拽式工作流编排，无需代码</li>
+            <li>知识库集成，支持文档、PDF、网页</li>
+            <li>Agent 框架，支持工具调用</li>
+            <li>版本管理与 A/B 测试</li>
+          </ul>
+          <p style="margin-top:12px"><strong>2. Hermes：AI 交互体验框架</strong></p>
+          <ul>
+            <li>流式输出优化，逐字显示</li>
+            <li>多轮对话管理，上下文维护</li>
+            <li>富文本渲染（Markdown、代码、表格）</li>
+            <li>移动端完美适配</li>
+          </ul>
+        </div>
+        <div class="arch-right">
+          <h4>励康的服务</h4>
+          <div class="arch-service-item">应用设计与原型</div>
+          <div class="arch-service-item">Dify 应用开发</div>
+          <div class="arch-service-item">企业知识库建立</div>
+          <div class="arch-service-item">Hermes 前端集成</div>
+          <div class="arch-service-item">多渠道部署（Web、移动、企业微信）</div>
+          <div class="arch-service-item">持续优化与迭代</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="faq">
-  <div class="section-label">常见问题</div>
-  <div class="faq-grid">
-    <div class="faq-item">
-      <div class="faq-q">我们公司规模不大，适合用 AI Agent 吗？</div>
-      <div class="faq-a">适合。AI Agent 对中小企业价值更大——人力有限，自动化能直接减少用人成本。我们有专门面向 50 人以下企业的轻量方案。</div>
+<div class="scenarios">
+  <div class="section-label">六大典型应用场景</div>
+  <div class="scenario-grid">
+    <div class="scenario-card">
+      <div class="scenario-num">场景 01</div>
+      <h3>企业知识库 QA 机器人</h3>
+      <p>上传企业文档、制度、技术文档等，员工通过自然语言提问，AI 自动从文档中查找答案。</p>
+      <span class="scenario-value">效率提升 80%</span>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">部署周期大概多久？</div>
-      <div class="faq-a">单场景 Agent 通常 2–4 周可上线。复杂多系统集成项目约 6–8 周。我们会在评估阶段给出明确时间表。</div>
+    <div class="scenario-card">
+      <div class="scenario-num">场景 02</div>
+      <h3>客服机器人</h3>
+      <p>自动处理 70% 的常见问题，复杂问题转接人工。7×24 小时可用，大幅降低客服成本。</p>
+      <span class="scenario-value">成本降低 50%</span>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">我们的数据安全怎么保障？</div>
-      <div class="faq-a">敏感数据可选择本地大模型方案，所有数据留在企业内部，不上传任何外部服务器。</div>
+    <div class="scenario-card">
+      <div class="scenario-num">场景 03</div>
+      <h3>内容生成助手</h3>
+      <p>输入关键信息，AI 自动生成多个版本的营销文案、技术文档等。支持 A/B 测试快速验证。</p>
+      <span class="scenario-value">效率提升 5-10 倍</span>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">上线后出了问题怎么办？</div>
-      <div class="faq-a">我们提供 7×24 小时运维支持，签署 SLA 协议，承诺响应时间。不是卖完就跑的项目制。</div>
+    <div class="scenario-card">
+      <div class="scenario-num">场景 04</div>
+      <h3>代码审查助手</h3>
+      <p>开发者提交代码前，AI 自动进行初筛，检查安全漏洞、性能问题、代码规范等。</p>
+      <span class="scenario-value">审查效率提升 30%</span>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-num">场景 05</div>
+      <h3>数据分析助手</h3>
+      <p>业务人员上传 CSV/Excel，用自然语言提问。AI 自动生成分析代码、图表、报告。</p>
+      <span class="scenario-value">分析周期缩短至分钟级</span>
+    </div>
+    <div class="scenario-card">
+      <div class="scenario-num">场景 06</div>
+      <h3>工作流自动化</h3>
+      <p>AI 自动调用企业系统 API（CRM、ERP、财务系统等），完成数据查询、处理、更新。</p>
+      <span class="scenario-value">效率提升 5-10 倍</span>
+    </div>
+  </div>
+</div>
+
+<div class="why-leadcom">
+  <div class="section-label">为什么选择励康</div>
+  <div class="why-grid">
+    <div class="why-item">
+      <div class="why-icon"><i class="ti ti-package" aria-hidden="true"></i></div>
+      <h4>一站式服务</h4>
+      <p>从底层算力到顶层应用，全部由我们负责。您只需告诉我们业务需求。</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+      <h4>本地化支持</h4>
+      <p>广州本地技术服务商，上门现场支持，快速响应问题。</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><i class="ti ti-wallet" aria-hidden="true"></i></div>
+      <h4>成本透明</h4>
+      <p>帮您选择最经济方案，优化使用成本，拒绝账单黑盒。</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><i class="ti ti-lock" aria-hidden="true"></i></div>
+      <h4>数据安全</h4>
+      <p>数据完全留在企业内部，满足等保二级及以上合规要求。</p>
+    </div>
+    <div class="why-item">
+      <div class="why-icon"><i class="ti ti-trending-up" aria-hidden="true"></i></div>
+      <h4>灵活扩展</h4>
+      <p>从小规模试点到大规模部署平滑扩展，逐步扩大应用范围。</p>
+    </div>
+  </div>
+</div>
+
+<div class="deployment">
+  <div class="section-label">典型部署方案</div>
+  <div class="plan-grid">
+    <div class="plan-card">
+      <div class="plan-badge">中小企业试点</div>
+      <h3>方案 A</h3>
+      <div class="plan-price">¥50-100 万</div>
+      <div class="plan-detail">
+        <strong>硬件：</strong>1 台 Mac Studio（32GB 内存）<br>
+        <strong>模型：</strong>Ollama 本地模型 + 少量公有云 API<br>
+        <strong>应用：</strong>1-2 个 Dify 应用
+      </div>
+      <div class="plan-specs">
+        <div>✓ 快速验证 AI 价值</div>
+        <div>✓ 隐私保护优先</div>
+        <div>✓ 适合 10-50 人团队</div>
+      </div>
+      <div class="plan-timeline">2-4 周上线</div>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-badge">中型企业标准</div>
+      <h3>方案 B</h3>
+      <div class="plan-price">¥200-500 万</div>
+      <div class="plan-detail">
+        <strong>硬件：</strong>2-4 台 GPU 服务器（A100 GPU）<br>
+        <strong>模型：</strong>One API 网关 + 多个模型源<br>
+        <strong>应用：</strong>3-5 个 Dify 应用 + 自定义前端
+      </div>
+      <div class="plan-specs">
+        <div>✓ 多个应用场景</div>
+        <div>✓ 推理性能优化</div>
+        <div>✓ 适合 50-200 人团队</div>
+      </div>
+      <div class="plan-timeline">4-8 周上线</div>
+    </div>
+
+    <div class="plan-card">
+      <div class="plan-badge">大型企业 AI 中台</div>
+      <h3>方案 C</h3>
+      <div class="plan-price">¥500 万+</div>
+      <div class="plan-detail">
+        <strong>硬件：</strong>大规模 GPU 集群（8+ 服务器）<br>
+        <strong>模型：</strong>One API 网关 + 自研模型微调<br>
+        <strong>应用：</strong>10+ 个 Dify 应用 + 完整 AI 中台
+      </div>
+      <div class="plan-specs">
+        <div>✓ 企业级 AI 能力</div>
+        <div>✓ 成本与合规控制</div>
+        <div>✓ 适合 200+ 人企业</div>
+      </div>
+      <div class="plan-timeline">2-3 个月上线</div>
+    </div>
+  </div>
+</div>
+
+<div class="next-steps">
+  <div class="section-label">后续步骤</div>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">第 1 步</div>
+      <h4>免费咨询</h4>
+      <p>预约 30 分钟的需求评估，我们根据您的业务情况推荐最优方案。</p>
+    </div>
+    <div class="step">
+      <div class="step-num">第 2 步</div>
+      <h4>方案设计</h4>
+      <p>详细的技术方案设计和成本预算，确保投资回报清晰。</p>
+    </div>
+    <div class="step">
+      <div class="step-num">第 3 步</div>
+      <h4>试点部署</h4>
+      <p>先在小范围内试点，验证效果，降低风险。</p>
+    </div>
+    <div class="step">
+      <div class="step-num">第 4 步</div>
+      <h4>全面推广</h4>
+      <p>根据试点结果，逐步扩大应用范围，持续优化。</p>
     </div>
   </div>
 </div>
@@ -388,8 +528,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
       <div class="promise-row"><i class="ti ti-check promise-check" aria-hidden="true"></i><span>无义务，可随时结束</span></div>
     </div>
   </div>
-  <div class="cta-content">
-    <div class="cta-form">
+  <div class="cta-right">
     <h3>预约免费服务</h3>
     <div class="field-label">姓名</div>
     <input class="cta-input" placeholder="您的姓名" type="text"/>
@@ -400,85 +539,27 @@ footer{padding:24px 28px;border-top:var(--rule)}
       <option>免费部署 AI Agent（Hermes / OpenClaw）</option>
       <option>免费 IT 体检（专家上门评估）</option>
     </select>
-    <div class="cta-submit">预约免费服务</div>
-    <div class="cta-note">我们绝不将您的信息用于其他用途</div>
-    </div>
-    <div class="wecom-card">
-      <div class="wecom-decorative-line"></div>
-      <div class="wecom-pulse"></div>
-      <div class="wecom-header">
-        <div class="wecom-icon">
-          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" fill="currentColor"/></svg>
-        </div>
-        <div>
-          <h3>企业微信咨询</h3>
-          <p>1对1专业服务，快速响应</p>
-        </div>
-      </div>
-      <div class="wecom-features">
-        <div class="wecom-feature">
-          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--copper)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--copper)" stroke-width="1.5"/></svg>
-          <span>专业技术团队1对1咨询</span>
-        </div>
-        <div class="wecom-feature">
-          <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="var(--copper)" stroke-width="1.5"/><path d="M5 8l2 2 4-4" stroke="var(--copper)" stroke-width="1.5"/></svg>
-          <span>免费获取定制化方案</span>
-        </div>
-      </div>
-      <a href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer" class="wecom-btn-primary">微信客服咨询</a>
-      <p class="wecom-hint">有任何问题，随时咨询</p>
-      <p class="wecom-secondary-title">或加入企业微信，获取更多服务</p>
-      <div class="wecom-secondary-actions">
-        <button class="wecom-btn-secondary" onclick="toggleWeComQR()">扫码加入</button>
-        <a href="https://work.weixin.qq.com/ca/cawcde5092c3bf5467" target="_blank" rel="noopener noreferrer" class="wecom-btn-secondary">点击加入</a>
-      </div>
-      <div id="wecom-qr" class="wecom-qr-hidden">
-        <img src="images/wecom-qr.jpg" alt="企业微信二维码">
-        <p>使用企业微信扫一扫</p>
-      </div>
-      <p class="wecom-footer">已有 500+ 企业选择我们</p>
-    </div>
+    <div class="cta-submit">立即预约</div>
+    <span class="cta-note">我们将在一个工作日内联系您</span>
   </div>
 </div>
 
 <footer>
   <div class="footer-top">
-    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-copy">© 2026 广东励康信息技术有限公司</div>
     <div class="footer-links">
-      <a href="index.html">← 返回首页</a>
-      <a href="leadcom_it_maintenance.html">IT 维保服务 →</a>
-    </div>
-    <div class="footer-social">
-      <h4>关注我们</h4>
-      <div class="social-qrs">
-        <div class="social-qr">
-          <img src="images/wechat_official.jpg" alt="微信公众号">
-          <span>微信公众号</span>
-        </div>
-        <div class="social-qr">
-          <img src="images/wecom-video.jpg" alt="微信视频号">
-          <span>微信视频号</span>
-        </div>
-        <div class="social-qr">
-          <img src="images/douyin.jpg" alt="抖音号">
-          <span>抖音号</span>
-        </div>
-      </div>
+      <a href="index.html">首页</a>
+      <span>·</span>
+      <a href="leadcom_success_cases.html">成功案例</a>
+      <span>·</span>
+      <a href="leadcom_about_us.html">关于我们</a>
+      <span>·</span>
+      <a href="leadcom_about_us.html#contact">联系我们</a>
     </div>
   </div>
 </footer>
 
-<script>
-function toggleWeComQR() {
-  var qr = document.getElementById('wecom-qr');
-  if (qr.style.display === 'block') {
-    qr.style.display = 'none';
-  } else {
-    qr.style.display = 'block';
-    qr.style.animation = 'slideIn 0.3s ease-out';
-  }
-}
-</script>
+</div>
 
 <!-- Hermes Agent Bubble Chat -->
 <style>
@@ -513,7 +594,6 @@ function toggleWeComQR() {
 .chat-typing span:nth-child(2){animation-delay:.2s}
 .chat-typing span:nth-child(3){animation-delay:.4s}
 @keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
-@keyframes colorShift{0%,100%{border-color:#60A5FA}50%{border-color:#2563EB}}
 .chat-input-area{padding:12px 16px;background:#fff;border-top:1px solid var(--chat-sand2);display:flex;gap:10px;align-items:flex-end;flex-shrink:0}
 .chat-input{flex:1;border:1px solid var(--chat-sand3);border-radius:20px;padding:8px 16px;font-size:13px;outline:none;resize:none;max-height:80px;line-height:1.4;font-family:inherit;transition:border-color .2s}
 .chat-input:focus{border-color:var(--chat-copper)}
@@ -554,12 +634,12 @@ function toggleWeComQR() {
     <div class="chat-welcome">
       <div style="font-size:32px;margin-bottom:4px">👋</div>
       <h5>您好！我是励康 AI 助手</h5>
-      <p>可以为您介绍 IT 维保、AI Agent 部署、<br>腾讯云服务等方案，也可以直接提问。</p>
+      <p>可以为您介绍 AI Agent 部署、IT 维保、<br>腾讯云服务等方案，也可以直接提问。</p>
     </div>
     <div class="chat-quick-actions" id="chatQuickActions">
-      <button class="chat-quick-btn" onclick="sendQuick(this)">IT 维保包含哪些服务？</button>
       <button class="chat-quick-btn" onclick="sendQuick(this)">AI Agent 部署流程是什么？</button>
-      <button class="chat-quick-btn" onclick="sendQuick(this)">腾讯云企业版怎么收费？</button>
+      <button class="chat-quick-btn" onclick="sendQuick(this)">三层架构如何选择？</button>
+      <button class="chat-quick-btn" onclick="sendQuick(this)">部署周期大概多久？</button>
     </div>
   </div>
   <div class="chat-input-area">
@@ -571,169 +651,8 @@ function toggleWeComQR() {
 </div>
 
 <script>
-(function(){
-  const API_URL = 'http://127.0.0.1:8642/v1/chat/completions';
-  const API_KEY = '691b5dc834e04f39807e49f4bcb1715c98d610bed4e009566f4b0c875d3482c9';
-  const SYSTEM_PROMPT = '你是励康信息技术（广东励康信息技术有限公司）的 AI 助手。励康位于广州，成立于 2002 年，注册资金 1000 万，提供 IT 基础架构维保、AI Agent 部署、腾讯云代理（WorkBuddy/CodeBuddy 授权代理）三大核心服务，服务珠三角企业 20 年。回答要简洁专业，突出励康的优势。如果用户问到具体报价或需要上门服务，建议留下联系方式或拨打 020-66319828。';
-
-  let conversationHistory = [];
-  let isStreaming = false;
-
-  window.toggleChat = function() {
-    const bubble = document.getElementById('chatBubble');
-    const win = document.getElementById('chatWindow');
-    const isOpen = win.classList.contains('open');
-    if (isOpen) {
-      win.classList.remove('open');
-      bubble.classList.remove('open');
-    } else {
-      win.classList.add('open');
-      bubble.classList.add('open');
-      setTimeout(() => document.getElementById('chatInput').focus(), 300);
-    }
-  };
-
-  window.sendQuick = function(btn) {
-    document.getElementById('chatQuickActions').style.display = 'none';
-    const input = document.getElementById('chatInput');
-    input.value = btn.textContent;
-    sendMessage();
-  };
-
-  window.handleKey = function(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-  };
-
-  function autoResize(el) {
-    el.style.height = 'auto';
-    el.style.height = Math.min(el.scrollHeight, 80) + 'px';
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    const input = document.getElementById('chatInput');
-    input.addEventListener('input', function(){ autoResize(this); });
-  });
-
-  window.sendMessage = async function() {
-    const input = document.getElementById('chatInput');
-    const text = input.value.trim();
-    if (!text || isStreaming) return;
-
-    input.value = '';
-    input.style.height = 'auto';
-    document.getElementById('chatQuickActions').style.display = 'none';
-
-    appendMsg('user', text);
-    conversationHistory.push({ role: 'user', content: text });
-
-    const typingEl = showTyping();
-    isStreaming = true;
-    document.getElementById('chatSend').disabled = true;
-
-    try {
-      const messages = [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...conversationHistory
-      ];
-
-      const resp = await fetch(API_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + API_KEY
-        },
-        body: JSON.stringify({
-          model: 'hermes-agent',
-          messages: messages,
-          stream: true
-        })
-      });
-
-      if (!resp.ok) {
-        throw new Error('API 返回 ' + resp.status);
-      }
-
-      typingEl.remove();
-      const msgEl = appendMsg('assistant', '');
-      let fullText = '';
-
-      const reader = resp.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split('\n');
-        buffer = lines.pop();
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue;
-          const data = line.slice(6).trim();
-          if (data === '[DONE]') break;
-          try {
-            const chunk = JSON.parse(data);
-            const delta = chunk.choices?.[0]?.delta?.content;
-            if (delta) {
-              fullText += delta;
-              msgEl.querySelector('.msg-content').innerHTML = renderMarkdown(fullText);
-              scrollBottom();
-            }
-          } catch(e) {}
-        }
-      }
-
-      conversationHistory.push({ role: 'assistant', content: fullText });
-    } catch(err) {
-      if (typingEl) typingEl.remove();
-      appendMsg('system', '⚠️ 连接失败：' + err.message + '。请确保 Hermes Agent 正在运行。');
-    } finally {
-      isStreaming = false;
-      document.getElementById('chatSend').disabled = false;
-      input.focus();
-    }
-  };
-
-  function appendMsg(role, text) {
-    const container = document.getElementById('chatMessages');
-    const el = document.createElement('div');
-    el.className = 'chat-msg ' + role;
-    if (role === 'assistant') {
-      el.innerHTML = '<div class="msg-content">' + renderMarkdown(text) + '</div>';
-    } else {
-      el.textContent = text;
-    }
-    container.appendChild(el);
-    scrollBottom();
-    return el;
-  }
-
-  function showTyping() {
-    const container = document.getElementById('chatMessages');
-    const el = document.createElement('div');
-    el.className = 'chat-typing';
-    el.innerHTML = '<span></span><span></span><span></span>';
-    container.appendChild(el);
-    scrollBottom();
-    return el;
-  }
-
-  function scrollBottom() {
-    const m = document.getElementById('chatMessages');
-    m.scrollTop = m.scrollHeight;
-  }
-
-  function renderMarkdown(text) {
-    if (!text) return '';
-    return text
-      .replace(/```(\w*)\n([\s\S]*?)```/g, '<pre><code>$2</code></pre>')
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
-      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      .replace(/\n/g, '<br>');
-  }
-})();
+function toggleChat(){var e=document.getElementById("chatBubble"),t=document.getElementById("chatWindow");e.classList.toggle("open"),t.classList.toggle("open")}function sendMessage(){var e=document.getElementById("chatInput").value.trim();e&&(addMessage(e,"user"),document.getElementById("chatInput").value="",showTyping(),setTimeout(function(){removeTyping(),addMessage("感谢您的提问！我们的专家团队会尽快为您解答。如需立即咨询，请点击下方的微信咨询按钮。","assistant")},1500))}function sendQuick(e){var t=e.textContent.trim();addMessage(t,"user"),showTyping(),setTimeout(function(){removeTyping(),addMessage("这是一个很好的问题！我们的 AI 解决方案包括三层架构：底层算力、中层模型网关、顶层应用开发。如需详细了解，欢迎预约免费咨询。","assistant")},1500)}function addMessage(e,t){var a=document.getElementById("chatMessages"),i=document.createElement("div");i.className="chat-msg "+t,i.textContent=e,a.appendChild(i),a.scrollTop=a.scrollHeight}function showTyping(){var e=document.getElementById("chatMessages"),t=document.createElement("div");t.className="chat-typing",t.id="typing",t.innerHTML="<span></span><span></span><span></span>",e.appendChild(t),e.scrollTop=e.scrollHeight}function removeTyping(){var e=document.getElementById("typing");e&&e.remove()}function handleKey(e){"Enter"===e.key&&!e.shiftKey&&(e.preventDefault(),sendMessage())}
 </script>
+
 </body>
 </html>
-
-</div>
