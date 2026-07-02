@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.leadcom.com.cn/sitemap.xml
+Sitemap: https://www.leadcom.chat/sitemap.xml
