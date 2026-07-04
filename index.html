@@ -330,6 +330,7 @@ footer{padding:36px 28px 28px;background:var(--sand);border-top:2px solid var(--
   .hero-stat{flex:1 1 45%;min-width:0;padding:16px 12px!important}
   .stat-num{font-size:23px!important}
   .stat-lbl{font-size:11px!important}
+  .hero-highlight{grid-template-columns:1fr!important}
   .hero,.section,.what-is,.svc-hero,.branches,.contact{padding-left:16px!important;padding-right:16px!important}
   .svc-grid,.what-is,.svc-hero-inner,.faq-grid,.case-inner,.intro-grid,.contact-grid,.str-grid{grid-template-columns:1fr!important}
   .product-grid{grid-template-columns:1fr!important}
@@ -361,6 +362,14 @@ footer{padding:36px 28px 28px;background:var(--sand);border-top:2px solid var(--
   .tl-item{padding:16px 12px!important}
   .cert-item{padding:14px 12px!important}
 }
+.hero-highlight{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:36px}
+.hero-hl-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:20px 22px;transition:all 0.3s ease}
+.hero-hl-card:hover{background:rgba(255,255,255,0.14);border-color:rgba(255,255,255,0.2);transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.2)}
+.hero-hl-card .hl-icon{font-size:22px;color:var(--copper);margin-bottom:10px}
+.hero-hl-card h3{font-size:15px;font-weight:600;color:#fff;margin-bottom:6px}
+.hero-hl-card p{font-size:12px;color:#cbd5e1;line-height:1.7;margin-bottom:10px}
+.hero-hl-card .hl-tags{display:flex;gap:6px;flex-wrap:wrap}
+.hero-hl-card .hl-tag{font-size:10px;padding:2px 8px;border-radius:2px;background:rgba(255,255,255,0.1);color:#93C5FD;border:1px solid rgba(255,255,255,0.08);font-weight:500}
 </style>
 <!-- 百度统计 -->
 <script>
@@ -399,8 +408,8 @@ var _hmt = _hmt || [];
   <div class="hero-main" style="display:flex;gap:32px;align-items:flex-start;margin-bottom:28px">
     <div style="flex:1">
       <div class="hero-kicker">华南 IT 综合服务商 · 2002</div>
-      <h1>让企业 IT 与 AI<br>真正<em>无后顾之忧</em></h1>
-      <p class="hero-sub">AI Agent 部署、IT 基础架构维保、腾讯云服务——一站式交付，专注珠三角企业数字化转型，20 年口碑。</p>
+      <h1>AI 智能落地<br><em>IT 运维无忧</em></h1>
+      <p class="hero-sub">从企业 AI Agent 全栈部署到 IT 基础架构 7×24 维保，励康以算力、模型、应用三层方案与全品牌服务器维保，一站式交付珠三角企业数字化转型。</p>
     </div>
     <div style="flex:0 0 380px;border-radius:6px;overflow:hidden;box-shadow:0 4px 12px rgba(30,28,24,0.15)">
       <video autoplay muted loop playsinline style="width:100%;height:auto;display:block" oncanplay="this.classList.add('ready')">
@@ -408,8 +417,31 @@ var _hmt = _hmt || [];
       </video>
     </div>
   </div>
+  <div class="hero-highlight">
+    <a class="hero-hl-card" href="ai-solutions.html" style="text-decoration:none">
+      <div class="hl-icon"><i class="ti ti-brain"></i></div>
+      <h3>AI Agent 全栈方案</h3>
+      <p>从私有化算力到智能应用，三层架构闭环交付。Dify / Hermes / OpenClaw 企业级部署，数据不出本地。</p>
+      <div class="hl-tags">
+        <span class="hl-tag">算力引擎</span>
+        <span class="hl-tag">模型网关</span>
+        <span class="hl-tag">智能触达</span>
+      </div>
+    </a>
+    <a class="hero-hl-card" href="it-maintenance.html" style="text-decoration:none">
+      <div class="hl-icon"><i class="ti ti-server-2"></i></div>
+      <h3>IT 基础架构维保</h3>
+      <p>服务器、存储、网络、数据库全品牌维保。IBM / HP / Dell 主流机型，7×24 小时紧急响应，500+ 企业信赖。</p>
+      <div class="hl-tags">
+        <span class="hl-tag">服务器</span>
+        <span class="hl-tag">存储</span>
+        <span class="hl-tag">数据库</span>
+        <span class="hl-tag">网络</span>
+      </div>
+    </a>
+  </div>
   <div class="hero-actions">
-    <a class="btn-primary" href="#cta">预约免费服务</a>
+    <a class="btn-primary" href="#cta">预约免费评估</a>
     <a class="btn-text" href="cases.html">查看成功案例 →</a>
   </div>
   <div class="hero-stats">
@@ -419,6 +451,7 @@ var _hmt = _hmt || [];
     <div class="hero-stat"><div class="stat-num">ITSS</div><div class="stat-lbl">认证服务商</div></div>
   </div>
 </div>
+
 
 <div class="services">
   <div class="section-header">
