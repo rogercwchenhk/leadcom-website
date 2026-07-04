@@ -92,6 +92,7 @@ a.nav-wechat:hover{color:var(--copper2)}
 .hero-sub{font-size:14px;color:#e0e7ff;line-height:1.75;max-width:520px}
 
 .section-label{font-size:11px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
 
 /* ===== 三层架构体系 ===== */
 .architecture{padding:40px 28px;border-bottom:var(--rule)}
@@ -205,7 +206,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
   .hero h1{font-size:23px!important;line-height:1.35}
   .hero h1 em{font-size:23px!important}
   .hero-sub{font-size:14px!important}
-  .arch-content,.scenario-grid,.why-grid,.plan-grid,.steps-grid{grid-template-columns:1fr!important}
+  .arch-content,.scenario-grid,.why-grid,.plan-grid,.steps-grid,.pricing-grid{grid-template-columns:1fr!important}
   .cta-section{grid-template-columns:1fr!important;padding:28px 16px!important}
   .cta-left h2{font-size:21px!important}
   .architecture,.scenarios,.why-leadcom,.deployment,.next-steps,.cta-section{padding-left:16px!important;padding-right:16px!important}
@@ -264,13 +265,13 @@ var _hmt = _hmt || [];
     </span>
   </p>
 </div>
-<div style="max-width:860px;margin:0 auto 48px;background:linear-gradient(135deg,#1A1F36 0%,#2563EB 100%);border-radius:12px;padding:40px 48px;color:#fff;box-shadow:0 8px 32px rgba(37,99,235,0.18);position:relative;overflow:hidden">
+<div style="padding:40px 28px;background:linear-gradient(135deg,#1A1F36 0%,#2563EB 100%);color:#fff;box-shadow:0 8px 32px rgba(37,99,235,0.18);position:relative;overflow:hidden;border-bottom:var(--rule)">
   <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,0.06);border-radius:50%"></div>
   <div style="position:absolute;bottom:-60px;left:-30px;width:160px;height:160px;background:rgba(255,255,255,0.04);border-radius:50%"></div>
   <div style="position:relative;z-index:1">
     <div style="display:inline-block;background:rgba(255,255,255,0.15);border-radius:4px;padding:4px 12px;font-size:12px;font-weight:600;letter-spacing:0.05em;margin-bottom:16px">🔥 本地 LLM 租赁方案</div>
     <p style="font-size:15px;line-height:1.7;opacity:0.85;margin-bottom:28px">128GB 统一内存 + 1TB 高速存储，推理速度 3-5 倍于云 API，数据不出内网。开箱即用，无需自建机房。</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px">
+    <div class="pricing-grid">
       <!-- AMD 395 -->
       <div style="background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:24px">
         <div style="display:inline-block;background:rgba(52,211,153,0.25);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:600;color:#6ee7b7;margin-bottom:12px">性价比之选</div>
