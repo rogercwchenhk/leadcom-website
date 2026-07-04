@@ -10,3 +10,7 @@ SEO优化报告.md
 seo-image-optimization.md
 seo-link-fix-guide.md
 .DS_Store
+
+# Node 依赖
+node_modules/
+package-lock.json
