@@ -1,0 +1,18 @@
+name: Mirror to Gitee
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror to Gitee
+        uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ""
+        with:
+          source-repo: https://github.com/rogercwchenhk/leadcom-website.git
+          destination-repo: https://rogercwchen:${{ secrets.GITEE_PAT }}@gitee.com/rogercwchen/leadcom-website.git
