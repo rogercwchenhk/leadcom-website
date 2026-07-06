@@ -7,8 +7,8 @@
   /* ---- Inject CSS ---- */
   var style = document.createElement('style');
   style.textContent = [
-    ':root{--chat-copper:#B45309;--chat-copper-light:#D97706;--chat-ink:#292524;--chat-ink2:#57534E;--chat-ink3:#A8A29E;--chat-sand:#FFF7ED;--chat-sand2:#FFEDD5;--chat-sand3:#D6D3D1;--chat-green:#00C896;--chat-green-dark:#007A5E}',
-    '.chat-bubble{position:fixed;bottom:140px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#D97706,#B45309,#92400E);border:2.5px solid #F59E0B;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(26,31,54,.35);z-index:9999;transition:all .3s ease;animation:chatColorShift 4s infinite}',
+    ':root{--chat-copper:#2563EB;--chat-copper-light:#3B82F6;--chat-ink:#1A1F36;--chat-ink2:#555;--chat-ink3:#9a9182;--chat-sand:#F0F4FF;--chat-sand2:#E0E7FF;--chat-sand3:#CBD5E1;--chat-green:#00C896;--chat-green-dark:#007A5E}',
+    '.chat-bubble{position:fixed;bottom:140px;right:28px;width:56px;height:56px;background:linear-gradient(135deg,#3B82F6,#2563EB,#1D4ED8);border:2.5px solid #60A5FA;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(26,31,54,.35);z-index:9999;transition:all .3s ease;animation:chatColorShift 4s infinite}',
     '.chat-bubble:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(26,31,54,.45)}',
     '.chat-bubble svg{width:26px;height:26px;fill:#fff}',
     '.chat-bubble.open{transform:scale(0) rotate(180deg);opacity:0;pointer-events:none}',
@@ -38,7 +38,7 @@
     '.chat-typing span:nth-child(2){animation-delay:.2s}',
     '.chat-typing span:nth-child(3){animation-delay:.4s}',
     '@keyframes chatTyping{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}',
-    '@keyframes chatColorShift{0%,100%{border-color:#F59E0B}50%{border-color:#B45309}}',
+    '@keyframes chatColorShift{0%,100%{border-color:#60A5FA}50%{border-color:#2563EB}}',
     '.chat-input-area{padding:12px 16px;background:#fff;border-top:1px solid var(--chat-sand2);display:flex;gap:10px;align-items:flex-end;flex-shrink:0}',
     '.chat-input{flex:1;border:1px solid var(--chat-sand3);border-radius:20px;padding:8px 16px;font-size:14px;outline:none;resize:none;max-height:80px;line-height:1.4;font-family:inherit;transition:border-color .2s}',
     '.chat-input:focus{border-color:var(--chat-copper)}',

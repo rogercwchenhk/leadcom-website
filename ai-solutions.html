@@ -60,113 +60,113 @@
 img{max-width:100%;height:auto}
 :root{
   --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --sand:#FFFBF5;--sand2:#F5F0E8;--sand3:#E5DDD0;--sand4:#D4C4B0;
-  --ink:#292524;--ink2:#44403C;--ink3:#78716C;--ink4:#A8A29E;
-  --copper:#B45309;--copper2:#D97706;--copper3:#FEF3C7;
-  --rule:1px solid #D6D3D1;--rule-light:1px solid #E5DDD0;
+  --bg:#F5F7FA;--bg-alt:#EDF0F5;--border:#D8DEE6;--bg-warm:#d4c9b4;
+  --text:#1A1F36;--text-secondary:#3A3F52;--text-muted:#6B7280;--text-faint:#9a9182;
+  --accent:#2563EB;--accent-light:#3B82F6;--accent-bg:#DBEAFE;
+  --rule:1px solid #CBD5E1;--rule-light:1px solid #D8DEE6;
 }
-body{font-family:var(--font-sans);background:var(--sand);color:var(--ink);overflow-x:hidden;padding-top:60px}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);overflow-x:hidden;padding-top:60px}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--sand);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
-.logo{font-size:16px;font-weight:500;color:var(--ink);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
+.logo{font-size:16px;font-weight:500;color:var(--text);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
-.logo em{color:var(--copper);font-style:normal}
+.logo em{color:var(--accent);font-style:normal}
 .nav-links{display:flex;gap:22px}
-.nav-link{font-size:12px;color:var(--ink3);text-decoration:none}
-a.nav-link:hover{color:var(--copper)}
-.nav-link.active{color:var(--copper);border-bottom:1px solid var(--copper);padding-bottom:1px}
+.nav-link{font-size:12px;color:var(--text-muted);text-decoration:none}
+a.nav-link:hover{color:var(--accent)}
+.nav-link.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px}
 .nav-right{display:flex;align-items:center;gap:16px}
-.nav-cta{font-size:12px;font-weight:500;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:1px;text-decoration:none}
-.nav-wechat{font-size:12px;font-weight:500;color:var(--copper);border-bottom:1.5px solid var(--copper);padding-bottom:1px;text-decoration:none}
-a.nav-wechat:hover{color:var(--copper2)}
+.nav-cta{font-size:12px;font-weight:500;color:var(--text);border-bottom:1.5px solid var(--text);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:12px;font-weight:500;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--accent-light)}
 
 .breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center}
-.breadcrumb span{font-size:12px;color:var(--ink4)}
-.breadcrumb .sep{font-size:12px;color:var(--sand4)}
-.breadcrumb .current{font-size:12px;color:var(--ink2)}
+.breadcrumb span{font-size:12px;color:var(--text-faint)}
+.breadcrumb .sep{font-size:12px;color:var(--bg-warm)}
+.breadcrumb .current{font-size:12px;color:var(--text-secondary)}
 
-.hero{padding:48px 28px 40px;border-bottom:var(--rule);background:linear-gradient(135deg, rgba(26,31,54,0.7) 0%, rgba(180,83,9,0.25) 100%), url('images/ai-solutions-hero.png') center/cover no-repeat;position:relative;color:#fff}.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(26,31,54,0.5);z-index:0}.hero > *{position:relative;z-index:1}
-.hero-kicker{font-size:11px;color:var(--copper);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--copper)}
+.hero{padding:48px 28px 40px;border-bottom:var(--rule);background:linear-gradient(135deg, rgba(26,31,54,0.7) 0%, rgba(37,99,235,0.25) 100%), url('images/ai-solutions-hero.png') center/cover no-repeat;position:relative;color:#fff}.hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(26,31,54,0.5);z-index:0}.hero > *{position:relative;z-index:1}
+.hero-kicker{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hero-kicker::before{content:'';display:block;width:20px;height:1px;background:var(--accent)}
 .hero h1{font-size:31px;font-weight:500;color:#fff;line-height:1.22;letter-spacing:-0.025em;max-width:480px;margin-bottom:14px}
-.hero h1 em{color:var(--copper);font-style:normal}
-.hero-sub{font-size:14px;color:#FDE68A;line-height:1.75;max-width:520px}
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:14px;color:#e0e7ff;line-height:1.75;max-width:520px}
 
-.section-label{font-size:11px;font-weight:500;color:var(--ink3);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.section-label{font-size:11px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
 .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
 
 /* ===== 三层架构体系 ===== */
 .architecture{padding:40px 28px;border-bottom:var(--rule)}
 .arch-grid{display:grid;grid-template-columns:1fr;gap:24px;margin-top:24px;max-width:1200px;margin-left:auto;margin-right:auto}
-.arch-layer{padding:28px;border:var(--rule);border-radius:4px;background:var(--sand);transition:all 0.3s ease}
-.arch-layer:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 8px 16px rgba(180,83,9,0.1)}
+.arch-layer{padding:28px;border:var(--rule);border-radius:4px;background:var(--bg);transition:all 0.3s ease}
+.arch-layer:hover{background:var(--bg-alt);transform:translateY(-4px);box-shadow:0 8px 16px rgba(37,99,235,0.1)}
 .arch-layer-header{display:flex;align-items:baseline;gap:16px;margin-bottom:16px}
-.arch-layer-title{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-0.01em}
-.arch-layer-kicker{font-size:12px;color:var(--copper);font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
+.arch-layer-title{font-size:17px;font-weight:600;color:var(--text);letter-spacing:-0.01em}
+.arch-layer-kicker{font-size:12px;color:var(--accent);font-weight:500;text-transform:uppercase;letter-spacing:0.08em}
 .arch-keywords{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
-.keyword-tag{font-size:12px;color:var(--copper);background:var(--copper3);padding:4px 10px;border-radius:2px;font-weight:500}
+.keyword-tag{font-size:12px;color:var(--accent);background:var(--accent-bg);padding:4px 10px;border-radius:2px;font-weight:500}
 .arch-content{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.arch-left h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:12px}
-.arch-left p{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:12px}
-.arch-left ul{font-size:13px;color:var(--ink2);line-height:1.8;margin-left:20px}
+.arch-left h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px}
+.arch-left p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
+.arch-left ul{font-size:13px;color:var(--text-secondary);line-height:1.8;margin-left:20px}
 .arch-left li{margin-bottom:8px}
-.arch-right h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:12px}
-.arch-service-item{font-size:13px;color:var(--ink2);line-height:1.8;margin-bottom:12px;padding-left:16px;position:relative}
-.arch-service-item::before{content:'✓';position:absolute;left:0;color:var(--copper);font-weight:bold}
+.arch-right h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:12px}
+.arch-service-item{font-size:13px;color:var(--text-secondary);line-height:1.8;margin-bottom:12px;padding-left:16px;position:relative}
+.arch-service-item::before{content:'✓';position:absolute;left:0;color:var(--accent);font-weight:bold}
 
 /* ===== 六大应用场景 ===== */
 .scenarios{padding:40px 28px;border-bottom:var(--rule)}
 .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-.scenario-card{padding:24px;border:var(--rule);border-radius:4px;background:var(--sand);transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);position:relative;overflow:hidden}
-.scenario-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.scenario-card{padding:24px;border:var(--rule);border-radius:4px;background:var(--bg);transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);position:relative;overflow:hidden}
+.scenario-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
 .scenario-card:hover::before{transform:scaleX(1)}
-.scenario-card:hover{background:var(--sand2);transform:translateY(-6px);box-shadow:0 8px 16px rgba(180,83,9,0.12);border-radius:8px}
-.scenario-num{font-size:12px;color:var(--copper);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
-.scenario-card h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.4}
-.scenario-card p{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:12px}
-.scenario-value{font-size:12px;color:var(--copper);font-weight:500;background:var(--copper3);padding:6px 10px;border-radius:2px;display:inline-block}
+.scenario-card:hover{background:var(--bg-alt);transform:translateY(-6px);box-shadow:0 8px 16px rgba(37,99,235,0.12);border-radius:8px}
+.scenario-num{font-size:12px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.scenario-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.4}
+.scenario-card p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px}
+.scenario-value{font-size:12px;color:var(--accent);font-weight:500;background:var(--accent-bg);padding:6px 10px;border-radius:2px;display:inline-block}
 
 /* ===== AI 算力期刊 ===== */
-.journal-section{padding:48px 28px;border-bottom:var(--rule);background:linear-gradient(180deg,#fff 0%,var(--sand) 100%)}
+.journal-section{padding:48px 28px;border-bottom:var(--rule);background:linear-gradient(180deg,#fff 0%,var(--bg) 100%)}
 .journal-section .section-label{margin-bottom:8px}
-.journal-subtitle{font-size:14px;color:var(--ink2);line-height:1.7;max-width:560px;margin-bottom:28px}
+.journal-subtitle{font-size:14px;color:var(--text-secondary);line-height:1.7;max-width:560px;margin-bottom:28px}
 .journal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:24px}
-.journal-card{background:var(--sand);border:var(--rule);border-radius:6px;overflow:hidden;transition:all 0.3s ease;cursor:pointer}
-.journal-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(180,83,9,0.1);border-color:var(--copper2)}
+.journal-card{background:var(--bg);border:var(--rule);border-radius:6px;overflow:hidden;transition:all 0.3s ease;cursor:pointer}
+.journal-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(37,99,235,0.1);border-color:var(--accent-light)}
 .journal-card-top{display:flex;align-items:stretch}
 .journal-cover{width:200px;min-height:160px;object-fit:cover;flex-shrink:0}
 .journal-body{flex:1;padding:20px 24px;display:flex;flex-direction:column;justify-content:center}
-.journal-tag{font-size:11px;color:var(--copper);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
-.journal-card h3{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.5}
-.journal-card p{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:0}
+.journal-tag{font-size:11px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.journal-card h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.5}
+.journal-card p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:0}
 .journal-card-footer{padding:14px 24px;border-top:var(--rule);display:flex;align-items:center;justify-content:space-between}
 .journal-keywords{display:flex;gap:6px;flex-wrap:wrap}
-.journal-kw{font-size:11px;color:var(--ink3);background:var(--sand2);padding:3px 8px;border-radius:2px}
-.journal-link{font-size:12px;color:var(--copper);font-weight:500;text-decoration:none;transition:all 0.2s ease}
-.journal-link:hover{color:var(--copper2)}
+.journal-kw{font-size:11px;color:var(--text-muted);background:var(--bg-alt);padding:3px 8px;border-radius:2px}
+.journal-link{font-size:12px;color:var(--accent);font-weight:500;text-decoration:none;transition:all 0.2s ease}
+.journal-link:hover{color:var(--accent-light)}
 
 /* ===== 为什么选择励康 ===== */
 .why-leadcom{padding:40px 28px;border-bottom:var(--rule)}
 .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:24px}
-.why-item{padding:20px;border:var(--rule);border-radius:4px;background:var(--sand);text-align:center;transition:all 0.3s ease}
-.why-item:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 4px 12px rgba(180,83,9,0.1)}
-.why-icon{font-size:29px;color:var(--copper);margin-bottom:12px}
-.why-item h4{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
-.why-item p{font-size:12px;color:var(--ink2);line-height:1.6}
+.why-item{padding:20px;border:var(--rule);border-radius:4px;background:var(--bg);text-align:center;transition:all 0.3s ease}
+.why-item:hover{background:var(--bg-alt);transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.1)}
+.why-icon{font-size:29px;color:var(--accent);margin-bottom:12px}
+.why-item h4{font-size:14px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.3}
+.why-item p{font-size:12px;color:var(--text-secondary);line-height:1.6}
 
 /* ===== 典型部署方案 ===== */
 .deployment{padding:40px 28px;border-bottom:var(--rule)}
 .plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:24px}
-.plan-card{padding:28px;border:var(--rule);border-radius:4px;background:var(--sand);transition:all 0.3s ease;position:relative}
-.plan-card:hover{background:var(--sand2);transform:translateY(-4px);box-shadow:0 8px 16px rgba(180,83,9,0.12)}
-.plan-badge{display:inline-block;font-size:11px;color:var(--copper);background:var(--copper3);padding:4px 10px;border-radius:2px;margin-bottom:14px;font-weight:500}
-.plan-card h3{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3}
-.plan-price{font-size:19px;font-weight:600;color:var(--copper);margin-bottom:14px}
-.plan-detail{font-size:13px;color:var(--ink2);line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:var(--rule)}
-.plan-detail strong{color:var(--ink);font-weight:600}
-.plan-specs{font-size:12px;color:var(--ink3);line-height:1.8;margin-bottom:12px}
+.plan-card{padding:28px;border:var(--rule);border-radius:4px;background:var(--bg);transition:all 0.3s ease;position:relative}
+.plan-card:hover{background:var(--bg-alt);transform:translateY(-4px);box-shadow:0 8px 16px rgba(37,99,235,0.12)}
+.plan-badge{display:inline-block;font-size:11px;color:var(--accent);background:var(--accent-bg);padding:4px 10px;border-radius:2px;margin-bottom:14px;font-weight:500}
+.plan-card h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:10px;line-height:1.3}
+.plan-price{font-size:19px;font-weight:600;color:var(--accent);margin-bottom:14px}
+.plan-detail{font-size:13px;color:var(--text-secondary);line-height:1.7;margin-bottom:12px;padding-bottom:12px;border-bottom:var(--rule)}
+.plan-detail strong{color:var(--text);font-weight:600}
+.plan-specs{font-size:12px;color:var(--text-muted);line-height:1.8;margin-bottom:12px}
 .plan-specs div{margin-bottom:6px}
-.plan-timeline{font-size:12px;color:var(--copper);font-weight:500;background:var(--copper3);padding:6px 10px;border-radius:2px;display:inline-block}
+.plan-timeline{font-size:12px;color:var(--accent);font-weight:500;background:var(--accent-bg);padding:6px 10px;border-radius:2px;display:inline-block}
 
 /* ===== 后续步骤 ===== */
 .next-steps{padding:40px 28px;border-bottom:var(--rule)}
@@ -174,36 +174,36 @@ a.nav-wechat:hover{color:var(--copper2)}
 .step{padding:28px 20px 20px 0;border-right:var(--rule);position:relative;transition:all 0.3s ease}
 .step:last-child{border-right:none}
 .step:not(:first-child){padding-left:20px}
-.step::before{content:'';position:absolute;left:-12px;top:0;width:24px;height:24px;background:var(--copper);border-radius:50%;border:3px solid var(--sand);z-index:2;display:flex;align-items:center;justify-content:center}
-.step-num{font-size:12px;color:var(--copper);font-weight:600;letter-spacing:0.1em;margin-bottom:10px;text-transform:uppercase}
-.step h4{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px}
-.step p{font-size:13px;color:var(--ink2);line-height:1.7}
+.step::before{content:'';position:absolute;left:-12px;top:0;width:24px;height:24px;background:var(--accent);border-radius:50%;border:3px solid var(--bg);z-index:2;display:flex;align-items:center;justify-content:center}
+.step-num{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:0.1em;margin-bottom:10px;text-transform:uppercase}
+.step h4{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.step p{font-size:13px;color:var(--text-secondary);line-height:1.7}
 
 .cta-section{padding:40px 28px;border-bottom:var(--rule);display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.cta-kicker{font-size:11px;color:var(--copper);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
-.cta-kicker::before{content:'';display:block;width:16px;height:1px;background:var(--copper)}
-.cta-left h2{font-size:21px;font-weight:500;color:var(--ink);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.3}
-.cta-left p{font-size:13px;color:var(--ink3);line-height:1.7;margin-bottom:16px}
+.cta-kicker{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.cta-kicker::before{content:'';display:block;width:16px;height:1px;background:var(--accent)}
+.cta-left h2{font-size:21px;font-weight:500;color:var(--text);letter-spacing:-0.02em;margin-bottom:8px;line-height:1.3}
+.cta-left p{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:16px}
 .cta-promise{display:flex;flex-direction:column;gap:6px}
 .promise-row{display:flex;align-items:center;gap:8px}
-.promise-check{font-size:13px;color:var(--copper)}
-.promise-row span{font-size:12px;color:var(--ink3)}
-.cta-right{background:var(--sand2);border:var(--rule);border-radius:2px;padding:22px}
-.cta-right h3{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:16px}
-.field-label{font-size:11px;color:var(--ink3);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px}
-.cta-input{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:13px;color:var(--ink);margin-bottom:12px;display:block}
-.cta-input::placeholder{color:var(--ink4)}
-.cta-select{width:100%;background:var(--sand);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:13px;color:var(--ink3);margin-bottom:16px;display:block;appearance:none}
-.cta-submit{width:100%;background:var(--ink);color:var(--sand);font-size:13px;font-weight:500;padding:11px;border-radius:2px;text-align:center;display:block;cursor:pointer;border:none;transition:all 0.3s ease}
-.cta-submit:hover{background:var(--copper);color:#fff}
-.cta-note{font-size:11px;color:var(--ink4);text-align:center;margin-top:8px}
+.promise-check{font-size:13px;color:var(--accent)}
+.promise-row span{font-size:12px;color:var(--text-muted)}
+.cta-right{background:var(--bg-alt);border:var(--rule);border-radius:2px;padding:22px}
+.cta-right h3{font-size:14px;font-weight:500;color:var(--text);margin-bottom:16px}
+.field-label{font-size:11px;color:var(--text-muted);font-weight:500;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:5px}
+.cta-input{width:100%;background:var(--bg);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:13px;color:var(--text);margin-bottom:12px;display:block}
+.cta-input::placeholder{color:var(--text-faint)}
+.cta-select{width:100%;background:var(--bg);border:var(--rule);border-radius:2px;padding:9px 12px;font-size:13px;color:var(--text-muted);margin-bottom:16px;display:block;appearance:none}
+.cta-submit{width:100%;background:var(--text);color:var(--bg);font-size:13px;font-weight:500;padding:11px;border-radius:2px;text-align:center;display:block;cursor:pointer;border:none;transition:all 0.3s ease}
+.cta-submit:hover{background:var(--accent);color:#fff}
+.cta-note{font-size:11px;color:var(--text-faint);text-align:center;margin-top:8px}
 
 footer{padding:24px 28px;border-top:var(--rule)}
 .footer-top{display:flex;justify-content:space-between;align-items:center}
-.footer-copy{font-size:11px;color:var(--ink4)}
+.footer-copy{font-size:11px;color:var(--text-faint)}
 .footer-links{display:flex;gap:16px}
-.footer-links span{font-size:11px;color:var(--ink4)}
-.footer-links a{font-size:11px;color:var(--ink4);text-decoration:none}
+.footer-links span{font-size:11px;color:var(--text-faint)}
+.footer-links a{font-size:11px;color:var(--text-faint);text-decoration:none}
 
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:0.3}50%{transform:scale(1.1);opacity:0.1}}
@@ -218,7 +218,7 @@ footer{padding:24px 28px;border-top:var(--rule)}
   .nav-right{gap:10px}
   .nav-cta{font-size:13px}
   .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
-  .nav-hamburger span{display:block;height:2px;background:var(--ink);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span{display:block;height:2px;background:var(--text);position:absolute;left:0;width:100%;transition:.3s}
   .nav-hamburger span:nth-child(1){top:0}
   .nav-hamburger span:nth-child(2){top:8px}
   .nav-hamburger span:nth-child(3){top:16px}
@@ -252,7 +252,7 @@ var _hmt = _hmt || [];
 </head>
 <body>
 
-<div style="background:var(--sand);border:var(--rule);border-radius:4px;overflow:hidden">
+<div style="background:var(--bg);border:var(--rule);border-radius:4px;overflow:hidden">
 
 <nav>
   <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
@@ -272,7 +272,7 @@ var _hmt = _hmt || [];
 </nav>
 
 <div class="breadcrumb">
-  <a href="index.html" style="font-size:12px;color:var(--ink4);text-decoration:none">首页</a><span class="sep">/</span><span class="current">AI 解决方案</span>
+  <a href="index.html" style="font-size:12px;color:var(--text-faint);text-decoration:none">首页</a><span class="sep">/</span><span class="current">AI 解决方案</span>
 </div>
 
 <div class="hero">
@@ -281,14 +281,14 @@ var _hmt = _hmt || [];
   <p class="hero-sub" style="max-width:580px">
     SPARK 本地算力租赁 + One API 模型网关 + Hermes / OpenClaw Agent 部署 —— 从开箱到上线，励康一站式交付。<br>
     <span style="display:inline-flex;align-items:center;gap:6px;margin-top:8px">
-      <span style="display:inline-block;width:6px;height:6px;background:var(--copper);border-radius:50%"></span>推理速度 3-5 倍于云 API
+      <span style="display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%"></span>推理速度 3-5 倍于云 API
     </span>
     <span style="display:inline-flex;align-items:center;gap:6px;margin-left:20px">
-      <span style="display:inline-block;width:6px;height:6px;background:var(--copper);border-radius:50%"></span>128GB 统一内存开箱即用
+      <span style="display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%"></span>128GB 统一内存开箱即用
     </span>
   </p>
 </div>
-<div style="padding:40px 28px;background:linear-gradient(135deg,#292524 0%,#B45309 100%);color:#fff;box-shadow:0 8px 32px rgba(180,83,9,0.18);position:relative;overflow:hidden;border-bottom:var(--rule)">
+<div style="padding:40px 28px;background:linear-gradient(135deg,#1A1F36 0%,#2563EB 100%);color:#fff;box-shadow:0 8px 32px rgba(37,99,235,0.18);position:relative;overflow:hidden;border-bottom:var(--rule)">
   <div style="position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,0.06);border-radius:50%"></div>
   <div style="position:absolute;bottom:-60px;left:-30px;width:160px;height:160px;background:rgba(255,255,255,0.04);border-radius:50%"></div>
   <div style="position:relative;z-index:1">
@@ -343,16 +343,16 @@ var _hmt = _hmt || [];
       </div>
     </div>
     <div style="text-align:center">
-      <a href="#spark-detail" style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:#292524;padding:10px 24px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='none'">了解详细配置与报价 →</a>
+      <a href="#spark-detail" style="display:inline-flex;align-items:center;gap:6px;background:#fff;color:#1A1F36;padding:10px 24px;border-radius:6px;font-size:14px;font-weight:600;text-decoration:none;transition:transform 0.2s" onmouseover="this.style.transform='translateY(-1px)'" onmouseout="this.style.transform='none'">了解详细配置与报价 →</a>
     </div>
   </div>
 </div>
 
 <div class="architecture">
-  <div class="section-label" style="font-size:21px;font-weight:700;color:var(--ink);text-transform:none;letter-spacing:normal;margin-bottom:24px">不止算力，更是完整 AI 栈</div>
-  <div style="text-align:center;margin:32px 0;background:#fff;padding:40px;border:var(--rule);border-radius:8px;box-shadow:0 4px 12px rgba(180,83,9,0.08)">
+  <div class="section-label" style="font-size:21px;font-weight:700;color:var(--text);text-transform:none;letter-spacing:normal;margin-bottom:24px">不止算力，更是完整 AI 栈</div>
+  <div style="text-align:center;margin:32px 0;background:#fff;padding:40px;border:var(--rule);border-radius:8px;box-shadow:0 4px 12px rgba(37,99,235,0.08)">
     <img src="images/ai-architecture-diagram.png" alt="AI Agent 全栈三层架构示意图" style="max-width:600px;width:100%;height:auto">
-    <p style="font-size:13px;color:var(--ink3);margin-top:16px">励康 AI Agent 全栈方案：从算力支撑到智能交互的闭环架构</p>
+    <p style="font-size:13px;color:var(--text-muted);margin-top:16px">励康 AI Agent 全栈方案：从算力支撑到智能交互的闭环架构</p>
   </div>
   <div class="arch-grid">
     <div class="arch-layer" id="spark-detail">
@@ -374,17 +374,17 @@ var _hmt = _hmt || [];
             <li>优势：性价比高，128GB 大内存跑 70B 模型，功耗低</li>
           </ul>
           <div style="background:#ecfdf5; padding:16px; border-radius:4px; border-left:4px solid #10b981; margin-bottom:20px">
-            <div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:12px">AMD 395 租赁价格 (含13%增值税):</div>
+            <div style="font-size:14px; font-weight:700; color:var(--text); margin-bottom:12px">AMD 395 租赁价格 (含13%增值税):</div>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:12px">
               <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(16,185,129,0.2)">
                 <div style="font-size:12px; color:#666; margin-bottom:4px">年租</div>
                 <div style="font-size:16px; color:#10b981; font-weight:700">¥15,000 <span style="font-size:12px; font-weight:normal">/年</span></div>
-                <div style="font-size:11px; color:#A8A29E; margin-top:2px">月均 ¥1,250</div>
+                <div style="font-size:11px; color:#9a9182; margin-top:2px">月均 ¥1,250</div>
               </div>
               <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(16,185,129,0.2)">
                 <div style="font-size:12px; color:#666; margin-bottom:4px">季租</div>
                 <div style="font-size:16px; color:#10b981; font-weight:700">¥4,350 <span style="font-size:12px; font-weight:normal">/季</span></div>
-                <div style="font-size:11px; color:#A8A29E; margin-top:2px">月均 ¥1,450</div>
+                <div style="font-size:11px; color:#9a9182; margin-top:2px">月均 ¥1,450</div>
               </div>
               <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(16,185,129,0.2)">
                 <div style="font-size:12px; color:#666; margin-bottom:4px">月租</div>
@@ -398,22 +398,22 @@ var _hmt = _hmt || [];
             <li>配置：128GB 统一内存 + 1TB 高速存储 · 可级联至 256GB · 2 PFLOP</li>
             <li>优势：CUDA 生态兼容，推理速度快 3-5 倍，开箱即用，高隐私</li>
           </ul>
-          <div style="background:var(--copper3); padding:16px; border-radius:4px; border-left:4px solid var(--copper); margin-bottom:16px">
-            <div style="font-size:14px; font-weight:700; color:var(--ink); margin-bottom:12px">SPARK 租赁价格 (含13%增值税):</div>
+          <div style="background:var(--accent-bg); padding:16px; border-radius:4px; border-left:4px solid var(--accent); margin-bottom:16px">
+            <div style="font-size:14px; font-weight:700; color:var(--text); margin-bottom:12px">SPARK 租赁价格 (含13%增值税):</div>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap:12px">
-              <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(180,83,9,0.2)">
+              <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(37,99,235,0.2)">
                 <div style="font-size:12px; color:#666; margin-bottom:4px">年租</div>
-                <div style="font-size:16px; color:var(--copper); font-weight:700">¥23,400 <span style="font-size:12px; font-weight:normal">/年</span></div>
-                <div style="font-size:11px; color:#A8A29E; margin-top:2px">月均 ¥1,950</div>
+                <div style="font-size:16px; color:var(--accent); font-weight:700">¥23,400 <span style="font-size:12px; font-weight:normal">/年</span></div>
+                <div style="font-size:11px; color:#9a9182; margin-top:2px">月均 ¥1,950</div>
               </div>
-              <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(180,83,9,0.2)">
+              <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(37,99,235,0.2)">
                 <div style="font-size:12px; color:#666; margin-bottom:4px">季租</div>
-                <div style="font-size:16px; color:var(--copper); font-weight:700">¥6,750 <span style="font-size:12px; font-weight:normal">/季</span></div>
-                <div style="font-size:11px; color:#A8A29E; margin-top:2px">月均 ¥2,250</div>
+                <div style="font-size:16px; color:var(--accent); font-weight:700">¥6,750 <span style="font-size:12px; font-weight:normal">/季</span></div>
+                <div style="font-size:11px; color:#9a9182; margin-top:2px">月均 ¥2,250</div>
               </div>
-              <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(180,83,9,0.2)">
+              <div style="background:#fff; padding:12px; border-radius:4px; text-align:center; border:1px solid rgba(37,99,235,0.2)">
                 <div style="font-size:12px; color:#666; margin-bottom:4px">月租</div>
-                <div style="font-size:16px; color:var(--copper); font-weight:700">¥2,650 <span style="font-size:12px; font-weight:normal">/月</span></div>
+                <div style="font-size:16px; color:var(--accent); font-weight:700">¥2,650 <span style="font-size:12px; font-weight:normal">/月</span></div>
               </div>
             </div>
           </div>
@@ -583,13 +583,13 @@ var _hmt = _hmt || [];
 
 <!-- Performance Benchmark -->
 <div class="architecture" style="margin-top:40px; padding:40px 28px; border-bottom:var(--rule)">
-  <div class="section-label" style="font-size:20px;font-weight:700;color:var(--ink);text-transform:none;letter-spacing:normal;margin-bottom:24px">算力性能实测对比</div>
-  <div style="background:#fff;padding:40px;border:var(--rule);border-radius:8px;box-shadow:0 4px 12px rgba(180,83,9,0.08)">
+  <div class="section-label" style="font-size:20px;font-weight:700;color:var(--text);text-transform:none;letter-spacing:normal;margin-bottom:24px">算力性能实测对比</div>
+  <div style="background:#fff;padding:40px;border:var(--rule);border-radius:8px;box-shadow:0 4px 12px rgba(37,99,235,0.08)">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center">
       <div>
-        <h4 style="font-size:17px;font-weight:600;color:var(--ink);margin-bottom:16px">DGX Spark vs Mac mini M4 Pro</h4>
-        <p style="font-size:14px;color:var(--ink2);line-height:1.7;margin-bottom:20px">基于 LMSYS 的权威评测数据，我们的算力方案在主流大模型（如 DeepSeek-R1, Qwen-32B, Llama-3.1）的推理速度上表现卓越。</p>
-        <ul style="font-size:13px;color:var(--ink2);line-height:2;padding-left:20px">
+        <h4 style="font-size:17px;font-weight:600;color:var(--text);margin-bottom:16px">DGX Spark vs Mac mini M4 Pro</h4>
+        <p style="font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:20px">基于 LMSYS 的权威评测数据，我们的算力方案在主流大模型（如 DeepSeek-R1, Qwen-32B, Llama-3.1）的推理速度上表现卓越。</p>
+        <ul style="font-size:13px;color:var(--text-secondary);line-height:2;padding-left:20px">
           <li><strong>本地化推理优势</strong>：在 Batch=1 的场景下，Mac mini M4 Pro 展现了极高的性价比与响应速度。</li>
           <li><strong>集群扩展能力</strong>：DGX Spark 在处理超大规模模型（如 70B+）及高并发任务时具备更强的吞吐性能。</li>
           <li><strong>全场景覆盖</strong>：无论是单机本地运行还是企业级集群部署，励康均能提供最优的能效比方案。</li>
@@ -597,7 +597,7 @@ var _hmt = _hmt || [];
       </div>
       <div style="text-align:center">
         <img src="images/compute-benchmark.png" alt="DGX Spark vs Mac mini M4 Pro 性能对比" style="max-width:100%;height:auto;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.1)">
-        <p style="font-size:11px;color:var(--ink3);margin-top:12px">数据来源：LMSYS (Decode Speed, Engine=ollama)</p>
+        <p style="font-size:11px;color:var(--text-muted);margin-top:12px">数据来源：LMSYS (Decode Speed, Engine=ollama)</p>
       </div>
     </div>
   </div>
@@ -701,7 +701,7 @@ var _hmt = _hmt || [];
     </div>
   </div>
   <div style="text-align:center;padding-top:16px;margin-top:16px;border-top:var(--rule)">
-    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--ink3);text-decoration:none">粤ICP备2021011807号</a>
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--text-muted);text-decoration:none">粤ICP备2021011807号</a>
   </div>
 </footer>
 
