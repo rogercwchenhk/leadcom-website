@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>WorkBuddy 企业版入门：对话、文档、知识库三大核心 | 励康信息技术</title>
+<meta name="description" content="WorkBuddy 企业版快速入门指南。掌握对话查询、智能文档、企业知识库三大核心场景，让团队用一个界面完成所有碎片化工作。">
+<meta name="keywords" content="WorkBuddy企业版,WorkBuddy教程,AI数字员工,腾讯云WorkBuddy,企业AI助手,知识库RAG">
+<link rel="canonical" href="https://www.leadcom.chat/blog-tencent-workbuddy-starter.html">
+
+<meta name="author" content="广东励康信息技术有限公司">
+<meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.leadcom.chat/blog-tencent-workbuddy-starter.html">
+<meta property="og:title" content="WorkBuddy 企业版入门：对话、文档、知识库三大核心">
+<meta property="og:description" content="WorkBuddy 企业版快速入门指南。掌握对话查询、智能文档、企业知识库三大核心场景，让团队用一个界面完成所有碎片化工作。">
+<meta property="og:image" content="https://www.leadcom.chat/images/hero-bg.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="励康信息技术">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "WorkBuddy 企业版入门：对话、文档、知识库三大核心",
+      "author": {"@type": "Person", "name": "陈超伟"},
+      "publisher": {"@type": "Organization", "name": "广东励康信息技术有限公司"},
+      "datePublished": "2026-07-09",
+      "description": "WorkBuddy 企业版快速入门指南。掌握对话查询、智能文档、企业知识库三大核心场景，让团队用一个界面完成所有碎片化工作。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.leadcom.chat/"},
+        {"@type": "ListItem", "position": 2, "name": "技术博客", "item": "https://www.leadcom.chat/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "WorkBuddy 企业版入门"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --bg:#F5F7FA;--bg-alt:#EDF0F5;--border:#D8DEE6;--bg-warm:#d4c9b4;
+  --text:#1A1F36;--text-secondary:#3A3F52;--text-muted:#6B7280;--text-faint:#9a9182;
+  --accent:#2563EB;--accent-light:#3B82F6;--accent-bg:#DBEAFE;
+  --rule:1px solid #CBD5E1;--rule-light:1px solid #D8DEE6;
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);overflow-x:hidden;padding-top:60px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
+.logo{font-size:16px;font-weight:500;color:var(--text);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+.logo em{color:var(--accent);font-style:normal}
+.nav-links{display:flex;gap:22px}
+.nav-link{font-size:12px;color:var(--text-muted);text-decoration:none}
+a.nav-link:hover{color:var(--accent)}
+.nav-link.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-size:12px;font-weight:500;color:var(--text);border-bottom:1.5px solid var(--text);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:12px;font-weight:500;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--accent-light)}
+
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.breadcrumb a{font-size:12px;color:var(--text-faint);text-decoration:none}
+.breadcrumb span{font-size:12px;color:var(--text-faint)}
+.breadcrumb .sep{font-size:12px;color:var(--bg-warm)}
+.breadcrumb .current{font-size:12px;color:var(--text-secondary)}
+
+.article-hero{padding:48px 28px 36px;border-bottom:var(--rule);max-width:780px;margin:0 auto}
+.article-tag{display:inline-block;font-size:11px;color:var(--accent);background:var(--accent-bg);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
+.article-hero h1{font-size:31px;font-weight:500;color:var(--text);line-height:1.25;letter-spacing:-0.025em;margin-bottom:16px}
+.article-meta{font-size:12px;color:var(--text-faint);display:flex;gap:14px;align-items:center}
+.article-meta-divider{color:var(--bg-warm)}
+
+.article-content{padding:40px 28px;max-width:780px;margin:0 auto;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.article-content p{margin-bottom:18px}
+.article-content h2{font-size:21px;font-weight:500;color:var(--text);margin:36px 0 16px;letter-spacing:-0.015em;padding-top:24px;border-top:var(--rule-light)}
+.article-content h2:first-of-type{border-top:none;padding-top:0;margin-top:8px}
+.article-content h3{font-size:17px;font-weight:500;color:var(--text);margin:24px 0 10px;letter-spacing:-0.01em}
+.article-content strong{color:var(--text);font-weight:500}
+.article-content em{color:var(--accent);font-style:normal;font-weight:500}
+.article-content ul{margin:12px 0 18px 0;padding-left:0;list-style:none}
+.article-content ul li{padding-left:20px;position:relative;margin-bottom:8px}
+.article-content ul li::before{content:'•';position:absolute;left:6px;color:var(--accent);font-weight:600}
+
+.callout{background:var(--bg-alt);border-left:3px solid var(--accent);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--text-secondary);line-height:1.7}
+.callout-label{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.quote-block{margin:20px 0;padding:18px 20px;background:var(--bg);border:var(--rule-light);border-radius:4px}
+.quote-block blockquote{font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:8px;font-style:italic}
+.quote-block cite{font-size:12px;color:var(--text-faint);font-style:normal}
+
+.pain-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.pain-stat-item{padding:16px;border:var(--rule-light);border-radius:2px;background:var(--bg-alt);text-align:center;transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.pain-stat-item:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.08)}
+.pain-stat-num{font-size:25px;font-weight:500;color:var(--accent);letter-spacing:-0.02em}
+.pain-stat-label{font-size:11px;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+
+.opportunity-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.opportunity-box:hover{background:var(--border);transform:translateX(4px)}
+.opportunity-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.opportunity-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.opportunity-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.solution-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.solution-box:hover{background:var(--border);transform:translateX(4px)}
+.solution-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.solution-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.solution-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.cta-article{padding:32px 28px;background:var(--text);color:var(--bg);text-align:center;margin-top:40px}
+.cta-article h3{font-size:19px;font-weight:500;margin-bottom:8px;letter-spacing:-0.015em}
+.cta-article p{font-size:13px;color:var(--border);margin-bottom:16px}
+.cta-article-btn{display:inline-block;background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:10px 24px;border-radius:2px;text-decoration:none;transition:all 0.3s ease}
+.cta-article-btn:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+
+.related-articles{padding:40px 28px;border-top:var(--rule);max-width:780px;margin:0 auto}
+.related-articles h3{font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule);border-radius:2px}
+.related-card{padding:20px;border-right:var(--rule);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.related-card:hover{background:var(--bg-alt);transform:translateY(-2px)}
+.related-card:last-child{border-right:none}
+.related-card h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.4}
+.related-card a{font-size:12px;color:var(--accent);text-decoration:none}
+
+footer{padding:24px 28px;border-top:var(--rule)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;max-width:780px;margin:0 auto}
+.footer-copy{font-size:11px;color:var(--text-faint)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text-faint);text-decoration:none}
+.footer-social h4{font-size:11px;font-weight:500;color:var(--text);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.social-qrs{display:flex;gap:16px}
+.social-qr{text-align:center}
+.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+.social-qr span{font-size:11px;color:var(--text-muted)}
+
+.nav-hamburger{display:none}
+@media(max-width:768px){
+  nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+  .nav-links.open{display:flex}
+  .nav-link{display:block;padding:8px 0;font-size:14px}
+  .nav-right{gap:10px}
+  .nav-cta{font-size:13px}
+  .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+  .nav-hamburger span{display:block;height:2px;background:var(--text);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span:nth-child(1){top:0}
+  .nav-hamburger span:nth-child(2){top:8px}
+  .nav-hamburger span:nth-child(3){top:16px}
+  .article-hero{padding:32px 16px 24px}
+  .article-hero h1{font-size:23px!important}
+  .article-content{padding:28px 16px;font-size:14px}
+  .article-content h2{font-size:18px}
+  .pain-stat{grid-template-columns:1fr!important}
+  .related-grid{grid-template-columns:1fr!important}
+  .related-card{border-right:none!important;border-bottom:var(--rule)}
+  .related-card:last-child{border-bottom:none}
+  .footer-top{flex-direction:column;gap:16px;align-items:flex-start}
+}
+</style>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99688ed8e4a1736010504e0c9c4af957";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+
+<div style="background:var(--bg);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="ai-solutions.html">AI 解决方案</a>
+    <a class="nav-link" href="it-maintenance.html">IT 维保</a>
+    <a class="nav-link" href="tencent-cloud.html">腾讯云</a>
+    <a class="nav-link" href="cases.html">成功案例</a>
+    <a class="nav-link active" href="blog.html">博客</a>
+    <a class="nav-link" href="about.html">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#cta">免费服务 →</a>
+    <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">首页</a><span class="sep">/</span>
+  <a href="blog.html">技术博客</a><span class="sep">/</span>
+  <span class="current">WorkBuddy 企业版入门</span>
+</div>
+
+<article>
+  <header class="article-hero">
+    <span class="article-tag">腾讯云 · 产品教程</span>
+    <h1>WorkBuddy 企业版入门：对话、文档、知识库三大核心</h1>
+    <div class="article-meta">
+      <span>2026-07-09</span>
+      <span class="article-meta-divider">·</span>
+      <span>陈超伟</span>
+      <span class="article-meta-divider">·</span>
+      <span>阅读 9 分钟</span>
+    </div>
+  </header>
+
+  <div class="article-content">
+    <p>员工每天在找文件、问流程、等审批中消耗 2.5 小时——这是 McKinsey 2025 年的数据。不是员工不努力，是工具太分散。WorkBuddy 用<em>"对话+文档+知识库"</em>三位一体，把碎片化的工作收进一个界面。</p>
+
+    <div class="callout">
+      <span class="callout-label">什么是 WorkBuddy</span>
+      WorkBuddy 是腾讯云推出的 AI 数字员工平台，支持自然语言对话查询企业数据、自动生成和编辑文档、基于私有知识库的智能问答。励康作为腾讯云授权代理，提供从采购到实施的一站式服务。
+    </div>
+
+    <div class="pain-stat">
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">2.5h</div>
+        <div class="pain-stat-label">每日浪费</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">60%</div>
+        <div class="pain-stat-label">效率提升</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">1天</div>
+        <div class="pain-stat-label">部署周期</div>
+      </div>
+    </div>
+
+    <h2>核心一：对话——问什么答什么</h2>
+    <p>对话模式的本质不是聊天机器人，而是<em>企业数据的自然语言接口</em>。你说一句话，它跨系统查数据、做计算、返回结果——不需要你打开五个系统来回切换。</p>
+
+    <p>三个典型场景：</p>
+    <ul>
+      <li><strong>"王工本月还剩几天年假？"</strong> → WorkBuddy 查 OA 系统 → 返回"<em>3天</em>"。不需要登录 HR 系统、不需要翻考勤表、一句话搞定。</li>
+      <li><strong>"帮我写一份 Q3 采购计划模板"</strong> → WorkBuddy 基于历史模板生成。不是从零写，是参考你团队过去十二个季度的采购文档，输出一份可直接修改的初稿。</li>
+      <li><strong>"上周三和 XX 供应商开了什么会？"</strong> → WorkBuddy 查会议记录 → 返回摘要。连会议纪要、参会人、关键决议一起拉出来，不用翻日历、不用找邮件。</li>
+    </ul>
+
+    <p>技术原理一句话：背后是 LLM + 企业系统 API 连接器 + RAG 检索增强，不是套壳 ChatGPT。</p>
+
+    <h2>核心二：文档——AI 时代的 Office</h2>
+    <p>文档模块不是"帮你写几段文字"，而是<em>从素材到成稿的全链路自动化</em>。三个核心能力：</p>
+    <ul>
+      <li><strong>上传即生成</strong>：上传会议录音 → 自动生成结构化纪要 + 待办事项。不再是"会后花 2 小时整理纪要"，而是"会开完，纪要已经在你的文档列表里"。</li>
+      <li><strong>合同智能审查</strong>：上传 PDF 合同 → 提取关键条款 + 识别风险项 + 生成修改建议。法务审核从逐行阅读变成"看 AI 标注的红线项"。</li>
+      <li><strong>模板驱动</strong>：预设报告/方案/周报模板，输入关键数据自动填充。格式统一、内容完整、逻辑清晰——团队不再各写各的"风格化周报"。</li>
+    </ul>
+
+    <div class="callout">
+      <span class="callout-label">实战数据</span>
+      某制造企业使用文档模块后，月度经营分析报告从 3 天缩短到 2 小时。
+    </div>
+
+    <h2>核心三：知识库——企业私有数据的 RAG 引擎</h2>
+    <p>知识库是 WorkBuddy 最底层的能力，也是最能体现<em>"企业级"</em>差异的部分。三步走：</p>
+    <ul>
+      <li><strong>上传</strong>：支持 PDF/Word/Excel/网页/数据库，批量导入。不用一条条手动粘贴，上传文件后自动进入处理流程。</li>
+      <li><strong>训练</strong>：WorkBuddy 自动索引和向量化，无需人工标注。你不需要写任何代码、不需要配置向量数据库——平台全自动处理。</li>
+      <li><strong>使用</strong>：员工自然语言提问，返回<em>带来源引用</em>的精准答案。不是模糊的"可能相关"，而是"这个答案来自 SOP-007 第 3.2 节"级别的精准。</li>
+    </ul>
+
+    <p>案例：某制造企业把 300 份 SOP 文档导入知识库，新员工上岗培训从 3 天缩到半天。老员工遇到冷门问题也不再翻文件柜——一句话问知识库，3 秒出答案。</p>
+
+    <h2>三大核心协同：从单点到闭环</h2>
+    <p>对话、文档、知识库不是三个孤立的模块，而是<em>一个完整工作流的三个环节</em>。来看一个典型的一天：</p>
+    <ul>
+      <li><strong>早上</strong>：打开 WorkBuddy 对话，"今天有什么待办？" → 从 OA 拉出今日任务，按优先级排列。</li>
+      <li><strong>上午</strong>：在文档模块中，基于上周的会议录音，自动生成客户方案初稿。不是空白文档，而是有框架、有数据、有引用的半成品。</li>
+      <li><strong>下午</strong>：方案中遇到一个技术参数不确定 → 在知识库中提问 → 得到答案 + 引用来源，直接补进方案。</li>
+      <li><strong>傍晚</strong>：对话中"帮我发邮件给客户确认方案" → WorkBuddy 调邮件系统发送。不需要打开邮箱、不需要手写邮件——一句话完成闭环。</li>
+    </ul>
+    <p>这就是三位一体的价值：<strong>从信息获取到内容生产再到决策执行，一个界面走完</strong>。</p>
+
+    <h2>实战总结</h2>
+    <p>三大核心场景的提效数据对比：</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary)">
+      <thead>
+        <tr style="border-bottom:var(--rule)">
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">核心</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">典型场景</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">传统耗时</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">WorkBuddy</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">效果</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">对话</td>
+          <td style="padding:10px 12px">跨系统查数据</td>
+          <td style="padding:10px 12px">15min</td>
+          <td style="padding:10px 12px">10秒</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">99%↓</td>
+        </tr>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">文档</td>
+          <td style="padding:10px 12px">会议纪要整理</td>
+          <td style="padding:10px 12px">2h</td>
+          <td style="padding:10px 12px">5min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">96%↓</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px">知识库</td>
+          <td style="padding:10px 12px">SOP查阅</td>
+          <td style="padding:10px 12px">30min</td>
+          <td style="padding:10px 12px">3秒</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">99.8%↓</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>这些数据来自励康 2026 年上半年的客户实施统计。核心趋势一致：<strong>越是跨系统、多步骤、重复性的工作，WorkBuddy 的提效越显著</strong>。</p>
+
+    <p>对于还在用五个系统来回切换的团队，建议从一个痛点场景开始——比如"跨系统查数据太慢"——用 WorkBuddy 跑两周，用数据说话。一旦习惯了"一句话完成闭环"的工作流，团队很难再回到碎片化的旧模式。</p>
+  </div>
+
+  <div class="cta-article">
+    <h3>让团队用一个界面完成所有工作</h3>
+    <p>申请 WorkBuddy 企业版免费 POC</p>
+    <a class="cta-article-btn" href="tencent-cloud.html">立即申请 POC</a>
+  </div>
+
+  <div class="related-articles">
+    <h3>相关文章</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <h4>CodeBuddy 企业版上手</h4>
+        <a href="blog-tencent-codebuddy-starter.html">阅读全文 →</a>
+      </div>
+      <div class="related-card">
+        <h4>WorkBuddy × 制造业实战</h4>
+        <a href="blog-tencent-workbuddy-manufacturing.html">阅读全文 →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-links">
+      <a href="blog.html">← 返回博客</a>
+      <a href="blog.html">博客首页</a>
+    </div>
+    <div class="footer-social">
+      <h4>关注我们</h4>
+      <div class="social-qrs">
+        <div class="social-qr">
+          <img src="images/wechat_official.jpg" alt="微信公众号">
+          <span>微信公众号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/wecom-video.jpg" alt="微信视频号">
+          <span>微信视频号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/douyin.jpg" alt="抖音号">
+          <span>抖音号</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding-top:16px;margin-top:16px;border-top:var(--rule)">
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--text-muted);text-decoration:none">粤ICP备2021011807号</a>
+  </div>
+</footer>
+
+</div>
+
+<script src="chat-widget.js"></script>
+</body>
+</html>

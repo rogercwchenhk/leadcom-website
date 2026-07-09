@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>WorkBuddy × 服务业：多系统查询从 15 分钟到 3 秒 | 励康信息技术</title>
+<meta name="description" content="客服、销售、运营每天在 CRM、工单、财务系统之间反复横跳。WorkBuddy 统一查询层，一个对话窗口查所有，客户问订单到哪了，3 秒出答案。">
+<meta name="keywords" content="WorkBuddy服务业,客服效率提升,销售支持工具,多系统统一查询,企业AI助手,数字化运营">
+<link rel="canonical" href="https://www.leadcom.chat/blog-tencent-workbuddy-service.html">
+
+<meta name="author" content="广东励康信息技术有限公司">
+<meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.leadcom.chat/blog-tencent-workbuddy-service.html">
+<meta property="og:title" content="WorkBuddy × 服务业：多系统查询从 15 分钟到 3 秒">
+<meta property="og:description" content="客服、销售、运营每天在 CRM、工单、财务系统之间反复横跳。WorkBuddy 统一查询层，一个对话窗口查所有，客户问订单到哪了，3 秒出答案。">
+<meta property="og:image" content="https://www.leadcom.chat/images/hero-bg.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="励康信息技术">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "WorkBuddy × 服务业：多系统查询从 15 分钟到 3 秒",
+      "author": {"@type": "Person", "name": "陈超伟"},
+      "publisher": {"@type": "Organization", "name": "广东励康信息技术有限公司"},
+      "datePublished": "2026-07-09",
+      "description": "客服、销售、运营每天在 CRM、工单、财务系统之间反复横跳。WorkBuddy 统一查询层，一个对话窗口查所有，客户问订单到哪了，3 秒出答案。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.leadcom.chat/"},
+        {"@type": "ListItem", "position": 2, "name": "技术博客", "item": "https://www.leadcom.chat/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "WorkBuddy × 服务业实战"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --bg:#F5F7FA;--bg-alt:#EDF0F5;--border:#D8DEE6;--bg-warm:#d4c9b4;
+  --text:#1A1F36;--text-secondary:#3A3F52;--text-muted:#6B7280;--text-faint:#9a9182;
+  --accent:#2563EB;--accent-light:#3B82F6;--accent-bg:#DBEAFE;
+  --rule:1px solid #CBD5E1;--rule-light:1px solid #D8DEE6;
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);overflow-x:hidden;padding-top:60px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
+.logo{font-size:16px;font-weight:500;color:var(--text);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+.logo em{color:var(--accent);font-style:normal}
+.nav-links{display:flex;gap:22px}
+.nav-link{font-size:12px;color:var(--text-muted);text-decoration:none}
+a.nav-link:hover{color:var(--accent)}
+.nav-link.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-size:12px;font-weight:500;color:var(--text);border-bottom:1.5px solid var(--text);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:12px;font-weight:500;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--accent-light)}
+
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.breadcrumb a{font-size:12px;color:var(--text-faint);text-decoration:none}
+.breadcrumb span{font-size:12px;color:var(--text-faint)}
+.breadcrumb .sep{font-size:12px;color:var(--bg-warm)}
+.breadcrumb .current{font-size:12px;color:var(--text-secondary)}
+
+.article-hero{padding:48px 28px 36px;border-bottom:var(--rule);max-width:780px;margin:0 auto}
+.article-tag{display:inline-block;font-size:11px;color:var(--accent);background:var(--accent-bg);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
+.article-hero h1{font-size:31px;font-weight:500;color:var(--text);line-height:1.25;letter-spacing:-0.025em;margin-bottom:16px}
+.article-meta{font-size:12px;color:var(--text-faint);display:flex;gap:14px;align-items:center}
+.article-meta-divider{color:var(--bg-warm)}
+
+.article-content{padding:40px 28px;max-width:780px;margin:0 auto;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.article-content p{margin-bottom:18px}
+.article-content h2{font-size:21px;font-weight:500;color:var(--text);margin:36px 0 16px;letter-spacing:-0.015em;padding-top:24px;border-top:var(--rule-light)}
+.article-content h2:first-of-type{border-top:none;padding-top:0;margin-top:8px}
+.article-content h3{font-size:17px;font-weight:500;color:var(--text);margin:24px 0 10px;letter-spacing:-0.01em}
+.article-content strong{color:var(--text);font-weight:500}
+.article-content em{color:var(--accent);font-style:normal;font-weight:500}
+.article-content ul{margin:12px 0 18px 0;padding-left:0;list-style:none}
+.article-content ul li{padding-left:20px;position:relative;margin-bottom:8px}
+.article-content ul li::before{content:'•';position:absolute;left:6px;color:var(--accent);font-weight:600}
+
+.callout{background:var(--bg-alt);border-left:3px solid var(--accent);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--text-secondary);line-height:1.7}
+.callout-label{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.quote-block{margin:20px 0;padding:18px 20px;background:var(--bg);border:var(--rule-light);border-radius:4px}
+.quote-block blockquote{font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:8px;font-style:italic}
+.quote-block cite{font-size:12px;color:var(--text-faint);font-style:normal}
+
+.pain-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.pain-stat-item{padding:16px;border:var(--rule-light);border-radius:2px;background:var(--bg-alt);text-align:center;transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.pain-stat-item:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.08)}
+.pain-stat-num{font-size:25px;font-weight:500;color:var(--accent);letter-spacing:-0.02em}
+.pain-stat-label{font-size:11px;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+
+.opportunity-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.opportunity-box:hover{background:var(--border);transform:translateX(4px)}
+.opportunity-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.opportunity-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.opportunity-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.solution-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.solution-box:hover{background:var(--border);transform:translateX(4px)}
+.solution-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.solution-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.solution-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.cta-article{padding:32px 28px;background:var(--text);color:var(--bg);text-align:center;margin-top:40px}
+.cta-article h3{font-size:19px;font-weight:500;margin-bottom:8px;letter-spacing:-0.015em}
+.cta-article p{font-size:13px;color:var(--border);margin-bottom:16px}
+.cta-article-btn{display:inline-block;background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:10px 24px;border-radius:2px;text-decoration:none;transition:all 0.3s ease}
+.cta-article-btn:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+
+.related-articles{padding:40px 28px;border-top:var(--rule);max-width:780px;margin:0 auto}
+.related-articles h3{font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule);border-radius:2px}
+.related-card{padding:20px;border-right:var(--rule);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.related-card:hover{background:var(--bg-alt);transform:translateY(-2px)}
+.related-card:last-child{border-right:none}
+.related-card h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.4}
+.related-card a{font-size:12px;color:var(--accent);text-decoration:none}
+
+footer{padding:24px 28px;border-top:var(--rule)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;max-width:780px;margin:0 auto}
+.footer-copy{font-size:11px;color:var(--text-faint)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text-faint);text-decoration:none}
+.footer-social h4{font-size:11px;font-weight:500;color:var(--text);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.social-qrs{display:flex;gap:16px}
+.social-qr{text-align:center}
+.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+.social-qr span{font-size:11px;color:var(--text-muted)}
+
+.nav-hamburger{display:none}
+@media(max-width:768px){
+  nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+  .nav-links.open{display:flex}
+  .nav-link{display:block;padding:8px 0;font-size:14px}
+  .nav-right{gap:10px}
+  .nav-cta{font-size:13px}
+  .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+  .nav-hamburger span{display:block;height:2px;background:var(--text);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span:nth-child(1){top:0}
+  .nav-hamburger span:nth-child(2){top:8px}
+  .nav-hamburger span:nth-child(3){top:16px}
+  .article-hero{padding:32px 16px 24px}
+  .article-hero h1{font-size:23px!important}
+  .article-content{padding:28px 16px;font-size:14px}
+  .article-content h2{font-size:18px}
+  .pain-stat{grid-template-columns:1fr!important}
+  .related-grid{grid-template-columns:1fr!important}
+  .related-card{border-right:none!important;border-bottom:var(--rule)}
+  .related-card:last-child{border-bottom:none}
+  .footer-top{flex-direction:column;gap:16px;align-items:flex-start}
+}
+</style>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99688ed8e4a1736010504e0c9c4af957";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+
+<div style="background:var(--bg);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="ai-solutions.html">AI 解决方案</a>
+    <a class="nav-link" href="it-maintenance.html">IT 维保</a>
+    <a class="nav-link" href="tencent-cloud.html">腾讯云</a>
+    <a class="nav-link" href="cases.html">成功案例</a>
+    <a class="nav-link active" href="blog.html">博客</a>
+    <a class="nav-link" href="about.html">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#cta">免费服务 →</a>
+    <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">首页</a><span class="sep">/</span>
+  <a href="blog.html">技术博客</a><span class="sep">/</span>
+  <span class="current">WorkBuddy × 服务业实战</span>
+</div>
+
+<article>
+  <header class="article-hero">
+    <span class="article-tag">腾讯云 · 行业场景</span>
+    <h1>WorkBuddy × 服务业：多系统查询从 15 分钟到 3 秒</h1>
+    <div class="article-meta">
+      <span>2026-07-09</span>
+      <span class="article-meta-divider">·</span>
+      <span>陈超伟</span>
+      <span class="article-meta-divider">·</span>
+      <span>阅读 9 分钟</span>
+    </div>
+  </header>
+
+  <div class="article-content">
+    <p>你打电话给客服问"我的订单到哪了"，电话那头沉默了 2 分钟——不是客服不专业，是她在切系统。CRM 查客户信息 → ERP 查订单 → WMS 查物流，三个系统三个界面，一个客户问题要切 3 次。这不是个例，是服务业的一线日常。</p>
+
+    <div class="callout">
+      <span class="callout-label">服务业"系统切换税"</span>
+      平均每个客服每天在 5 个系统之间切换 60+ 次，每次切换浪费 1-2 分钟，一天累积浪费 90 分钟。不是人慢，是工具割裂。
+    </div>
+
+    <div class="pain-stat">
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">90min</div>
+        <div class="pain-stat-label">每日切换浪费</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">5个</div>
+        <div class="pain-stat-label">平均系统数</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">60次</div>
+        <div class="pain-stat-label">每日切换次数</div>
+      </div>
+    </div>
+
+    <h2>一、服务业的"系统孤岛"比你想象的更严重</h2>
+    <p>服务业的数字化转型买了不少系统，每个系统都有用，但它们之间不打通。结果就是员工成了"人肉路由器"——在不同系统之间搬运信息。看看三个典型角色的一天：</p>
+
+    <ul>
+      <li><strong>客服</strong>：CRM（客户信息）→ 工单系统（问题记录）→ ERP（订单详情）→ WMS（物流跟踪）→ 知识库（解决方案）→ 回到 CRM 回复客户。一个工单平均跨 3-5 个系统。</li>
+      <li><strong>销售</strong>：CRM（客户档案）→ ERP（历史订单和欠款）→ 合同系统（到期日）→ 商品系统（报价）。拜访前准备客户画像，30 分钟起步。</li>
+      <li><strong>运营</strong>：BI 看板（业务数据）→ 财务系统（实收实付）→ CRM（客户活跃度）→ 工单系统（服务质量）。出一份周报，半天没了。</li>
+    </ul>
+
+    <p>一句话总结：系统买了、数据有了，但人在系统之间跑，不是系统为人服务。</p>
+
+    <h2>二、WorkBuddy 的统一查询层——一个窗口，查所有系统</h2>
+    <p>WorkBuddy 通过连接器同时接入 CRM、工单、ERP、财务、知识库等系统。无论数据在哪个系统里，员工都在 WorkBuddy 一个对话框里提问，AI 自动判断该查哪个系统、如何聚合结果。</p>
+
+    <p>三个关键能力：</p>
+    <ul>
+      <li><strong>并行查询</strong>：一道问题同时问多个系统，不等排队。问"这个客户的订单和欠款情况"，CRM、ERP、财务系统同时响应，不用一个个查。</li>
+      <li><strong>智能聚合</strong>：跨系统的碎片结果自动拼成完整答案。CRM 返回客户信息、ERP 返回订单明细、财务返回应收款，WorkBuddy 把它们合并成一段通顺的回答。</li>
+      <li><strong>权限隔离</strong>：客服只能查客户服务数据，销售只能看自己客户，数据安全不妥协。WorkBuddy 的权限体系与企业现有系统权限对齐，不会越权。</li>
+    </ul>
+
+    <h2>三、场景一：客户服务——从 2 分钟沉默到 3 秒响应</h2>
+    <p>这是客服最日常的场景：客户来电问订单状态。传统流程是这样的：</p>
+
+    <ul>
+      <li>客户来电问订单状态 → 客服问客户姓名/手机号 → 打开 CRM 查客户 ID → 打开 ERP 用客户 ID 查最近订单 → 找到订单号 → 打开 WMS 查物流 → 回到电话："您的订单昨天已从广州仓发出，预计后天送达。"</li>
+    </ul>
+
+    <p>这个流程最快 2 分钟。客户在电话那头等的时候，听到的只有键盘敲击声和"您稍等，我帮您查一下"。</p>
+
+    <p>用 WorkBuddy，流程变成这样：客服在对话框输入"查一下张先生的最近订单状态"→ 3 秒返回：</p>
+
+    <div class="callout">
+      <span class="callout-label">WorkBuddy 返回</span>
+      订单 #20260709-0038，已发货，顺丰单号 SF123456，预计 7 月 11 日送达。
+    </div>
+
+    <p>同样的客服，同样的问题，<strong>以前的 2 分钟沉默变成了 3 秒即时回应</strong>。客户体验直接拉满，客服也不用再一边接电话一边疯狂切窗口。</p>
+
+    <h2>四、场景二：销售支持——30 分钟客户画像缩到 30 秒</h2>
+    <p>销售明天要去拜访 XX 公司采购总监，前一晚要准备"客户画像"。传统方式是这样的：</p>
+
+    <ul>
+      <li>打开 CRM 看客户档案 → 打开 ERP 查过去一年采购记录 → 查最近一笔订单状态 → 打开合同系统看合同到期日 → 查应收款情况。拼出一份"客户画像"，30 分钟。</li>
+    </ul>
+
+    <p>用 WorkBuddy，输入"给我 XX 公司的客户画像"→ 30 秒返回完整画像：</p>
+
+    <ul>
+      <li>公司全称、行业、规模</li>
+      <li>过去一年采购总额和品类分布</li>
+      <li>最近 3 笔订单状态</li>
+      <li>当前合同到期日</li>
+      <li>应收账款情况</li>
+      <li>建议拜访要点</li>
+    </ul>
+
+    <div class="quote-block">
+      <blockquote>"以前拜访客户，一半时间花在准备上。现在信息随时问随时有，到客户楼下才问都来得及。"</blockquote>
+      <cite>—— 某制造业企业大客户经理</cite>
+    </div>
+
+    <h2>五、场景三：运营管理——周报从半天到 10 分钟</h2>
+    <p>运营经理每周要出一份服务运营周报，数据来自四个系统：BI 看板看业务数据、财务系统看实收实付、CRM 看客户活跃度、工单系统看服务质量。传统方式光收集数据就要半天，还要手动整理成报告。</p>
+
+    <p>用 WorkBuddy，输入"生成本周服务运营周报"→ 自动聚合四个系统数据，生成结构化报告，包含：</p>
+    <ul>
+      <li>本周工单量、解决率、满意度</li>
+      <li>客户活跃度变化趋势</li>
+      <li>应收应付概览</li>
+      <li>重点关注事项和建议</li>
+    </ul>
+
+    <p>从半天到 10 分钟，运营经理终于可以把时间花在分析问题上，而不是找数据上。</p>
+
+    <h2>六、配置要点</h2>
+
+    <div class="opportunity-box">
+      <h4>1. 系统对接优先级</h4>
+      <p>先接 CRM + 工单（客服刚需），再接 ERP + 财务（销售需求），最后接 BI（运营需求）。按业务紧急程度分批对接，第一周就能让客服团队感受到提效，后续逐步扩展。</p>
+    </div>
+
+    <div class="opportunity-box">
+      <h4>2. 权限分级</h4>
+      <p>设置角色权限模板——客服组、销售组、运营组、管理层，数据隔离不越界。每个角色只能查到权限范围内的数据，与现有系统权限保持一致，安全合规。</p>
+    </div>
+
+    <div class="opportunity-box">
+      <h4>3. 常见问题模板</h4>
+      <p>预设 20 个高频查询模板，员工点击即查，无需打字。上线第一周使用率就超 80%，降低了学习门槛，让不擅长打字的员工也能轻松上手。</p>
+    </div>
+
+    <h2>实战总结</h2>
+    <p>以下是励康客户企业使用 WorkBuddy 后，三个角色的典型场景提效数据：</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary)">
+      <thead>
+        <tr style="border-bottom:var(--rule)">
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">角色</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">典型场景</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">原耗时</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">WorkBuddy</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">提效</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">客服</td>
+          <td style="padding:10px 12px">查订单状态</td>
+          <td style="padding:10px 12px">2min</td>
+          <td style="padding:10px 12px">3秒</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">98%↓</td>
+        </tr>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">客服</td>
+          <td style="padding:10px 12px">查退换货进度</td>
+          <td style="padding:10px 12px">5min</td>
+          <td style="padding:10px 12px">5秒</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">98%↓</td>
+        </tr>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">销售</td>
+          <td style="padding:10px 12px">客户画像准备</td>
+          <td style="padding:10px 12px">30min</td>
+          <td style="padding:10px 12px">30秒</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">98%↓</td>
+        </tr>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">销售</td>
+          <td style="padding:10px 12px">报价计算</td>
+          <td style="padding:10px 12px">15min</td>
+          <td style="padding:10px 12px">1min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">93%↓</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px">运营</td>
+          <td style="padding:10px 12px">周报生成</td>
+          <td style="padding:10px 12px">4h</td>
+          <td style="padding:10px 12px">10min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">96%↓</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>这些数据来自励康 2026 年上半年的客户实施案例。提效比例因企业系统数量、数据质量而异，但整体趋势一致：<strong>越是跨系统、跨角色的查询场景，WorkBuddy 的提效越显著</strong>。</p>
+
+    <p>对于还在用"人肉路由器"方式跑系统的服务企业，建议从客服场景切入——这是见效最快、员工感知最强的场景。先用 WorkBuddy 打通 CRM + 工单 + ERP 三个核心系统，跑两周看数据，再逐步扩展到销售和运营场景。</p>
+  </div>
+
+  <div class="cta-article">
+    <h3>给你的团队松绑</h3>
+    <p>申请 WorkBuddy 服务业专属 POC</p>
+    <a class="cta-article-btn" href="tencent-cloud.html">立即申请 POC</a>
+  </div>
+
+  <div class="related-articles">
+    <h3>相关文章</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <h4>WorkBuddy 企业版入门</h4>
+        <a href="blog-tencent-workbuddy-starter.html">阅读全文 →</a>
+      </div>
+      <div class="related-card">
+        <h4>WorkBuddy × 制造业实战</h4>
+        <a href="blog-tencent-workbuddy-manufacturing.html">阅读全文 →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-links">
+      <a href="blog.html">← 返回博客</a>
+      <a href="blog.html">博客首页</a>
+    </div>
+    <div class="footer-social">
+      <h4>关注我们</h4>
+      <div class="social-qrs">
+        <div class="social-qr">
+          <img src="images/wechat_official.jpg" alt="微信公众号">
+          <span>微信公众号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/wecom-video.jpg" alt="微信视频号">
+          <span>微信视频号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/douyin.jpg" alt="抖音号">
+          <span>抖音号</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding-top:16px;margin-top:16px;border-top:var(--rule)">
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--text-muted);text-decoration:none">粤ICP备2021011807号</a>
+  </div>
+</footer>
+
+</div>
+
+<script src="chat-widget.js"></script>
+</body>
+</html>

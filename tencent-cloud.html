@@ -377,6 +377,24 @@ footer{padding:24px 28px;border-top:var(--rule)}
   .mfg-user-grid{grid-template-columns:1fr}
   .mfg-flow{flex-direction:column;align-items:flex-start}
 }
+
+/* Latest Articles */
+.latest-articles{padding:48px 28px;border-bottom:var(--rule)}
+.latest-articles .section-label{margin-bottom:24px}
+.articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:var(--rule);border-radius:2px}
+.article-card{padding:24px;border-right:var(--rule);border-bottom:var(--rule);transition:background .2s}
+.article-card:nth-child(even){border-right:none}
+.article-card:nth-child(n+3){border-bottom:none}
+.article-card:hover{background:var(--bg-alt)}
+.article-card-tag{font-size:11px;color:var(--accent);font-weight:500;letter-spacing:0.08em;margin-bottom:8px}
+.article-card h4{font-size:15px;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.4;letter-spacing:-0.01em}
+.article-card p{font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:12px}
+.article-card a{font-size:12px;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-light);padding-bottom:1px}
+@media(max-width:768px){
+  .articles-grid{grid-template-columns:1fr!important}
+  .article-card{border-right:none!important}
+  .article-card:nth-child(n+3){border-bottom:var(--rule)}
+}
 </style>
 <!-- 百度统计 -->
 <script>
@@ -980,6 +998,36 @@ var _hmt = _hmt || [];
         <p>使用企业微信扫一扫</p>
       </div>
       <p class="wecom-footer">已有 500+ 企业选择我们</p>
+    </div>
+  </div>
+</div>
+
+<div class="latest-articles">
+  <div class="section-label">最新技术文章</div>
+  <div class="articles-grid">
+    <div class="article-card">
+      <div class="article-card-tag">产品教程</div>
+      <h4>CodeBuddy 企业版上手：从开通到第一个 AI 提效项目</h4>
+      <p>5 步开通指南 + 供应商评分 API 实战，30 分钟让团队用上 AI 编程搭档。</p>
+      <a href="blog-tencent-codebuddy-starter.html">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-card-tag">产品教程</div>
+      <h4>WorkBuddy 企业版入门：对话、文档、知识库三大核心</h4>
+      <p>掌握 WorkBuddy 三大核心能力，用一个界面完成团队所有碎片化工作。</p>
+      <a href="blog-tencent-workbuddy-starter.html">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-card-tag">行业场景</div>
+      <h4>WorkBuddy × 制造业：对接 MES/ERP/QMS 实战配置</h4>
+      <p>八大系统孤岛怎么破？采购询价从 4 小时缩到 3 分钟的实战方案。</p>
+      <a href="blog-tencent-workbuddy-manufacturing.html">阅读全文 →</a>
+    </div>
+    <div class="article-card">
+      <div class="article-card-tag">行业场景</div>
+      <h4>WorkBuddy × 服务业：多系统查询从 15 分钟到 3 秒</h4>
+      <p>客服/销售/运营每天切系统 60 次，WorkBuddy 统一查询层解决方案。</p>
+      <a href="blog-tencent-workbuddy-service.html">阅读全文 →</a>
     </div>
   </div>
 </div>

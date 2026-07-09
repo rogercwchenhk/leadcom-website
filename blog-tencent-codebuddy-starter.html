@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>CodeBuddy 企业版上手：从开通到第一个 AI 提效项目 | 励康信息技术</title>
+<meta name="description" content="从零开始用 CodeBuddy 企业版提升开发效率。5步开通指南 + 第一个实战项目演示，从注册到 AI 生成代码只需 30 分钟。">
+<meta name="keywords" content="CodeBuddy企业版,CodeBuddy教程,AI编程助手,腾讯云CodeBuddy,企业AI开发">
+<link rel="canonical" href="https://www.leadcom.chat/blog-tencent-codebuddy-starter.html">
+
+<meta name="author" content="广东励康信息技术有限公司">
+<meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.leadcom.chat/blog-tencent-codebuddy-starter.html">
+<meta property="og:title" content="CodeBuddy 企业版上手：从开通到第一个 AI 提效项目">
+<meta property="og:description" content="从零开始用 CodeBuddy 企业版提升开发效率。5步开通指南 + 第一个实战项目演示，从注册到 AI 生成代码只需 30 分钟。">
+<meta property="og:image" content="https://www.leadcom.chat/images/hero-bg.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="励康信息技术">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "CodeBuddy 企业版上手：从开通到第一个 AI 提效项目",
+      "author": {"@type": "Person", "name": "陈超伟"},
+      "publisher": {"@type": "Organization", "name": "广东励康信息技术有限公司"},
+      "datePublished": "2026-07-09",
+      "description": "从零开始用 CodeBuddy 企业版提升开发效率。5步开通指南 + 第一个实战项目演示，从注册到 AI 生成代码只需 30 分钟。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.leadcom.chat/"},
+        {"@type": "ListItem", "position": 2, "name": "技术博客", "item": "https://www.leadcom.chat/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "CodeBuddy 企业版上手"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --bg:#F5F7FA;--bg-alt:#EDF0F5;--border:#D8DEE6;--bg-warm:#d4c9b4;
+  --text:#1A1F36;--text-secondary:#3A3F52;--text-muted:#6B7280;--text-faint:#9a9182;
+  --accent:#2563EB;--accent-light:#3B82F6;--accent-bg:#DBEAFE;
+  --rule:1px solid #CBD5E1;--rule-light:1px solid #D8DEE6;
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);overflow-x:hidden;padding-top:60px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
+.logo{font-size:16px;font-weight:500;color:var(--text);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+.logo em{color:var(--accent);font-style:normal}
+.nav-links{display:flex;gap:22px}
+.nav-link{font-size:12px;color:var(--text-muted);text-decoration:none}
+a.nav-link:hover{color:var(--accent)}
+.nav-link.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-size:12px;font-weight:500;color:var(--text);border-bottom:1.5px solid var(--text);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:12px;font-weight:500;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--accent-light)}
+
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.breadcrumb a{font-size:12px;color:var(--text-faint);text-decoration:none}
+.breadcrumb span{font-size:12px;color:var(--text-faint)}
+.breadcrumb .sep{font-size:12px;color:var(--bg-warm)}
+.breadcrumb .current{font-size:12px;color:var(--text-secondary)}
+
+.article-hero{padding:48px 28px 36px;border-bottom:var(--rule);max-width:780px;margin:0 auto}
+.article-tag{display:inline-block;font-size:11px;color:var(--accent);background:var(--accent-bg);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
+.article-hero h1{font-size:31px;font-weight:500;color:var(--text);line-height:1.25;letter-spacing:-0.025em;margin-bottom:16px}
+.article-meta{font-size:12px;color:var(--text-faint);display:flex;gap:14px;align-items:center}
+.article-meta-divider{color:var(--bg-warm)}
+
+.article-content{padding:40px 28px;max-width:780px;margin:0 auto;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.article-content p{margin-bottom:18px}
+.article-content h2{font-size:21px;font-weight:500;color:var(--text);margin:36px 0 16px;letter-spacing:-0.015em;padding-top:24px;border-top:var(--rule-light)}
+.article-content h2:first-of-type{border-top:none;padding-top:0;margin-top:8px}
+.article-content h3{font-size:17px;font-weight:500;color:var(--text);margin:24px 0 10px;letter-spacing:-0.01em}
+.article-content strong{color:var(--text);font-weight:500}
+.article-content em{color:var(--accent);font-style:normal;font-weight:500}
+.article-content ul{margin:12px 0 18px 0;padding-left:0;list-style:none}
+.article-content ul li{padding-left:20px;position:relative;margin-bottom:8px}
+.article-content ul li::before{content:'•';position:absolute;left:6px;color:var(--accent);font-weight:600}
+
+.callout{background:var(--bg-alt);border-left:3px solid var(--accent);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--text-secondary);line-height:1.7}
+.callout-label{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.quote-block{margin:20px 0;padding:18px 20px;background:var(--bg);border:var(--rule-light);border-radius:4px}
+.quote-block blockquote{font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:8px;font-style:italic}
+.quote-block cite{font-size:12px;color:var(--text-faint);font-style:normal}
+
+.pain-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.pain-stat-item{padding:16px;border:var(--rule-light);border-radius:2px;background:var(--bg-alt);text-align:center;transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.pain-stat-item:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.08)}
+.pain-stat-num{font-size:25px;font-weight:500;color:var(--accent);letter-spacing:-0.02em}
+.pain-stat-label{font-size:11px;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+
+.opportunity-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.opportunity-box:hover{background:var(--border);transform:translateX(4px)}
+.opportunity-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.opportunity-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.opportunity-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.solution-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.solution-box:hover{background:var(--border);transform:translateX(4px)}
+.solution-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.solution-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.solution-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.cta-article{padding:32px 28px;background:var(--text);color:var(--bg);text-align:center;margin-top:40px}
+.cta-article h3{font-size:19px;font-weight:500;margin-bottom:8px;letter-spacing:-0.015em}
+.cta-article p{font-size:13px;color:var(--border);margin-bottom:16px}
+.cta-article-btn{display:inline-block;background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:10px 24px;border-radius:2px;text-decoration:none;transition:all 0.3s ease}
+.cta-article-btn:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+
+.related-articles{padding:40px 28px;border-top:var(--rule);max-width:780px;margin:0 auto}
+.related-articles h3{font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule);border-radius:2px}
+.related-card{padding:20px;border-right:var(--rule);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.related-card:hover{background:var(--bg-alt);transform:translateY(-2px)}
+.related-card:last-child{border-right:none}
+.related-card h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.4}
+.related-card a{font-size:12px;color:var(--accent);text-decoration:none}
+
+footer{padding:24px 28px;border-top:var(--rule)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;max-width:780px;margin:0 auto}
+.footer-copy{font-size:11px;color:var(--text-faint)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text-faint);text-decoration:none}
+.footer-social h4{font-size:11px;font-weight:500;color:var(--text);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.social-qrs{display:flex;gap:16px}
+.social-qr{text-align:center}
+.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+.social-qr span{font-size:11px;color:var(--text-muted)}
+
+.nav-hamburger{display:none}
+@media(max-width:768px){
+  nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+  .nav-links.open{display:flex}
+  .nav-link{display:block;padding:8px 0;font-size:14px}
+  .nav-right{gap:10px}
+  .nav-cta{font-size:13px}
+  .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+  .nav-hamburger span{display:block;height:2px;background:var(--text);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span:nth-child(1){top:0}
+  .nav-hamburger span:nth-child(2){top:8px}
+  .nav-hamburger span:nth-child(3){top:16px}
+  .article-hero{padding:32px 16px 24px}
+  .article-hero h1{font-size:23px!important}
+  .article-content{padding:28px 16px;font-size:14px}
+  .article-content h2{font-size:18px}
+  .pain-stat{grid-template-columns:1fr!important}
+  .related-grid{grid-template-columns:1fr!important}
+  .related-card{border-right:none!important;border-bottom:var(--rule)}
+  .related-card:last-child{border-bottom:none}
+  .footer-top{flex-direction:column;gap:16px;align-items:flex-start}
+}
+</style>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99688ed8e4a1736010504e0c9c4af957";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+
+<div style="background:var(--bg);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="ai-solutions.html">AI 解决方案</a>
+    <a class="nav-link" href="it-maintenance.html">IT 维保</a>
+    <a class="nav-link" href="tencent-cloud.html">腾讯云</a>
+    <a class="nav-link" href="cases.html">成功案例</a>
+    <a class="nav-link active" href="blog.html">博客</a>
+    <a class="nav-link" href="about.html">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#cta">免费服务 →</a>
+    <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">首页</a><span class="sep">/</span>
+  <a href="blog.html">技术博客</a><span class="sep">/</span>
+  <span class="current">CodeBuddy 企业版上手</span>
+</div>
+
+<article>
+  <header class="article-hero">
+    <span class="article-tag">腾讯云 · 产品教程</span>
+    <h1>CodeBuddy 企业版上手：从开通到第一个 AI 提效项目</h1>
+    <div class="article-meta">
+      <span>2026-07-09</span>
+      <span class="article-meta-divider">·</span>
+      <span>陈超伟</span>
+      <span class="article-meta-divider">·</span>
+      <span>阅读 8 分钟</span>
+    </div>
+  </header>
+
+  <div class="article-content">
+    <p>团队接了一个新项目，开发 + 文档 + 测试，传统方式要 2 周。用 CodeBuddy 企业版，3 天交付——不用写一行样板代码。这不是科幻，是 2026 年腾讯云 AI 编程工具的日常。</p>
+
+    <div class="callout">
+      <span class="callout-label">什么是 CodeBuddy</span>
+      CodeBuddy 是腾讯云推出的企业级 AI 编程助手，基于自研代码大模型，支持代码生成、补全、审查、测试用例编写等全流程开发场景。企业版额外提供私有知识库、团队协作、用量监控和安全审计能力，让 AI 不仅能写代码，还能<em>懂你的业务</em>、<em>遵循你的规范</em>。
+    </div>
+
+    <div class="pain-stat">
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">80%</div>
+        <div class="pain-stat-label">提效比例</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">12万</div>
+        <div class="pain-stat-label">月省成本</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">30分钟</div>
+        <div class="pain-stat-label">上手时间</div>
+      </div>
+    </div>
+
+    <h2>第一步：5 步开通 CodeBuddy 企业版</h2>
+    <p>很多人觉得企业级 AI 工具的开通流程会很复杂——其实不然。CodeBuddy 企业版的开通被设计成了一个"30 分钟自助流程"，不需要技术背景也能完成。以下是完整的 5 个步骤：</p>
+
+    <ul>
+      <li><strong>注册腾讯云账号</strong>：访问 cloud.tencent.com，使用企业邮箱注册腾讯云账号，完成企业实名认证（需要营业执照，通常 1-2 小时内审核通过）。已有腾讯云账号的直接登录即可。</li>
+      <li><strong>开通 CodeBuddy 企业版服务</strong>：在控制台搜索"CodeBuddy"，进入产品页面选择"企业版"，根据团队规模选择席位数量。新用户有 14 天免费试用，建议先开 5 个席位跑通流程。</li>
+      <li><strong>创建企业空间</strong>：开通后进入管理后台，创建企业空间。空间是 CodeBuddy 的顶级组织单元，一个企业可以有多个空间（如"研发部空间"、"测试部空间"），不同空间的数据和知识库相互隔离。</li>
+      <li><strong>邀请团队成员</strong>：在空间设置中，通过企业邮箱或企业微信批量邀请团队成员。被邀请人收到邮件后一键加入，无需额外注册。支持按角色分配权限：管理员、开发者、只读成员。</li>
+      <li><strong>安装 IDE 插件</strong>：在 VSCode 或 JetBrains IDE 的插件市场搜索"CodeBuddy"安装。安装后用企业微信扫码登录，自动关联企业空间。整个安装过程不超过 3 分钟，插件会自动检测项目语言和框架。</li>
+    </ul>
+
+    <h2>第二步：配置企业知识库——让你的 AI 懂你的代码</h2>
+    <p>开通只是第一步。CodeBuddy 企业版真正的威力，在于<strong>企业知识库</strong>——这是它和个人版 AI 编程工具最大的区别。</p>
+
+    <p>知识库的作用很简单：上传公司代码规范、API 文档、架构设计文档，CodeBuddy 会基于这些私有知识来生成代码。这意味着它生成的不再是"通用示例代码"，而是<strong>符合你公司标准的、可以直接提交的代码</strong>。</p>
+
+    <p>具体来说，配置知识库带来三个直接好处：</p>
+    <p><strong>代码风格统一</strong>。团队里每个人都用 CodeBuddy 写代码，但所有人产出的代码风格一致——因为它们都参考了同一份公司编码规范。新员工入职第一天写的代码，和五年老员工写的看起来一样。</p>
+    <p><strong>避免使用废弃 API</strong>。把公司的 API 变更日志上传到知识库后，CodeBuddy 会自动避免使用已废弃的接口。再也不用等 Code Review 时才被指出"这个方法上个版本就删了"。</p>
+    <p><strong>自动遵循安全规范</strong>。上传公司的安全编码准则（如"所有 SQL 必须用参数化查询"、"密码必须用 bcrypt 加密"），CodeBuddy 会在生成代码时自动遵循这些规则，从源头减少安全漏洞。</p>
+
+    <h2>第三步：第一个实战项目——写一个供应商自动评分 API</h2>
+    <p>开通完了，知识库配好了，现在来跑第一个实战项目。我们选一个真实但不太复杂的场景：<strong>供应商自动评分 API</strong>。</p>
+
+    <p>在 CodeBuddy 的对话框中，用自然语言描述需求：</p>
+
+    <div class="callout">
+      <span class="callout-label">Prompt 示例</span>
+      写一个 REST API，用 Python FastAPI 框架。输入是供应商名称和订单量，输出是评分（0-100）。评分规则：订单量 1000 以上评 90+，500-1000 评 75-89，100-499 评 60-74，100 以下评 60 以下。需要输入校验、异常处理、单元测试、API 文档。
+    </div>
+
+    <p>CodeBuddy 在约 40 秒内生成了完整的代码包：FastAPI 路由文件（含输入校验和异常处理）、评分逻辑模块、12 个单元测试用例（覆盖正常输入、边界值、异常输入）、自动生成的 OpenAPI 文档。<strong>总共约 300 行代码，人工编写大约需要 2 小时，CodeBuddy 用了 40 秒。</strong></p>
+
+    <p>更重要的是，因为配置了企业知识库，生成的代码自动使用了公司统一的日志格式、错误码规范和数据库连接方式——<em>不用改一行就能直接提交</em>。</p>
+
+    <p>同样的方法可以用于生成 CRUD 接口、数据迁移脚本、前端组件等日常开发任务。核心思路是：<strong>描述清楚输入、输出和业务规则，让 AI 处理样板代码，你专注在业务逻辑上。</strong></p>
+
+    <h2>第四步：企业级配置要点</h2>
+    <p>基础流程跑通后，还有 4 个企业级配置要点需要关注。这些配置决定了 CodeBuddy 能不能在团队中安全、高效地长期使用：</p>
+
+    <ul>
+      <li><strong>代码规范注入</strong>：把公司的 ESLint、Prettier、Checkstyle 配置文件上传到知识库。CodeBuddy 生成代码时会自动遵循这些规范，省去后续格式化步骤。建议同时上传一份"反面教材"——常见错误示例，让 AI 知道什么不该做。</li>
+      <li><strong>敏感信息脱敏</strong>：在管理后台配置 .env 文件过滤规则，确保 API Key、数据库密码等敏感信息不会被 CodeBuddy 读取或出现在生成代码中。这是企业级使用的安全底线，务必在部署第一天就配好。</li>
+      <li><strong>CI/CD 集成</strong>：CodeBuddy 生成的单元测试可以直接接入 Jenkins 或 GitHub Actions 流水线。在 IDE 中用 CodeBuddy 生成测试后，一键推送到代码仓库，CI 流水线自动运行——从写代码到跑测试，全程不需要离开 IDE。</li>
+      <li><strong>用量监控</strong>：在管理后台查看团队使用数据，包括每日代码生成量、Token 消耗、按成员/项目维度的使用分布。这些数据不仅能做成本管控，还能用来计算 ROI——哪个团队用得多、哪个项目提效最明显，一目了然。</li>
+    </ul>
+
+    <h2>实战总结</h2>
+    <p>我们把励康内部团队及客户企业使用 CodeBuddy 企业版后的典型场景提效数据汇总如下，供参考：</p>
+
+    <table style="width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;color:var(--text-secondary)">
+      <thead>
+        <tr style="border-bottom:var(--rule)">
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">场景</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">传统耗时</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">CodeBuddy</th>
+          <th style="text-align:left;padding:10px 12px;font-weight:500;color:var(--text)">提效</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">CRUD 接口开发</td>
+          <td style="padding:10px 12px">4h</td>
+          <td style="padding:10px 12px">30min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">87%↓</td>
+        </tr>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">单元测试编写</td>
+          <td style="padding:10px 12px">3h</td>
+          <td style="padding:10px 12px">30min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">83%↓</td>
+        </tr>
+        <tr style="border-bottom:var(--rule-light)">
+          <td style="padding:10px 12px">API 文档生成</td>
+          <td style="padding:10px 12px">2h</td>
+          <td style="padding:10px 12px">10min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">92%↓</td>
+        </tr>
+        <tr>
+          <td style="padding:10px 12px">代码 Review</td>
+          <td style="padding:10px 12px">1.5h</td>
+          <td style="padding:10px 12px">15min</td>
+          <td style="padding:10px 12px;color:var(--accent);font-weight:500">83%↓</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>这些数据来自励康 2026 年上半年的内部统计。需要说明的是，提效比例因项目复杂度、代码规范成熟度而异，但整体趋势一致：<strong>越是标准化、重复性高的开发任务，CodeBuddy 的提效越显著</strong>。</p>
+
+    <p>对于还没有尝试过 AI 编程工具的团队，建议从一个具体的痛点场景开始（比如"单元测试编写太慢"），用 CodeBuddy 跑两周，用数据说话。一旦团队习惯了"描述需求→AI 生成→人工审查"的工作流，就很难再回到纯手写的日子了。</p>
+  </div>
+
+  <div class="cta-article">
+    <h3>准备好了吗？</h3>
+    <p>申请 CodeBuddy 企业版免费试用</p>
+    <a class="cta-article-btn" href="tencent-cloud.html">立即申请试用</a>
+  </div>
+
+  <div class="related-articles">
+    <h3>相关文章</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <h4>WorkBuddy 企业版入门</h4>
+        <a href="blog-tencent-workbuddy-starter.html">阅读全文 →</a>
+      </div>
+      <div class="related-card">
+        <h4>WorkBuddy × 制造业实战</h4>
+        <a href="blog-tencent-workbuddy-manufacturing.html">阅读全文 →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-links">
+      <a href="blog.html">← 返回博客</a>
+      <a href="blog.html">博客首页</a>
+    </div>
+    <div class="footer-social">
+      <h4>关注我们</h4>
+      <div class="social-qrs">
+        <div class="social-qr">
+          <img src="images/wechat_official.jpg" alt="微信公众号">
+          <span>微信公众号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/wecom-video.jpg" alt="微信视频号">
+          <span>微信视频号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/douyin.jpg" alt="抖音号">
+          <span>抖音号</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding-top:16px;margin-top:16px;border-top:var(--rule)">
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--text-muted);text-decoration:none">粤ICP备2021011807号</a>
+  </div>
+</footer>
+
+</div>
+
+<script src="chat-widget.js"></script>
+</body>
+</html>
