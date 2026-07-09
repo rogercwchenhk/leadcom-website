@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>79%的企业在搞AI Agent，为什么只有2%跑通？ | 励康信息技术</title>
+<meta name="description" content="79%企业有AI Agent项目，仅2%成功规模化。本文拆解从POC到生产的5大断层，给出可操作的避坑方案。">
+<meta name="keywords" content="AI Agent落地,企业AI部署,Agent失败率,POC到生产,AI规模化,数字员工">
+<link rel="canonical" href="https://www.leadcom.chat/blog-ai-agent-79-vs-2.html">
+
+<meta name="author" content="广东励康信息技术有限公司">
+<meta name="copyright" content="© 2026 广东励康信息技术有限公司">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.leadcom.chat/blog-ai-agent-79-vs-2.html">
+<meta property="og:title" content="79%的企业在搞AI Agent，为什么只有2%跑通？">
+<meta property="og:description" content="79%企业有AI Agent项目，仅2%成功规模化。拆解5大断层与避坑方案。">
+<meta property="og:image" content="https://www.leadcom.chat/images/hero-bg.png">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:site_name" content="励康信息技术">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "79%的企业在搞AI Agent，为什么只有2%跑通？",
+      "author": {"@type": "Person", "name": "陈超伟"},
+      "publisher": {"@type": "Organization", "name": "广东励康信息技术有限公司"},
+      "datePublished": "2026-07-05",
+      "description": "79%企业有AI Agent项目，仅2%成功规模化。本文拆解从POC到生产的5大断层，给出可操作的避坑方案。"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.leadcom.chat/"},
+        {"@type": "ListItem", "position": 2, "name": "技术博客", "item": "https://www.leadcom.chat/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "79% vs 2% AI Agent落差"}
+      ]
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.44.0/dist/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+img{max-width:100%;height:auto}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideInLeft{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+:root{
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --bg:#F5F7FA;--bg-alt:#EDF0F5;--border:#D8DEE6;--bg-warm:#d4c9b4;
+  --text:#1A1F36;--text-secondary:#3A3F52;--text-muted:#6B7280;--text-faint:#9a9182;
+  --accent:#2563EB;--accent-light:#3B82F6;--accent-bg:#DBEAFE;
+  --rule:1px solid #CBD5E1;--rule-light:1px solid #D8DEE6;
+}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);overflow-x:hidden;padding-top:60px}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:var(--bg);border-bottom:var(--rule);box-shadow:0 2px 8px rgba(26,31,54,0.08)}
+.logo{font-size:16px;font-weight:500;color:var(--text);letter-spacing:-0.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo img{height:32px;width:auto;mix-blend-mode:multiply;filter:brightness(1.05) contrast(0.95)}
+.logo em{color:var(--accent);font-style:normal}
+.nav-links{display:flex;gap:22px}
+.nav-link{font-size:12px;color:var(--text-muted);text-decoration:none}
+a.nav-link:hover{color:var(--accent)}
+.nav-link.active{color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:1px}
+.nav-right{display:flex;align-items:center;gap:16px}
+.nav-cta{font-size:12px;font-weight:500;color:var(--text);border-bottom:1.5px solid var(--text);padding-bottom:1px;text-decoration:none}
+.nav-wechat{font-size:12px;font-weight:500;color:var(--accent);border-bottom:1.5px solid var(--accent);padding-bottom:1px;text-decoration:none}
+a.nav-wechat:hover{color:var(--accent-light)}
+
+.breadcrumb{padding:10px 28px;border-bottom:var(--rule-light);display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.breadcrumb a{font-size:12px;color:var(--text-faint);text-decoration:none}
+.breadcrumb span{font-size:12px;color:var(--text-faint)}
+.breadcrumb .sep{font-size:12px;color:var(--bg-warm)}
+.breadcrumb .current{font-size:12px;color:var(--text-secondary)}
+
+.article-hero{padding:48px 28px 36px;border-bottom:var(--rule);max-width:780px;margin:0 auto}
+.article-tag{display:inline-block;font-size:11px;color:var(--accent);background:var(--accent-bg);padding:3px 9px;border-radius:1px;margin-bottom:14px;font-weight:500;letter-spacing:0.05em}
+.article-hero h1{font-size:31px;font-weight:500;color:var(--text);line-height:1.25;letter-spacing:-0.025em;margin-bottom:16px}
+.article-meta{font-size:12px;color:var(--text-faint);display:flex;gap:14px;align-items:center}
+.article-meta-divider{color:var(--bg-warm)}
+
+.article-content{padding:40px 28px;max-width:780px;margin:0 auto;font-size:15px;color:var(--text-secondary);line-height:1.85}
+.article-content p{margin-bottom:18px}
+.article-content h2{font-size:21px;font-weight:500;color:var(--text);margin:36px 0 16px;letter-spacing:-0.015em;padding-top:24px;border-top:var(--rule-light)}
+.article-content h2:first-of-type{border-top:none;padding-top:0;margin-top:8px}
+.article-content h3{font-size:17px;font-weight:500;color:var(--text);margin:24px 0 10px;letter-spacing:-0.01em}
+.article-content strong{color:var(--text);font-weight:500}
+.article-content em{color:var(--accent);font-style:normal;font-weight:500}
+.article-content ul{margin:12px 0 18px 0;padding-left:0;list-style:none}
+.article-content ul li{padding-left:20px;position:relative;margin-bottom:8px}
+.article-content ul li::before{content:'•';position:absolute;left:6px;color:var(--accent);font-weight:600}
+
+.callout{background:var(--bg-alt);border-left:3px solid var(--accent);padding:14px 18px;margin:20px 0;font-size:14px;color:var(--text-secondary);line-height:1.7}
+.callout-label{font-size:11px;color:var(--accent);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;display:block}
+
+.quote-block{margin:20px 0;padding:18px 20px;background:var(--bg);border:var(--rule-light);border-radius:4px}
+.quote-block blockquote{font-size:14px;color:var(--text-secondary);line-height:1.75;margin-bottom:8px;font-style:italic}
+.quote-block cite{font-size:12px;color:var(--text-faint);font-style:normal}
+
+.pain-stat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.pain-stat-item{padding:16px;border:var(--rule-light);border-radius:2px;background:var(--bg-alt);text-align:center;transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.pain-stat-item:hover{transform:translateY(-4px);box-shadow:0 4px 12px rgba(37,99,235,0.08)}
+.pain-stat-num{font-size:25px;font-weight:500;color:var(--accent);letter-spacing:-0.02em}
+.pain-stat-label{font-size:11px;color:var(--text-muted);margin-top:4px;text-transform:uppercase;letter-spacing:0.05em}
+
+.opportunity-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.opportunity-box:hover{background:var(--border);transform:translateX(4px)}
+.opportunity-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.opportunity-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.opportunity-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.solution-box{margin:24px 0;padding:18px 20px;background:var(--bg-alt);border-radius:4px;border:var(--rule-light);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.solution-box:hover{background:var(--border);transform:translateX(4px)}
+.solution-box h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.solution-box h4::before{content:'';display:inline-block;width:18px;height:2px;background:var(--accent)}
+.solution-box p{font-size:13px;color:var(--text-secondary);line-height:1.7;margin:0}
+
+.cta-article{padding:32px 28px;background:var(--text);color:var(--bg);text-align:center;margin-top:40px}
+.cta-article h3{font-size:19px;font-weight:500;margin-bottom:8px;letter-spacing:-0.015em}
+.cta-article p{font-size:13px;color:var(--border);margin-bottom:16px}
+.cta-article-btn{display:inline-block;background:var(--accent);color:#fff;font-size:13px;font-weight:500;padding:10px 24px;border-radius:2px;text-decoration:none;transition:all 0.3s ease}
+.cta-article-btn:hover{background:var(--accent-light);transform:translateY(-2px);box-shadow:0 4px 12px rgba(37,99,235,0.3)}
+
+.related-articles{padding:40px 28px;border-top:var(--rule);max-width:780px;margin:0 auto}
+.related-articles h3{font-size:12px;font-weight:500;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--rule);border-radius:2px}
+.related-card{padding:20px;border-right:var(--rule);transition:all 0.3s ease;animation:fadeInUp 0.6s ease-out backwards}
+.related-card:hover{background:var(--bg-alt);transform:translateY(-2px)}
+.related-card:last-child{border-right:none}
+.related-card h4{font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.4}
+.related-card a{font-size:12px;color:var(--accent);text-decoration:none}
+
+footer{padding:24px 28px;border-top:var(--rule)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;max-width:780px;margin:0 auto}
+.footer-copy{font-size:11px;color:var(--text-faint)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:11px;color:var(--text-faint);text-decoration:none}
+.footer-social h4{font-size:11px;font-weight:500;color:var(--text);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px}
+.social-qrs{display:flex;gap:16px}
+.social-qr{text-align:center}
+.social-qr img{width:72px;height:72px;border-radius:4px;display:block;margin-bottom:4px}
+.social-qr span{font-size:11px;color:var(--text-muted)}
+
+.nav-hamburger{display:none}
+@media(max-width:768px){
+  nav{flex-wrap:wrap;padding:10px 16px;gap:8px}
+  .nav-links{display:none;flex-direction:column;width:100%;gap:0;order:3;border-top:var(--rule);padding-top:8px}
+  .nav-links.open{display:flex}
+  .nav-link{display:block;padding:8px 0;font-size:14px}
+  .nav-right{gap:10px}
+  .nav-cta{font-size:13px}
+  .nav-hamburger{display:block;width:24px;height:18px;position:relative;cursor:pointer}
+  .nav-hamburger span{display:block;height:2px;background:var(--text);position:absolute;left:0;width:100%;transition:.3s}
+  .nav-hamburger span:nth-child(1){top:0}
+  .nav-hamburger span:nth-child(2){top:8px}
+  .nav-hamburger span:nth-child(3){top:16px}
+  .article-hero{padding:32px 16px 24px}
+  .article-hero h1{font-size:23px!important}
+  .article-content{padding:28px 16px;font-size:14px}
+  .article-content h2{font-size:18px}
+  .pain-stat{grid-template-columns:1fr!important}
+  .related-grid{grid-template-columns:1fr!important}
+  .related-card{border-right:none!important;border-bottom:var(--rule)}
+  .related-card:last-child{border-bottom:none}
+  .footer-top{flex-direction:column;gap:16px;align-items:flex-start}
+}
+</style>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?99688ed8e4a1736010504e0c9c4af957";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body>
+
+<div style="background:var(--bg);border:var(--rule);border-radius:4px;overflow:hidden">
+
+<nav>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="励康信息"><span>励<em>康</em>信息技术</span></a>
+  <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a class="nav-link" href="ai-solutions.html">AI 解决方案</a>
+    <a class="nav-link" href="it-maintenance.html">IT 维保</a>
+    <a class="nav-link" href="tencent-cloud.html">腾讯云</a>
+    <a class="nav-link" href="cases.html">成功案例</a>
+    <a class="nav-link active" href="blog.html">博客</a>
+    <a class="nav-link" href="about.html">关于我们</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-cta" href="index.html#cta">免费服务 →</a>
+    <a class="nav-wechat" href="https://work.weixin.qq.com/kfid/kfc45e9cc63e2496d3c" target="_blank" rel="noopener noreferrer">微信咨询</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="index.html">首页</a><span class="sep">/</span>
+  <a href="blog.html">技术博客</a><span class="sep">/</span>
+  <span class="current">79% vs 2% AI Agent落差</span>
+</div>
+
+<article>
+  <header class="article-hero">
+    <span class="article-tag">AI部署实战 · 深度分析</span>
+    <h1>79%的企业在搞AI Agent，为什么只有2%跑通？</h1>
+    <div class="article-meta">
+      <span>2026-07-05</span>
+      <span class="article-meta-divider">·</span>
+      <span>陈超伟</span>
+      <span class="article-meta-divider">·</span>
+      <span>阅读 10 分钟</span>
+    </div>
+  </header>
+
+  <div class="article-content">
+    <p>先看一个数字组合：<strong>79% vs 2%</strong>。前者是有AI Agent项目或计划的企业比例，后者是真正实现规模化投产的企业比例。这中间77个百分点的差距，就是所有做AI部署的人正在踩的坑。</p>
+    <p>这个数据来自AaiNova《2026 Enterprise AI Agent Deployment Landscape》。我们拿到这份报告后，结合励康30+项目的亲身经历，逐一验证了报告中的每一个断层点。结果发现：<strong>问题不在技术，而在认知和执行</strong>。</p>
+
+    <div class="callout">
+      <span class="callout-label">数据来源</span>
+      AaiNova《2026 Enterprise AI Agent Deployment Landscape》调查了全球940家已启动AI Agent项目的企业。79%的企业表示有Agent部署计划或在试行中，但仅2%完成了跨部门的规模化投产。
+    </div>
+
+    <div class="pain-stat">
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">79%</div>
+        <div class="pain-stat-label">企业有Agent项目</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">2%</div>
+        <div class="pain-stat-label">成功规模化投产</div>
+      </div>
+      <div class="pain-stat-item">
+        <div class="pain-stat-num">77pp</div>
+        <div class="pain-stat-label">落差 = 五大断层</div>
+      </div>
+    </div>
+
+    <h2>断层一：POC太容易，生产太难</h2>
+    <p>做过AI Agent POC的人都懂那种感觉：用DeepSeek或者GPT套个开源框架，搭一个会回复的聊天机器人，两天就搞定了。给老板演示的时候，回答流畅、逻辑清晰，老板当场拍板："上线！"</p>
+
+    <p>然后真正的噩梦就开始了。</p>
+
+    <p>POC阶段跑的都是精心挑选的"表演数据"。数据干净、场景简单、边界清晰，模型回答漂亮得不像话。但生产环境完全不同：数据格式五花八门（PDF扫描件、手写批注、十年前的老旧Excel），业务场景充满例外（"这个单子虽然有流程，但王总特批过的"），权限体系错综复杂（"这个数据A部门能看，B部门只能看前三列"）。</p>
+
+    <div class="quote-block">
+      <blockquote>"POC的时候我觉得Agent就是我司的未来之星。上线第一周，它把财务部的报销审批发到了全员大群。那一刻我想的不是怎么修bug，是怎么跟CEO交代。"</blockquote>
+      <cite>—— 某SaaS企业CTO，Agent投产第一周的真实经历</cite>
+    </div>
+
+    <p>IDC 2026年的数据印证了这一点：<strong>只有41.2%的AI Agent项目达到了预期的投产标准</strong>。剩下的近60%要么回炉重造，要么默默转为"内部学习项目"——这个委婉的说法翻译过来就是：失败了。</p>
+
+    <div class="opportunity-box">
+      <h4>破解之道：从POC思维切换到生产思维</h4>
+      <p>POC的目标是"证明可行"，生产的目标是"保证可靠"。两者的技术栈、测试标准、运维要求完全不同。励康的项目方法论中，POC和生产之间有明确的"生产化改造"阶段，包括压力测试、异常场景注入、权限审计、数据脱敏等至少7个检查项。</p>
+    </div>
+
+    <h2>断层二：数据治理是沉默的杀手</h2>
+    <p>说出来你可能不信——在励康经手的30+项目中，<strong>80%的延迟和返工不是模型的问题，是数据的问题</strong>。</p>
+
+    <p>一个典型的场景：客户想做"智能客服Agent"，能够回答关于产品、售后、政策的各类问题。听起来很简单对吧？但当我们开始做数据对接时，发现：产品手册有12个版本散落在4个部门的共享盘中；售后FAQ是一个3年前的Excel，其中30%的答案已经过时；最新的政策文件在CTO的个人电脑上，还没有同步到任何知识库。</p>
+
+    <p>AaiNova报告指出，41.2%的Agent投产不达标，<strong>首要原因就是底层数据质量不过关</strong>。这不是模型的问题——模型回答不出正确的内容，是因为根本没有正确的内容可以读。</p>
+
+    <div class="quote-block">
+      <blockquote>"我以为AI Agent的上线最难的是调模型，后来发现最难的是让各个部门交出他们手里的文档。有些部门负责人直接回复我：'你要这些干嘛？我们自己都三年没更新了。'"</blockquote>
+      <cite>—— 某制造企业AI项目负责人</cite>
+    </div>
+
+    <p>数据治理不是一个"顺带做做"的工作。它需要专门的人力、流程和工具，但在大多数企业的AI预算中，数据的投入不到总预算的15%。励康的建议是：<strong>数据治理的预算至少占AI项目总投入的30%</strong>，这是我们从失败案例中学到的血泪教训。</p>
+
+    <div class="solution-box">
+      <h4>励康的数据治理四步法</h4>
+      <p>第一步：数据资产盘点——找到所有散落的知识资产。第二步：质量评估——标注哪些可用、哪些需更新。第三步：统一入库——结构化存储到中央知识库。第四步：持续维护——建立文档更新与Agent响应的联动机制。这四步走完，Agent的准确率通常能从50%提升到85%以上。</p>
+    </div>
+
+    <h2>断层三：选型陷阱——别一上来就搞"全家桶"</h2>
+    <p>AI Agent平台太多了。Dify、Coze、FastGPT、LangChain、AutoGen……每一个都在说自己是"一站式解决方案"。很多企业的第一反应是：选一个最全的，一次搞定所有场景。</p>
+
+    <p>这恰恰是最大的陷阱。</p>
+
+    <p>我们在「智能进化 AI 交流群」里观察到一个现象：<strong>用户的负面评价高度集中在"大而全的多Agent编排"上</strong>。正如群友吐槽的："整了一堆专家团，没有一个有用的。一步卡，全卡。"</p>
+
+    <p>不是编排本身没有价值，而是企业还没有能力驾驭复杂的多Agent系统。通用平台的预设模板与企业实际场景之间有巨大的鸿沟。AaiNova的数据也显示：<strong>单一Agent单点突破的成功率在75%以上</strong>，而多Agent协同的初次成功率不到20%。</p>
+
+    <div class="opportunity-box">
+      <h4>励康的建议：MVA策略（最小可行Agent）</h4>
+      <p>选一个最痛、最明确的业务场景（如"合同条款合规审查"或"工单自动分类"），用一个Agent、一个模型、一个知识库把这件事做到极致。跑通后，再用同样的方法论复制到第二个场景。我们30+项目的经验是：从单一Agent起步的项目，平均3-4周就能见到业务价值；而从多Agent起步的项目，平均要8-10周才能跑通第一个场景。</p>
+    </div>
+
+    <h2>断层四：人与AI的磨合成本</h2>
+    <p>Gartner在2026年发布了一个让很多CIO失眠的警告：<strong>约40%的AI Agent项目在投产后面临被叫停的风险</strong>，原因不是技术故障，而是人。</p>
+
+    <p>具体来说，是三类"人的问题"：</p>
+    <ul>
+      <li><strong>使用者的信任危机</strong>：员工不相信Agent给出的答案。即使准确率达到85%，剩下的15%错误足以摧毁整体信任。"它上次把200万的报价算成了2000万，我现在每条都要人工复核，还不如我自己算。"</li>
+      <li><strong>中层管理者的阻力</strong>：Agent让某些中层发现自己的工作可以被自动化。这种威胁感会转化为对项目的隐形抵制——"这个需求还没整理好""等下一个版本再说吧"。</li>
+      <li><strong>IT团队的疲惫</strong>：Agent不是部署完就结束的。持续的数据更新、模型调优、用户培训、异常处理——IT团队的工作量不降反升，而且"成就感极低，都是擦屁股的活"。</li>
+    </ul>
+
+    <div class="quote-block">
+      <blockquote>"Agent上线第三周，业务部门偷偷恢复了原来的Excel工作流。我问为什么，他们说：'AI那个太吓人了，用着不踏实。'不是Agency不行，是信任建立比你想象的要慢得多。"</blockquote>
+      <cite>—— 某金融科技公司AI项目PM</cite>
+    </div>
+
+    <p>励康在项目中总结出一套<strong>"双轨并行"策略</strong>：Agent上线后至少保持4-6周的双轨运行期——AI给出建议，人工确认后执行。这期间的目标不是追求效率提升，而是建立信任。只有当人工确认率自然下降到10%以下，才正式切换到AI主导模式。</p>
+
+    <h2>断层五：缺乏持续的运维能力</h2>
+    <p>如果把AI Agent比作一辆车，POC阶段你只是在4S店试驾了两圈。投产之后，你要面对的是：加油（Token消耗）、保养（模型更新）、年检（安全审计）、事故处理（异常恢复），以及永远在涨的停车费（基础设施成本）。</p>
+
+    <p>但大多数企业没有给Agent配"运维司机"。在励康接触的客户中，<strong>超过60%的企业没有为AI Agent设置专门的运维岗位</strong>。Agent上线后遇到问题，全靠最初的开发团队"顺带处理"，而开发团队早已被分配到了下一个"更激动人心"的项目中。</p>
+
+    <p>一个Agent的运维清单至少包括：</p>
+    <ul>
+      <li>每日Token消耗监控与异常告警</li>
+      <li>每周回答质量抽检（人工评估至少20条）</li>
+      <li>每月知识库更新与过期内容清理</li>
+      <li>每季度模型版本评估与升级测试</li>
+      <li>实时监控Agent的响应时间、准确率、用户满意度</li>
+    </ul>
+
+    <div class="solution-box">
+      <h4>励康的Agent运维SOP</h4>
+      <p>我们为每个部署项目输出一套标准化的运维手册，包含日检、周检、月检、季检四张检查清单。同时提供远程监控面板，客户IT团队可以在一个界面看到所有Agent的健康状态。对于运维人力不足的客户，我们提供托管运维服务，每月出具Agent健康报告。</p>
+    </div>
+
+    <h2>总结</h2>
+    <p>从79%到2%，这77个百分点的差距不是技术鸿沟，而是执行鸿沟。</p>
+    <p>励康30+项目的经验反复验证了一条路：<strong>数据先行、单点突破、双轨上线、持续运维</strong>——这四个原则让我们的客户Agent投产成功率超过90%。不是因为我们有更厉害的技术，而是因为我们承认了一个简单的事实：AI Agent落地，技术只占30%的工作量，剩下的70%是工程、流程和人。</p>
+    <p>下一篇，我们来聊聊另一个关键基础设施——当企业接入第5个大模型时，为什么没有一个LLM网关会让人崩溃。</p>
+  </div>
+
+  <div class="cta-article">
+    <h3>你的Agent部署路径对吗？</h3>
+    <p>励康提供免费Agent部署路径评估——30分钟帮你识别最大的投产风险点。</p>
+    <a class="cta-article-btn" href="index.html#cta">免费Agent部署路径评估</a>
+  </div>
+
+  <div class="related-articles">
+    <h3>相关文章</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <h4>83%的AI项目被叫停？数据不出内网才是关键</h4>
+        <a href="blog-data-security-83-percent.html">阅读全文 →</a>
+      </div>
+      <div class="related-card">
+        <h4>从POC到生产：企业AI Agent部署实战手册</h4>
+        <a href="blog-poc-to-production.html">阅读全文 →</a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<footer>
+  <div class="footer-top">
+    <span class="footer-copy">© 2026 广东励康信息技术有限公司 · 020-66319828</span>
+    <div class="footer-links">
+      <a href="blog.html">← 返回博客</a>
+      <a href="blog-llm-gateway-guide.html">下一篇 →</a>
+    </div>
+    <div class="footer-social">
+      <h4>关注我们</h4>
+      <div class="social-qrs">
+        <div class="social-qr">
+          <img src="images/wechat_official.jpg" alt="微信公众号">
+          <span>微信公众号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/wecom-video.jpg" alt="微信视频号">
+          <span>微信视频号</span>
+        </div>
+        <div class="social-qr">
+          <img src="images/douyin.jpg" alt="抖音号">
+          <span>抖音号</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;padding-top:16px;margin-top:16px;border-top:var(--rule)">
+    <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:var(--text-muted);text-decoration:none">粤ICP备2021011807号</a>
+  </div>
+</footer>
+
+</div>
+
+<script src="chat-widget.js"></script>
+</body>
+</html>

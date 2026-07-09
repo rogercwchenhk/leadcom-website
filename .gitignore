@@ -14,3 +14,6 @@ seo-link-fix-guide.md
 # Node 依赖
 node_modules/
 package-lock.json
+
+# Git Worktrees
+.worktrees/
