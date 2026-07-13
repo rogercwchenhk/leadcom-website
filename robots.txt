@@ -1,4 +1,57 @@
 User-agent: *
 Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 3
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
+
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
+
+User-agent: Sogou web spider
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
+
+User-agent: YisouSpider
+Allow: /
+Crawl-delay: 5
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /api/
 
 Sitemap: https://www.leadcom.chat/sitemap.xml
